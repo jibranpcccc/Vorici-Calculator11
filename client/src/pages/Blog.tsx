@@ -1,6 +1,7 @@
 import { useParams } from 'wouter';
 import { Link } from 'wouter';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import TopCraftingMistakes from './blog/top-5-crafting-mistakes';
 
 export default function Blog() {
   const params = useParams();
@@ -137,88 +138,20 @@ export default function Blog() {
 }
 
 function BlogPost({ slug }: { slug: string }) {
-  const postContent = {
-    'top-5-crafting-mistakes': {
-      title: 'Top 5 Crafting Mistakes That Are Wasting Your Currency',
-      description: 'Are you wasting currency? Avoid these top 5 common Path of Exile crafting mistakes.',
-      date: 'December 15, 2024',
-      readTime: '5 min read',
-    },
-    'poe-3-25-crafting-changes': {
-      title: 'PoE 3.25 Crafting Changes: What You Need to Know',
-      description: 'Complete breakdown of Settlers League crafting updates.',
-      date: 'December 12, 2024',
-      readTime: '8 min read',
-    },
-    'advanced-socket-strategies': {
-      title: 'Advanced Socket Color Strategies for Endgame Items',
-      description: 'Master off-coloring techniques and bench crafting combinations.',
-      date: 'December 10, 2024',
-      readTime: '12 min read',
-    },
-  };
-
-  const post = postContent[slug as keyof typeof postContent];
-
-  if (!post) {
-    return (
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl font-gaming font-bold text-poe-gold mb-4">Post Not Found</h1>
-          <p className="text-poe-text-dim mb-6">The blog post you're looking for is currently being written.</p>
-          <Link href="/blog" className="text-poe-gold hover:text-poe-orange transition-colors">
-            ← Back to Blog
-          </Link>
-        </div>
-      </main>
-    );
-  }
-
-  return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-poe-gold hover:text-poe-orange transition-colors mb-8">
-          <ArrowLeft className="w-4 h-4" />
-          Back to Blog
-        </Link>
-
-        <article className="prose prose-invert max-w-none">
-          <header className="mb-8">
-            <div className="flex items-center gap-4 text-sm text-poe-text-dim mb-4">
-              <div className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
-                {post.date}
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="w-4 h-4" />
-                {post.readTime}
-              </div>
-            </div>
-            <h1 className="text-4xl font-gaming font-bold text-poe-gold mb-4">{post.title}</h1>
-            <p className="text-lg text-poe-text-dim">{post.description}</p>
-          </header>
-
-          <div className="bg-poe-dark-alt rounded-xl p-8 border border-poe-gold/20">
-            <div className="text-center text-poe-text-dim">
-              <div className="text-6xl mb-4">📰</div>
-              <h3 className="text-xl font-gaming text-poe-gold mb-2">Article Coming Soon</h3>
-              <p className="mb-4">
-                This {post.title.toLowerCase()} is currently being written and will include:
-              </p>
-              <ul className="text-left max-w-lg mx-auto space-y-2">
-                <li>• Detailed analysis and examples</li>
-                <li>• Step-by-step instructions</li>
-                <li>• Screenshots and visual guides</li>
-                <li>• Expert tips and strategies</li>
-                <li>• Community insights and data</li>
-              </ul>
-              <p className="mt-6">
-                While you wait, check out our <Link href="/#calculator" className="text-poe-gold hover:text-poe-orange transition-colors">crafting calculator</Link> to optimize your currency usage.
-              </p>
-            </div>
+  switch (slug) {
+    case 'top-5-crafting-mistakes':
+      return <TopCraftingMistakes />;
+    default:
+      return (
+        <main className="container mx-auto px-4 py-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl font-gaming font-bold text-poe-gold mb-4">Post Not Found</h1>
+            <p className="text-poe-text-dim mb-6">The blog post you're looking for doesn't exist.</p>
+            <Link href="/blog" className="text-poe-gold hover:text-poe-orange transition-colors">
+              ← Back to Blog
+            </Link>
           </div>
-        </article>
-      </div>
-    </main>
-  );
+        </main>
+      );
+  }
 }

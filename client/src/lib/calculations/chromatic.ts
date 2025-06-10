@@ -88,7 +88,7 @@ function getColorCombinationKey(colors: SocketColor[]): string {
 
 export function calculateChromaticCost(input: ChromaticCalculationInput): CalculationResult {
   const { item, targetSockets } = input;
-  const activeColors = targetSockets.colors.filter(c => c !== 'disabled');
+  const activeColors = targetSockets.colors.slice(0, targetSockets.activeCount).filter(c => c !== 'disabled');
   
   // Calculate probability of getting the desired combination
   const probability = calculateSocketProbability(activeColors, item.base);

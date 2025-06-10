@@ -34,9 +34,9 @@ export function CostBreakdownModal({ isOpen, onClose, result, title }: CostBreak
           </div>
           
           <div className="bg-poe-dark rounded-lg p-4">
-            <h4 className="font-gaming font-semibold text-poe-gold mb-2">Parameters</h4>
+            <h4 className="font-gaming font-semibold text-poe-gold mb-2">Variables</h4>
             <div className="grid grid-cols-2 gap-4 text-sm">
-              {Object.entries(result.costBreakdown.parameters).map(([key, value]) => (
+              {Object.entries(result.costBreakdown.variables).map(([key, value]) => (
                 <div key={key} className="flex justify-between">
                   <span className="text-poe-text-dim capitalize">
                     {key.replace(/([A-Z])/g, ' $1').toLowerCase()}:

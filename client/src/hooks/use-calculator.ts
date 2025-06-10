@@ -37,7 +37,7 @@ const initialState: CalculatorState = {
   },
   chromaticSockets: {
     colors: ['red', 'red', 'green', 'blue', 'disabled', 'disabled'],
-    count: 4,
+    activeCount: 4,
   },
   
   jewellerCurrentSockets: 4,

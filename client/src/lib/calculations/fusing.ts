@@ -39,8 +39,8 @@ export function calculateFusingCost(input: FusingCalculationInput): CalculationR
       recommendedMethod: 'Already achieved',
       costBreakdown: {
         formula: 'N/A',
+        variables: {},
         explanation: 'Current links already meet or exceed target',
-        parameters: {},
       },
     };
   }
@@ -73,8 +73,7 @@ export function calculateFusingCost(input: FusingCalculationInput): CalculationR
     recommendedMethod,
     costBreakdown: {
       formula: 'P(target_links) = base_probability * (1 + quality_bonus)',
-      explanation: `${targetLinks}-link probability with ${quality}% quality. Quality improves odds by ${((getQualityMultiplier(quality) - 1) * 100).toFixed(1)}%`,
-      parameters: {
+      variables: {
         targetLinks,
         quality,
         baseProbability: targetLinks === 6 ? BASE_6LINK_PROBABILITY : 
@@ -84,6 +83,7 @@ export function calculateFusingCost(input: FusingCalculationInput): CalculationR
         expectedAttempts: Math.ceil(1 / probability),
         benchCost: benchCost || 0,
       },
+      explanation: `${targetLinks}-link probability with ${quality}% quality. Quality improves odds by ${((getQualityMultiplier(quality) - 1) * 100).toFixed(1)}%`,
     },
   };
 }

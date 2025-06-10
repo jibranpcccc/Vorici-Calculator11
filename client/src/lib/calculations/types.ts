@@ -10,7 +10,7 @@ export type ItemBase =
 
 export interface SocketConfiguration {
   colors: SocketColor[];
-  count: number;
+  activeCount: number;
 }
 
 export interface ItemConfiguration {

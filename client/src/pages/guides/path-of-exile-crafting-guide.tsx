@@ -32,7 +32,7 @@ export default function PathOfExileCraftingGuide() {
   return (
     <div>
       <SEOHead
-        title="The Complete Path of Exile Crafting Guide (2024) | Master All Mechanics"
+        title="The Complete Path of Exile Crafting Guide (2025) | Master All Mechanics"
         description="The definitive guide to crafting in Path of Exile. Learn everything about currency orbs, the crafting bench, socket mechanics, influencing items, and more. Updated for current league."
         keywords="path of exile crafting guide, poe crafting mechanics, crafting bench, socket mechanics, orb of fusing, chromatic orb guide, jeweller orb, poe currency guide"
         canonicalUrl="https://vorici-calculator.com/guides/path-of-exile-crafting-guide/"
@@ -110,9 +110,7 @@ export default function PathOfExileCraftingGuide() {
               <li><a href="#understanding-items" className="hover:text-poe-gold transition-colors">2. Understanding Your Item (The Crafting Base)</a></li>
               <li><a href="#crafting-bench" className="hover:text-poe-gold transition-colors">3. The Crafting Bench: Your Best Friend</a></li>
               <li><a href="#socket-mathematics" className="hover:text-poe-gold transition-colors">4. The Mathematics of Sockets, Links, and Colors</a></li>
-              <li><a href="#advanced-crafting" className="hover:text-poe-gold transition-colors">5. Advanced Crafting: Influences, Essences, and Fossils</a></li>
-              <li><a href="#practical-strategies" className="hover:text-poe-gold transition-colors">6. Practical Crafting Strategies</a></li>
-              <li><a href="#common-mistakes" className="hover:text-poe-gold transition-colors">7. Common Mistakes to Avoid</a></li>
+              <li><a href="#advanced-crafting" className="hover:text-poe-gold transition-colors">5. Advanced Crafting Concepts</a></li>
             </ol>
           </CardContent>
         </Card>
@@ -201,7 +199,7 @@ export default function PathOfExileCraftingGuide() {
                   </ul>
                   <div className="mt-4">
                     <Link href="/guides/6-linking-strategies" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
-                      Master 6-linking techniques →
+                      Read our complete 6-linking strategies guide →
                     </Link>
                   </div>
                 </CardContent>
@@ -221,58 +219,66 @@ export default function PathOfExileCraftingGuide() {
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-poe-dark-alt border-poe-gold/30">
                 <CardHeader>
-                  <CardTitle className="text-poe-gold font-gaming">Item Level (iLvl)</CardTitle>
+                  <CardTitle className="text-poe-gold">Item Level Requirements</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-poe-text-dim mb-4">
-                    Item level determines the maximum number of sockets an item can have. This is crucial for socket planning.
+                    Item level determines the maximum number of sockets an item can have. This is crucial for socket calculations.
                   </p>
-                  <div className="bg-poe-dark rounded-lg p-4">
-                    <h4 className="font-semibold text-poe-gold mb-2">Socket Limits by Item Level:</h4>
-                    <ul className="text-sm text-poe-text-dim space-y-1">
-                      <li>iLvl 1-14: 1-2 sockets maximum</li>
-                      <li>iLvl 15-27: 1-3 sockets maximum</li>
-                      <li>iLvl 28-34: 1-4 sockets maximum</li>
-                      <li>iLvl 35-49: 1-5 sockets maximum</li>
-                      <li>iLvl 50+: 1-6 sockets maximum</li>
-                    </ul>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">Item Level 1-14:</span>
+                      <span className="text-poe-gold">Max 2 sockets</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">Item Level 15-27:</span>
+                      <span className="text-poe-gold">Max 3 sockets</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">Item Level 28-34:</span>
+                      <span className="text-poe-gold">Max 4 sockets</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">Item Level 35-49:</span>
+                      <span className="text-poe-gold">Max 5 sockets</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">Item Level 50+:</span>
+                      <span className="text-poe-gold">Max 6 sockets</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="bg-poe-dark-alt border-poe-gold/30">
                 <CardHeader>
-                  <CardTitle className="text-poe-gold font-gaming">Attribute Requirements</CardTitle>
+                  <CardTitle className="text-poe-gold">Attribute Requirements</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-poe-text-dim mb-4">
-                    An item's attribute requirements determine socket color probabilities when using Chromatic Orbs.
+                    Item attribute requirements determine socket color probabilities. This is the foundation of chromatic calculations.
                   </p>
-                  <div className="bg-poe-dark rounded-lg p-4">
-                    <h4 className="font-semibold text-poe-gold mb-2">Color Weights:</h4>
-                    <ul className="text-sm text-poe-text-dim space-y-1">
-                      <li><span className="text-strength-red">Strength items:</span> 100 red, 25 green, 25 blue</li>
-                      <li><span className="text-dexterity-green">Dexterity items:</span> 25 red, 100 green, 25 blue</li>
-                      <li><span className="text-intelligence-blue">Intelligence items:</span> 25 red, 25 green, 100 blue</li>
-                      <li><span className="text-poe-gold">Hybrid items:</span> Balanced between requirements</li>
-                    </ul>
+                  <div className="space-y-3">
+                    <div>
+                      <span className="text-strength-red font-medium">Strength Items:</span>
+                      <span className="text-poe-text-dim text-sm ml-2">90% red, 5% green, 5% blue</span>
+                    </div>
+                    <div>
+                      <span className="text-dexterity-green font-medium">Dexterity Items:</span>
+                      <span className="text-poe-text-dim text-sm ml-2">5% red, 90% green, 5% blue</span>
+                    </div>
+                    <div>
+                      <span className="text-intelligence-blue font-medium">Intelligence Items:</span>
+                      <span className="text-poe-text-dim text-sm ml-2">5% red, 5% green, 90% blue</span>
+                    </div>
+                    <div>
+                      <span className="text-poe-orange font-medium">Hybrid Items:</span>
+                      <span className="text-poe-text-dim text-sm ml-2">Balanced based on requirements</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-
-            <Card className="bg-gradient-to-r from-poe-orange/20 to-poe-gold/20 border-poe-orange/40">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-gaming font-bold text-poe-orange mb-3">
-                  Pro Tip: Off-Coloring Strategy
-                </h3>
-                <p className="text-poe-text-dim">
-                  When you need colors that don't match your item's attributes (like blue sockets on a strength item), 
-                  expect to use significantly more Chromatic Orbs. Always check the calculator to compare costs with 
-                  Vorici bench recipes for guaranteed results.
-                </p>
-              </CardContent>
-            </Card>
           </section>
 
           {/* Section 3: Crafting Bench */}
@@ -280,213 +286,221 @@ export default function PathOfExileCraftingGuide() {
             <h2 className="text-4xl font-heading font-bold text-poe-gold mb-8">The Crafting Bench: Your Best Friend</h2>
             
             <p className="text-poe-text-dim mb-8 text-lg leading-relaxed">
-              The Crafting Bench in your hideout provides guaranteed outcomes for fixed costs. For socket manipulation, 
-              these recipes often provide the most cost-effective solutions, especially for difficult color combinations.
+              The crafting bench in your hideout provides guaranteed outcomes for specific currency costs. Understanding 
+              when to use the bench versus gambling with orbs is essential for cost-effective crafting.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-poe-dark-alt border-poe-gold/30">
-                <CardHeader>
-                  <CardTitle className="text-poe-gold font-gaming">Socket Recipes</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-poe-text mb-2">Number of Sockets:</h4>
-                      <ul className="text-sm text-poe-text-dim space-y-1">
-                        <li>6 sockets: 350 Jeweller's Orbs</li>
-                        <li>5 sockets: 70 Jeweller's Orbs</li>
-                        <li>4 sockets: 20 Jeweller's Orbs</li>
-                        <li>3 sockets: 7 Jeweller's Orbs</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-poe-text mb-2">Socket Colors:</h4>
-                      <ul className="text-sm text-poe-text-dim space-y-1">
-                        <li>1 red socket: 4 Chromatic Orbs</li>
-                        <li>2 red sockets: 25 Chromatic Orbs</li>
-                        <li>3 red sockets: 120 Chromatic Orbs</li>
-                        <li>(Same costs for green and blue)</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-poe-dark-alt border-poe-gold/30">
-                <CardHeader>
-                  <CardTitle className="text-poe-gold font-gaming">Linking Recipes</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-poe-text mb-2">Socket Links:</h4>
-                      <ul className="text-sm text-poe-text-dim space-y-1">
-                        <li>6-link: 1500 Orbs of Fusing</li>
-                        <li>5-link: 150 Orbs of Fusing</li>
-                        <li>4-link: 30 Orbs of Fusing</li>
-                      </ul>
-                    </div>
-                    <div className="bg-poe-dark rounded-lg p-3">
-                      <p className="text-sm text-poe-gold font-medium">
-                        ⚡ Bench recipes provide guaranteed results but cost more than average RNG outcomes.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <Card className="bg-gradient-to-r from-intelligence-blue/20 to-poe-blue/20 border-intelligence-blue/40">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-gaming font-bold text-intelligence-blue mb-3">
-                  When to Use the Bench vs RNG
-                </h3>
-                <p className="text-poe-text-dim mb-4">
-                  Use our calculator to compare costs! Generally:
-                </p>
-                <ul className="text-poe-text-dim space-y-2">
-                  <li>• <strong>Use bench for:</strong> Off-color combinations, guaranteed 6-links on valuable items</li>
-                  <li>• <strong>Use RNG for:</strong> On-color combinations, when you have excess currency to gamble</li>
-                  <li>• <strong>Consider risk tolerance:</strong> Bench = guaranteed cost, RNG = potential savings with risk</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </section>
-
-          {/* Section 4: Socket Mathematics */}
-          <section id="socket-mathematics" className="mb-16">
-            <h2 className="text-4xl font-heading font-bold text-poe-gold mb-8">The Mathematics of Sockets, Links, and Colors</h2>
-            
-            <p className="text-poe-text-dim mb-8 text-lg leading-relaxed">
-              Understanding the probability mathematics behind socket manipulation helps you make informed crafting decisions. 
-              Our calculator handles the complex formulas, but knowing the basics helps you understand the results.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="bg-poe-dark-alt border-strength-red/30">
-                <CardHeader>
-                  <CardTitle className="text-strength-red font-gaming text-lg">Socket Colors</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-poe-text-dim mb-3">
-                    Color probability is based on weighted rolls using item attribute requirements.
-                  </p>
-                  <Link href="/guides/socket-coloring-mechanics" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
-                    Read our deep-dive on socket coloring mechanics →
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-poe-dark-alt border-dexterity-green/30">
-                <CardHeader>
-                  <CardTitle className="text-dexterity-green font-gaming text-lg">Socket Numbers</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-poe-text-dim mb-3">
-                    Socket count probability varies by item level, with each outcome having different weights.
-                  </p>
-                  <span className="text-poe-gold text-sm font-medium">
-                    6 sockets: ~16.7% chance at iLvl 50+
-                  </span>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-poe-dark-alt border-intelligence-blue/30">
-                <CardHeader>
-                  <CardTitle className="text-intelligence-blue font-gaming text-lg">Socket Links</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-poe-text-dim mb-3">
-                    Link probability is very low for high-tier outcomes, making quality crucial for efficiency.
-                  </p>
-                  <Link href="/guides/6-linking-strategies" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
-                    Master 6-linking techniques →
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-
-            <Card className="bg-poe-dark-alt border-poe-gold/30">
+            <Card className="bg-poe-dark-alt border-poe-gold/30 mb-8">
               <CardHeader>
-                <CardTitle className="text-poe-gold font-gaming">Quality Bonus for Linking</CardTitle>
+                <CardTitle className="text-poe-gold">Key Bench Recipes for Socket Manipulation</CardTitle>
               </CardHeader>
               <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-poe-orange font-semibold mb-3">Socket Number Recipes</h4>
+                    <ul className="space-y-2 text-sm text-poe-text-dim">
+                      <li>• 2 sockets: 2 Jeweller's Orbs</li>
+                      <li>• 3 sockets: 3 Jeweller's Orbs</li>
+                      <li>• 4 sockets: 4 Jeweller's Orbs</li>
+                      <li>• 5 sockets: 70 Jeweller's Orbs</li>
+                      <li>• 6 sockets: 350 Jeweller's Orbs</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-poe-orange font-semibold mb-3">Socket Color Recipes</h4>
+                    <ul className="space-y-2 text-sm text-poe-text-dim">
+                      <li>• At least 1 red: 4 Chromatic Orbs</li>
+                      <li>• At least 1 green: 4 Chromatic Orbs</li>
+                      <li>• At least 1 blue: 4 Chromatic Orbs</li>
+                      <li>• At least 2 red: 25 Chromatic Orbs</li>
+                      <li>• At least 3 blue: 120 Chromatic Orbs</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-r from-poe-orange/10 to-poe-gold/10 border-poe-orange/30">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-gaming font-bold text-poe-orange mb-4">When to Use the Bench vs. Orb Spam</h3>
                 <p className="text-poe-text-dim mb-4">
-                  Item quality provides a significant bonus to linking chances. This is why you should always 20% quality 
-                  an item before attempting to link it.
+                  The decision between using bench recipes or spamming orbs depends on probability calculations. 
+                  Our calculator automatically determines the most cost-effective method for your specific requirements.
                 </p>
-                <div className="bg-poe-dark rounded-lg p-4">
-                  <h4 className="font-semibold text-poe-gold mb-2">Quality Impact:</h4>
-                  <ul className="text-sm text-poe-text-dim space-y-1">
-                    <li>0% quality: Base linking chance (~1/1200 for 6-link)</li>
-                    <li>10% quality: ~10% better linking odds</li>
-                    <li>20% quality: ~20% better linking odds</li>
-                    <li>28% quality (Perfect Fossils): ~28% better linking odds</li>
-                  </ul>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-semibold text-poe-gold mb-2">Use the Bench When:</h4>
+                    <ul className="text-sm text-poe-text-dim space-y-1">
+                      <li>• Expected cost exceeds bench cost</li>
+                      <li>• Working with expensive items</li>
+                      <li>• Need guaranteed results</li>
+                      <li>• Off-color combinations are difficult</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-poe-gold mb-2">Spam Orbs When:</h4>
+                    <ul className="text-sm text-poe-text-dim space-y-1">
+                      <li>• Probability is in your favor</li>
+                      <li>• Working with cheap bases</li>
+                      <li>• Colors match item attributes</li>
+                      <li>• Expected cost is low</li>
+                    </ul>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </section>
 
-          {/* Call to Action */}
-          <Card className="bg-gradient-to-r from-poe-gold/20 to-poe-orange/20 border-poe-gold/40 mb-12">
-            <CardContent className="p-8 text-center">
-              <Calculator className="w-12 h-12 text-poe-gold mx-auto mb-4" />
-              <h3 className="text-2xl font-gaming font-bold text-poe-gold mb-4">
-                Ready to Calculate Your Crafting Costs?
-              </h3>
-              <p className="text-poe-text-dim mb-6 max-w-2xl mx-auto">
-                Now that you understand the mechanics, use our All-in-One Crafting Calculator to get precise 
-                cost estimates for all your socket manipulation projects.
-              </p>
-              <Link 
-                href="/#calculator"
-                className="bg-poe-gold text-poe-dark px-8 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
-              >
-                Use the Calculator Now
-              </Link>
-            </CardContent>
-          </Card>
+          {/* Section 4: Mathematics */}
+          <section id="socket-mathematics" className="mb-16">
+            <h2 className="text-4xl font-heading font-bold text-poe-gold mb-8">The Mathematics of Sockets, Links, and Colors</h2>
+            
+            <p className="text-poe-text-dim mb-8 text-lg leading-relaxed">
+              Understanding the underlying probability system is crucial for cost-effective crafting. This section provides 
+              an overview of the mathematical principles that govern socket manipulation.
+            </p>
 
-          {/* External References */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-heading font-bold text-poe-gold mb-6">Additional Resources</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-poe-dark-alt border-poe-gold/30">
-                <CardContent className="p-6">
-                  <h3 className="font-gaming font-semibold text-poe-gold mb-3">Official PoE Wiki</h3>
-                  <p className="text-poe-text-dim mb-4 text-sm">
-                    For the most up-to-date information on crafting mechanics and official formulas.
+                <CardHeader>
+                  <CardTitle className="text-poe-gold">Socket Color Weights</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-poe-text-dim mb-4">
+                    Socket colors use a weighted system based on item requirements. The actual formula involves complex calculations.
                   </p>
-                  <a 
-                    href="https://www.poewiki.net/wiki/Crafting" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium inline-flex items-center gap-1"
-                  >
-                    Visit PoE Wiki <ExternalLink className="w-3 h-3" />
+                  <div className="bg-poe-dark rounded-lg p-4">
+                    <div className="text-sm font-mono text-poe-text-dim">
+                      <div>Red Weight = STR Requirement</div>
+                      <div>Green Weight = DEX Requirement</div>
+                      <div>Blue Weight = INT Requirement</div>
+                      <div>White Weight = 1 (always)</div>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <Link href="/guides/socket-coloring-mechanics" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
+                      Read the complete mathematical breakdown →
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-poe-dark-alt border-poe-gold/30">
+                <CardHeader>
+                  <CardTitle className="text-poe-gold">Linking Probabilities</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-poe-text-dim mb-4">
+                    Link probabilities are affected by item quality. Higher quality items have better linking chances.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">6-link at 0% quality:</span>
+                      <span className="text-poe-gold">~1/1200</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">6-link at 20% quality:</span>
+                      <span className="text-poe-gold">~1/1000</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-poe-text-dim">Bench cost:</span>
+                      <span className="text-poe-gold">1500 fusings</span>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <Link href="/guides/6-linking-strategies" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
+                      Learn advanced 6-linking strategies →
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* Section 5: Advanced Concepts */}
+          <section id="advanced-crafting" className="mb-16">
+            <h2 className="text-4xl font-heading font-bold text-poe-gold mb-8">Advanced Crafting Concepts</h2>
+            
+            <p className="text-poe-text-dim mb-8 text-lg leading-relaxed">
+              Beyond basic socket manipulation lies a world of advanced crafting techniques. This section introduces 
+              concepts that will take your crafting to the next level.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="bg-poe-dark-alt border-poe-gold/30">
+                <CardHeader>
+                  <CardTitle className="text-poe-gold">Influence Crafting</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-poe-text-dim text-sm mb-4">
+                    Influenced items have special properties and crafting considerations. Shaper, Elder, and Conqueror influences 
+                    affect both socket mechanics and overall item value.
+                  </p>
+                  <a href="https://www.poewiki.net/wiki/Influenced_item" target="_blank" rel="noopener noreferrer" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium flex items-center gap-1">
+                    Learn more on PoE Wiki <ExternalLink className="w-3 h-3" />
                   </a>
                 </CardContent>
               </Card>
 
               <Card className="bg-poe-dark-alt border-poe-gold/30">
-                <CardContent className="p-6">
-                  <h3 className="font-gaming font-semibold text-poe-gold mb-3">Craft of Exile</h3>
-                  <p className="text-poe-text-dim mb-4 text-sm">
-                    Advanced crafting simulator for complex modifier crafting scenarios.
+                <CardHeader>
+                  <CardTitle className="text-poe-gold">Essence Crafting</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-poe-text-dim text-sm mb-4">
+                    Essences provide guaranteed modifiers while rerolling all other properties. Understanding how essences 
+                    interact with socket requirements is crucial for efficient crafting.
                   </p>
-                  <a 
-                    href="https://www.craftofexile.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium inline-flex items-center gap-1"
-                  >
-                    Visit Craft of Exile <ExternalLink className="w-3 h-3" />
+                  <a href="https://www.poewiki.net/wiki/Essence" target="_blank" rel="noopener noreferrer" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium flex items-center gap-1">
+                    Essence mechanics guide <ExternalLink className="w-3 h-3" />
+                  </a>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-poe-dark-alt border-poe-gold/30">
+                <CardHeader>
+                  <CardTitle className="text-poe-gold">Fossil Crafting</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-poe-text-dim text-sm mb-4">
+                    Fossils modify the pool of available modifiers when crafting. Some fossils can affect socket outcomes 
+                    and should be considered in your crafting strategy.
+                  </p>
+                  <a href="https://www.pathofexile.com/forum/view-thread/2036637" target="_blank" rel="noopener noreferrer" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium flex items-center gap-1">
+                    Official fossil guide <ExternalLink className="w-3 h-3" />
                   </a>
                 </CardContent>
               </Card>
             </div>
+          </section>
+
+          {/* Conclusion */}
+          <section className="mb-16">
+            <Card className="bg-gradient-to-r from-poe-gold/20 to-poe-orange/20 border-poe-gold/40">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-gaming font-bold text-poe-gold mb-6">
+                  Master Path of Exile Crafting Today
+                </h3>
+                <p className="text-poe-text-dim mb-6 max-w-3xl mx-auto">
+                  You now have the foundational knowledge to approach PoE crafting with confidence. Remember that practice 
+                  makes perfect, and our calculator is here to guide you through every decision.
+                </p>
+                <div className="flex flex-col md:flex-row gap-4 justify-center">
+                  <Link 
+                    href="/#calculator"
+                    className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors"
+                  >
+                    Use the Calculator Now
+                  </Link>
+                  <Link 
+                    href="/guides/how-to-use-the-calculator"
+                    className="bg-transparent border border-poe-gold text-poe-gold px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/10 transition-colors"
+                  >
+                    Learn How to Use the Calculator
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </section>
         </article>
       </main>

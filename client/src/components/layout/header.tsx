@@ -38,7 +38,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-poe-text hover:text-poe-gold transition-colors"
+                  className="text-off-white hover:text-exalted-gold transition-colors"
                 >
                   {item.name}
                 </a>
@@ -48,8 +48,8 @@ export function Header() {
                   href={item.href}
                   className={`transition-colors ${
                     isActive(item.href)
-                      ? 'text-poe-gold'
-                      : 'text-poe-text hover:text-poe-gold'
+                      ? 'text-exalted-gold'
+                      : 'text-off-white hover:text-exalted-gold'
                   }`}
                 >
                   {item.name}
@@ -62,7 +62,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden text-poe-text hover:text-poe-gold"
+            className="md:hidden text-off-white hover:text-exalted-gold"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -71,14 +71,14 @@ export function Header() {
         
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-poe-gold/20 pt-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-exalted-gold/20 pt-4">
             <div className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 item.external ? (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-poe-text hover:text-poe-gold transition-colors"
+                    className="text-off-white hover:text-exalted-gold transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -89,8 +89,8 @@ export function Header() {
                     href={item.href}
                     className={`transition-colors ${
                       isActive(item.href)
-                        ? 'text-poe-gold'
-                        : 'text-poe-text hover:text-poe-gold'
+                        ? 'text-exalted-gold'
+                        : 'text-off-white hover:text-exalted-gold'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

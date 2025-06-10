@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/footer';
 import { CraftingCalculator } from '@/components/calculator/crafting-calculator';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   return (
@@ -22,26 +23,26 @@ export default function Home() {
         }}
       />
       
-      <div className="min-h-screen bg-poe-dark text-poe-text">
+      <div className="min-h-screen bg-charcoal-stone text-off-white">
         <Header />
         
         {/* Hero Section with Calculator */}
         <main className="container mx-auto px-4 py-8">
           <section id="calculator" className="mb-16">
             <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-gaming font-bold text-poe-gold mb-4">
+              <h1 className="text-4xl md:text-5xl font-heading font-bold text-exalted-gold mb-4">
                 The Ultimate Path of Exile<br />Crafting Calculator
               </h1>
-              <p className="text-lg text-poe-text-dim max-w-3xl mx-auto mb-6">
+              <p className="text-lg text-light-slate max-w-3xl mx-auto mb-6">
                 Calculate Chromatic Orb costs, socket probabilities, and 6-link odds instantly. 
                 The most accurate PoE socket calculator with real-time results, cost optimization, 
                 and advanced crafting strategies. Updated for the current league with precise mathematics.
               </p>
               <div className="flex flex-wrap gap-2 justify-center mb-8">
-                <Badge variant="secondary" className="bg-poe-gold/20 text-poe-gold">Free Forever</Badge>
-                <Badge variant="secondary" className="bg-green-500/20 text-green-400">Real-Time Results</Badge>
-                <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">All Leagues</Badge>
-                <Badge variant="secondary" className="bg-purple-500/20 text-purple-400">Mobile Optimized</Badge>
+                <Badge variant="secondary" className="bg-exalted-gold/20 text-exalted-gold">Free Forever</Badge>
+                <Badge variant="secondary" className="bg-dexterity-green/20 text-dexterity-green">Real-Time Results</Badge>
+                <Badge variant="secondary" className="bg-intelligence-blue/20 text-intelligence-blue">All Leagues</Badge>
+                <Badge variant="secondary" className="bg-light-slate/20 text-light-slate">Mobile Optimized</Badge>
               </div>
             </div>
 
@@ -51,62 +52,62 @@ export default function Home() {
           {/* Feature Overview */}
           <section className="mb-16">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-gaming font-bold text-poe-gold mb-4">
+              <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-4">
                 One Tool for All Your Core Crafting Needs
               </h2>
-              <p className="text-lg text-poe-text-dim max-w-3xl mx-auto">
+              <p className="text-lg text-light-slate max-w-3xl mx-auto">
                 Master Path of Exile crafting with precise calculations for every orb type. 
                 Updated formulas ensure accuracy across all leagues.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="bg-poe-dark-alt border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
+              <Card className="bg-dark-slate border-exalted-gold/20 hover:border-exalted-gold/40 transition-colors">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-16 h-16 bg-exalted-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <div className="w-8 h-8 socket-red rounded-full"></div>
                   </div>
-                  <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-3">
+                  <h3 className="text-xl font-heading font-semibold text-exalted-gold mb-3">
                     Perfect Socket Coloring
                   </h3>
-                  <p className="text-poe-text-dim mb-4">
+                  <p className="text-light-slate mb-4">
                     Calculate exact Chromatic Orb costs for any color combination. Factor in item attributes and probability mathematics.
                   </p>
-                  <Link href="/guides/socket-coloring-mechanics" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
+                  <Link href="/guides/socket-coloring-mechanics" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
                     Read our complete socket coloring mechanics guide →
                   </Link>
                 </CardContent>
               </Card>
 
-              <Card className="bg-poe-dark-alt border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
+              <Card className="bg-dark-slate border-exalted-gold/20 hover:border-exalted-gold/40 transition-colors">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-16 h-16 bg-exalted-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-full"></div>
                   </div>
-                  <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-3">
+                  <h3 className="text-xl font-heading font-semibold text-exalted-gold mb-3">
                     Max Sockets Every Time
                   </h3>
-                  <p className="text-poe-text-dim mb-4">
+                  <p className="text-light-slate mb-4">
                     Optimize Jeweller's Orb usage with precise probability calculations. Know exactly when to stop or continue.
                   </p>
-                  <Link href="/guides/path-of-exile-crafting-guide" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
+                  <Link href="/guides/path-of-exile-crafting-guide" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
                     Learn more in our main guide →
                   </Link>
                 </CardContent>
               </Card>
 
-              <Card className="bg-poe-dark-alt border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
+              <Card className="bg-dark-slate border-exalted-gold/20 hover:border-exalted-gold/40 transition-colors">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-16 h-16 bg-exalted-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-600 rounded-full"></div>
                   </div>
-                  <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-3">
+                  <h3 className="text-xl font-heading font-semibold text-exalted-gold mb-3">
                     Master the 6-Link
                   </h3>
-                  <p className="text-poe-text-dim mb-4">
+                  <p className="text-light-slate mb-4">
                     Compare Orb of Fusing spam vs bench crafting costs. Factor in quality bonuses and statistical variance.
                   </p>
-                  <Link href="/guides/6-linking-strategies" className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium">
+                  <Link href="/guides/6-linking-strategies" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
                     Read our full 6-linking strategies guide →
                   </Link>
                 </CardContent>

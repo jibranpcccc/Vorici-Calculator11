@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(43, 74%, 66%);
+  --primary-foreground: hsl(0, 0%, 7%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Path of Exile Theme Colors */
+  --poe-dark: hsl(0, 0%, 7%);
+  --poe-dark-alt: hsl(0, 0%, 12%);
+  --poe-gold: hsl(43, 74%, 66%);
+  --poe-orange: hsl(14, 100%, 60%);
+  --poe-text: hsl(0, 0%, 90%);
+  --poe-text-dim: hsl(0, 0%, 69%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 7%);
+  --foreground: hsl(0, 0%, 90%);
+  --muted: hsl(0, 0%, 12%);
+  --muted-foreground: hsl(0, 0%, 69%);
+  --popover: hsl(0, 0%, 7%);
+  --popover-foreground: hsl(0, 0%, 90%);
+  --card: hsl(0, 0%, 7%);
+  --card-foreground: hsl(0, 0%, 90%);
+  --border: hsl(0, 0%, 15%);
+  --input: hsl(0, 0%, 15%);
+  --primary: hsl(43, 74%, 66%);
+  --primary-foreground: hsl(0, 0%, 7%);
+  --secondary: hsl(0, 0%, 12%);
+  --secondary-foreground: hsl(0, 0%, 90%);
+  --accent: hsl(0, 0%, 12%);
+  --accent-foreground: hsl(0, 0%, 90%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-poe-dark text-poe-text;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .font-gaming {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .bg-poe-dark {
+    background-color: var(--poe-dark);
+  }
+  
+  .bg-poe-dark-alt {
+    background-color: var(--poe-dark-alt);
+  }
+  
+  .text-poe-gold {
+    color: var(--poe-gold);
+  }
+  
+  .text-poe-orange {
+    color: var(--poe-orange);
+  }
+  
+  .text-poe-text {
+    color: var(--poe-text);
+  }
+  
+  .text-poe-text-dim {
+    color: var(--poe-text-dim);
+  }
+  
+  .border-poe-gold {
+    border-color: var(--poe-gold);
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 20px hsla(43, 74%, 66%, 0.3);
+  }
+  
+  .socket-red {
+    background: linear-gradient(135deg, hsl(0, 73%, 41%), hsl(0, 74%, 36%));
+  }
+  
+  .socket-green {
+    background: linear-gradient(135deg, hsl(142, 71%, 45%), hsl(142, 73%, 40%));
+  }
+  
+  .socket-blue {
+    background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(217, 91%, 55%));
+  }
+  
+  .socket-white {
+    background: linear-gradient(135deg, hsl(210, 17%, 95%), hsl(210, 16%, 90%));
+  }
+  
+  .socket-disabled {
+    background: linear-gradient(135deg, hsl(215, 15%, 25%), hsl(215, 14%, 30%));
+  }
+  
+  .calculator-tab {
+    @apply px-6 py-3 rounded-t-lg font-gaming font-medium transition-all cursor-pointer;
+  }
+  
+  .calculator-tab.active {
+    background: linear-gradient(135deg, var(--poe-gold), hsl(43, 74%, 56%));
+    @apply text-poe-dark;
+  }
+  
+  .calculator-tab:not(.active) {
+    @apply hover:bg-poe-gold/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

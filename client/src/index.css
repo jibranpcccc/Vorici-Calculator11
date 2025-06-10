@@ -101,6 +101,10 @@
     color: var(--poe-text-dim);
   }
   
+  .text-poe-dark {
+    color: var(--poe-dark);
+  }
+  
   .border-poe-gold {
     border-color: var(--poe-gold);
   }
@@ -135,11 +139,15 @@
   
   .calculator-tab.active {
     background: linear-gradient(135deg, var(--poe-gold), hsl(43, 74%, 56%));
-    @apply text-poe-dark;
+    color: var(--poe-dark);
   }
   
   .calculator-tab:not(.active) {
-    @apply hover:bg-poe-gold/10;
+    background-color: rgba(255, 199, 0, 0.1);
+  }
+  
+  .calculator-tab:not(.active):hover {
+    background-color: rgba(255, 199, 0, 0.2);
   }
 }
 

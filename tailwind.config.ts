@@ -61,6 +61,12 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        "poe-dark": "var(--poe-dark)",
+        "poe-dark-alt": "var(--poe-dark-alt)",
+        "poe-gold": "var(--poe-gold)",
+        "poe-orange": "var(--poe-orange)",
+        "poe-text": "var(--poe-text)",
+        "poe-text-dim": "var(--poe-text-dim)",
       },
       keyframes: {
         "accordion-down": {

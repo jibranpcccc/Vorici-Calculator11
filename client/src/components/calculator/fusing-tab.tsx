@@ -46,9 +46,9 @@ export function FusingTab({
             <SelectTrigger className="select-poe">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-dark-slate border-exalted-gold/30">
+            <SelectContent className="select-content">
               {[0, 1, 2, 3, 4, 5].map((links) => (
-                <SelectItem key={links} value={links.toString()} className="text-off-white hover:bg-exalted-gold/20">
+                <SelectItem key={links} value={links.toString()} className="select-item">
                   {links === 0 ? '🔌 Unlinked' : `🔗 ${links}-Link`}
                 </SelectItem>
               ))}
@@ -62,9 +62,9 @@ export function FusingTab({
             <SelectTrigger className="select-poe">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-dark-slate border-exalted-gold/30">
+            <SelectContent className="select-content">
               {[2, 3, 4, 5, 6].map((links) => (
-                <SelectItem key={links} value={links.toString()} className="text-off-white hover:bg-exalted-gold/20">
+                <SelectItem key={links} value={links.toString()} className="select-item">
                   ⭐ {links}-Link {links === 6 ? '(Rare!)' : ''}
                 </SelectItem>
               ))}

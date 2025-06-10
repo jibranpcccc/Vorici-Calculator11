@@ -44,9 +44,9 @@ export function ChromaticTab({
             <SelectTrigger className="select-poe">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-dark-slate border-exalted-gold/30">
+            <SelectContent className="select-content">
               {itemBaseOptions.map((option) => (
-                <SelectItem key={option.value} value={option.value} className="text-off-white hover:bg-exalted-gold/20">
+                <SelectItem key={option.value} value={option.value} className="select-item">
                   {option.icon} {option.label}
                 </SelectItem>
               ))}

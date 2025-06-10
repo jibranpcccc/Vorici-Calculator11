@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import TopCraftingMistakes from './blog/top-5-crafting-mistakes';
 import PoESettlersLeagueCraftingChanges from './blog/poe-settlers-league-crafting-changes';
+import PoELeagueCraftingChanges from './blog/poe-league-crafting-changes';
 import AdvancedSocketStrategies from './blog/advanced-socket-strategies';
 
 export default function Blog() {
@@ -146,7 +147,7 @@ function BlogPost({ slug }: { slug: string }) {
     case 'poe-settlers-league-crafting-changes':
       return <PoESettlersLeagueCraftingChanges />;
     case 'poe-league-crafting-changes':
-      return <PoESettlersLeagueCraftingChanges />;
+      return <PoELeagueCraftingChanges />;
     case 'advanced-socket-strategies':
       return <AdvancedSocketStrategies />;
     default:

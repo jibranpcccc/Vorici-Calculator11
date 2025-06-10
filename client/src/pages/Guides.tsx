@@ -1,6 +1,10 @@
 import { useParams } from 'wouter';
 import { Link } from 'wouter';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import PathOfExileCraftingGuide from './guides/path-of-exile-crafting-guide';
+import SocketColoringMechanics from './guides/socket-coloring-mechanics';
+import SixLinkingStrategies from './guides/6-linking-strategies';
+import HowToUseCalculator from './guides/how-to-use-the-calculator';
 
 export default function Guides() {
   const params = useParams();
@@ -128,80 +132,26 @@ export default function Guides() {
 }
 
 function GuideDetail({ slug }: { slug: string }) {
-  const guideContent = {
-    'path-of-exile-crafting-guide': {
-      title: 'The Complete Path of Exile Crafting Guide',
-      description: 'The definitive guide to crafting in Path of Exile. Learn everything about currency orbs, the crafting bench, socket mechanics, and more.',
-      content: 'This comprehensive guide will be populated with detailed crafting information...',
-    },
-    'socket-coloring-mechanics': {
-      title: 'Socket Coloring Mechanics: A Deep Dive',
-      description: 'Learn the exact math behind Chromatic Orbs and socket coloring in Path of Exile.',
-      content: 'Deep dive into socket coloring mechanics will be added here...',
-    },
-    '6-linking-strategies': {
-      title: 'The Ultimate Guide to 6-Linking in Path of Exile',
-      description: 'Learn how to 6-link items efficiently in Path of Exile with our comprehensive strategy guide.',
-      content: '6-linking strategies and analysis will be detailed here...',
-    },
-    'how-to-use-the-calculator': {
-      title: 'How to Use Our PoE Crafting Calculator',
-      description: 'A detailed, visual tutorial on how to use every feature of our All-in-One Path of Exile Crafting Calculator.',
-      content: 'Step-by-step calculator tutorial will be provided here...',
-    },
-  };
-
-  const guide = guideContent[slug as keyof typeof guideContent];
-
-  if (!guide) {
-    return (
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl font-gaming font-bold text-poe-gold mb-4">Guide Not Found</h1>
-          <p className="text-poe-text-dim mb-6">The guide you're looking for is currently being written.</p>
-          <Link href="/guides" className="text-poe-gold hover:text-poe-orange transition-colors">
-            ← Back to Guides
-          </Link>
-        </div>
-      </main>
-    );
-  }
-
-  return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <Link href="/guides" className="inline-flex items-center gap-2 text-poe-gold hover:text-poe-orange transition-colors mb-8">
-          <ArrowLeft className="w-4 h-4" />
-          Back to Guides
-        </Link>
-
-        <article className="prose prose-invert max-w-none">
-          <header className="mb-8">
-            <h1 className="text-4xl font-gaming font-bold text-poe-gold mb-4">{guide.title}</h1>
-            <p className="text-lg text-poe-text-dim">{guide.description}</p>
-          </header>
-
-          <div className="bg-poe-dark-alt rounded-xl p-8 border border-poe-gold/20">
-            <div className="text-center text-poe-text-dim">
-              <div className="text-6xl mb-4">📝</div>
-              <h3 className="text-xl font-gaming text-poe-gold mb-2">Content Coming Soon</h3>
-              <p className="mb-4">
-                This {guide.title.toLowerCase()} is currently being written and will include:
-              </p>
-              <ul className="text-left max-w-lg mx-auto space-y-2">
-                <li>• Detailed explanations with examples</li>
-                <li>• Mathematical formulas and calculations</li>
-                <li>• Visual diagrams and screenshots</li>
-                <li>• Practical tips and strategies</li>
-                <li>• Real-world crafting scenarios</li>
-              </ul>
-              <p className="mt-6">
-                In the meantime, try our <Link href="/#calculator" className="text-poe-gold hover:text-poe-orange transition-colors">calculator tool</Link> to start optimizing your crafting costs.
-              </p>
-            </div>
+  switch (slug) {
+    case 'path-of-exile-crafting-guide':
+      return <PathOfExileCraftingGuide />;
+    case 'socket-coloring-mechanics':
+      return <SocketColoringMechanics />;
+    case '6-linking-strategies':
+      return <SixLinkingStrategies />;
+    case 'how-to-use-the-calculator':
+      return <HowToUseCalculator />;
+    default:
+      return (
+        <main className="container mx-auto px-4 py-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl font-gaming font-bold text-poe-gold mb-4">Guide Not Found</h1>
+            <p className="text-poe-text-dim mb-6">The guide you're looking for doesn't exist.</p>
+            <Link href="/guides" className="text-poe-gold hover:text-poe-orange transition-colors">
+              ← Back to Guides
+            </Link>
           </div>
-        </article>
-      </div>
-    </main>
-  );
+        </main>
+      );
+  }
 }

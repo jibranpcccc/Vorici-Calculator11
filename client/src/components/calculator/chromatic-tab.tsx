@@ -31,63 +31,59 @@ export function ChromaticTab({
   onSocketClick,
 }: ChromaticTabProps) {
   return (
-    <div className="grid md:grid-cols-2 gap-8">
-      {/* Inputs */}
-      <div className="space-y-6">
-        <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">
-          Item Configuration
+    <div className="space-y-6">
+      <div className="card-poe">
+        <h3 className="text-2xl font-heading font-bold text-exalted-gold mb-6 flex items-center">
+          🎨 Item Configuration
         </h3>
         
         {/* Item Base */}
-        <div>
-          <Label className="block text-sm font-medium mb-2">Item Base</Label>
+        <div className="mb-6">
+          <Label className="block text-sm font-medium mb-3 text-off-white">Item Base Type</Label>
           <Select value={itemBase} onValueChange={onItemBaseChange}>
-            <SelectTrigger className="w-full bg-poe-dark border-poe-gold/30 text-poe-text">
+            <SelectTrigger className="select-poe">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-poe-dark border-poe-gold/30">
+            <SelectContent className="bg-dark-slate border-exalted-gold/30">
               {itemBaseOptions.map((option) => (
-                <SelectItem key={option.value} value={option.value} className="text-poe-text">
+                <SelectItem key={option.value} value={option.value} className="text-off-white hover:bg-exalted-gold/20">
                   {option.icon} {option.label}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
+          <p className="text-sm text-light-slate mt-2">Different item bases have different socket color probabilities</p>
         </div>
 
         {/* Item Level */}
-        <div>
-          <Label className="block text-sm font-medium mb-2">Item Level</Label>
+        <div className="mb-6">
+          <Label className="block text-sm font-medium mb-3 text-off-white">Item Level</Label>
           <Input
             type="number"
             value={itemLevel}
             onChange={(e) => onItemLevelChange(parseInt(e.target.value) || 1)}
             min={1}
             max={100}
-            className="w-full bg-poe-dark border-poe-gold/30 text-poe-text"
+            className="input-poe"
+            placeholder="Enter item level (1-100)"
           />
+          <p className="text-sm text-light-slate mt-2">Higher item levels can affect socket generation</p>
         </div>
 
         {/* Socket Configuration */}
         <div>
-          <Label className="block text-sm font-medium mb-2">Desired Socket Colors</Label>
-          <SocketSelector
-            colors={socketColors as any}
-            onSocketClick={onSocketClick}
-            className="mb-4"
-          />
-          <p className="text-sm text-poe-text-dim">
-            Click sockets to cycle colors: Red → Green → Blue → White → Disabled
-          </p>
+          <Label className="block text-sm font-medium mb-3 text-off-white">Desired Socket Colors</Label>
+          <div className="bg-charcoal-stone rounded-lg p-4 border border-exalted-gold/20">
+            <SocketSelector
+              colors={socketColors as any}
+              onSocketClick={onSocketClick}
+              className="mb-4"
+            />
+            <div className="text-sm text-light-slate bg-dark-slate rounded-md p-3 border-l-4 border-dexterity-green">
+              <strong>💡 Tip:</strong> Click sockets to cycle through colors: Red → Green → Blue → White → Disabled
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Results section will be handled by parent component */}
-      <div className="space-y-6">
-        <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">
-          Calculation Results
-        </h3>
-        {/* Results content will be injected here */}
       </div>
     </div>
   );

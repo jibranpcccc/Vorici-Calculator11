@@ -65,90 +65,110 @@ Recommended Method: ${result.recommendedMethod}`;
     
     return (
       <div className="space-y-4">
-        <div className="bg-dark-slate rounded-lg p-4 border border-light-slate/30">
-          <div className="flex items-center justify-between">
-            <span className="text-light-slate">Average Cost</span>
-            <span className="text-2xl font-heading font-bold text-exalted-gold">
-              {result.averageCost}
-            </span>
+        <div className="card-poe">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-light-slate font-medium">Average Cost</span>
+            <div className="text-right">
+              <span className="text-3xl font-heading font-bold text-exalted-gold block leading-none">
+                {result.averageCost}
+              </span>
+              <span className="text-sm text-light-slate mt-1 block">
+                {calculator.state.activeTab === 'chromatic' && 'Chromatic Orbs'}
+                {calculator.state.activeTab === 'jeweller' && "Jeweller's Orbs"}
+                {calculator.state.activeTab === 'fusing' && 'Orbs of Fusing'}
+              </span>
+            </div>
           </div>
-          <div className="text-sm text-light-slate">
-            {calculator.state.activeTab === 'chromatic' && 'Chromatic Orbs'}
-            {calculator.state.activeTab === 'jeweller' && "Jeweller's Orbs"}
-            {calculator.state.activeTab === 'fusing' && 'Orbs of Fusing'}
+          <div className="w-full bg-dark-slate rounded-full h-2">
+            <div 
+              className="bg-gradient-to-r from-exalted-gold to-vibrant-gold h-2 rounded-full transition-all duration-500"
+              style={{ width: `${Math.min(result.averageCost / 100 * 10, 100)}%` }}
+            ></div>
           </div>
         </div>
         
-        <div className="bg-dark-slate rounded-lg p-4 border border-light-slate/30">
-          <div className="flex items-center justify-between">
-            <span className="text-light-slate">Success Chance</span>
-            <span className="text-2xl font-heading font-bold text-dexterity-green">
-              {result.successChance.toFixed(3)}%
-            </span>
+        <div className="card-poe">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-light-slate font-medium">Success Chance</span>
+            <div className="text-right">
+              <span className="text-3xl font-heading font-bold text-dexterity-green block leading-none">
+                {result.successChance.toFixed(3)}%
+              </span>
+              <span className="text-sm text-light-slate mt-1 block">Per attempt</span>
+            </div>
           </div>
-          <div className="text-sm text-light-slate">Per attempt</div>
+          <div className="w-full bg-dark-slate rounded-full h-2">
+            <div 
+              className="bg-gradient-to-r from-dexterity-green to-green-400 h-2 rounded-full transition-all duration-500"
+              style={{ width: `${result.successChance}%` }}
+            ></div>
+          </div>
         </div>
 
-        <div className="bg-dark-slate rounded-lg p-4 border border-light-slate/30">
-          <div className="text-light-slate mb-2">Recommended Method</div>
-          <div className="text-exalted-gold font-medium font-heading">{result.recommendedMethod}</div>
-          <div className="text-sm text-light-slate">
+        <div className="card-poe">
+          <div className="text-light-slate mb-3 font-medium">Recommended Method</div>
+          <div className="text-exalted-gold font-bold font-heading text-lg mb-2">{result.recommendedMethod}</div>
+          <div className="text-sm text-light-slate bg-charcoal-stone rounded-lg p-3 border-l-4 border-exalted-gold">
             {result.recommendedMethod.includes('Bench') 
-              ? 'Guaranteed result at fixed cost'
-              : 'Statistical average based on probability'
+              ? '✓ Guaranteed result at fixed cost'
+              : '📊 Statistical average based on probability'
             }
           </div>
         </div>
 
-        {/* Utility Buttons */}
-        <div className="flex flex-wrap gap-3">
-          <Button
+        {/* Action Buttons */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
+          <button
             onClick={() => setBreakdownModal({ isOpen: true, type: calculator.state.activeTab })}
-            className="btn-poe"
+            className="btn-poe flex items-center justify-center"
           >
-            Cost Breakdown
-          </Button>
-          <Button
+            📊 Cost Breakdown
+          </button>
+          <button
             onClick={handleCopyResults}
-            className="btn-poe"
+            className="btn-poe flex items-center justify-center"
           >
             <Copy className="w-4 h-4 mr-2" />
             Copy Results
-          </Button>
-          <Button
+          </button>
+          <button
             onClick={calculator.resetTab}
-            variant="outline"
-            className="border-exalted-gold/50 hover:border-exalted-gold text-off-white hover:text-exalted-gold"
+            className="btn-secondary flex items-center justify-center"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
-            Reset
-          </Button>
+            Reset Calculator
+          </button>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="bg-dark-slate rounded-2xl border border-exalted-gold/30 p-6 md:p-8 glow-gold max-w-4xl mx-auto">
+    <div className="card-poe max-w-6xl mx-auto">
+      <div className="mb-8">
+        <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-2">Path of Exile Crafting Calculator</h2>
+        <p className="text-light-slate">Calculate the optimal costs for socket coloring, jeweller's orbs, and fusing orbs</p>
+      </div>
+      
       <Tabs value={calculator.state.activeTab} onValueChange={calculator.setActiveTab as any}>
-        <TabsList className="grid w-full grid-cols-3 bg-transparent border-b border-exalted-gold/20 rounded-none h-auto p-0">
+        <TabsList className="grid w-full grid-cols-3 bg-transparent rounded-none h-auto p-0 gap-2 mb-8">
           <TabsTrigger 
             value="chromatic" 
             className="calculator-tab"
           >
-            Chromatic Orbs
+            🎨 Chromatic Orbs
           </TabsTrigger>
           <TabsTrigger 
             value="jeweller" 
             className="calculator-tab"
           >
-            Jeweller's Orbs
+            💎 Jeweller's Orbs
           </TabsTrigger>
           <TabsTrigger 
             value="fusing" 
             className="calculator-tab"
           >
-            Orbs of Fusing
+            🔗 Orbs of Fusing
           </TabsTrigger>
         </TabsList>
 

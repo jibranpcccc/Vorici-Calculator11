@@ -10,14 +10,15 @@ import SocketVisualizer from './SocketVisualizer';
 import CostBreakdownModal from './CostBreakdownModal';
 import { ItemBase } from '@/lib/types';
 import { Copy, RotateCcw, Calculator as CalculatorIcon, Plus, Minus } from 'lucide-react';
+import { ChromaticOrbIcon, JewellersOrbIcon, FusingOrbIcon, StrengthIcon, DexterityIcon, IntelligenceIcon } from './icons/ItemBaseIcons';
 
-const itemBaseOptions: { value: ItemBase; label: string; icon: string }[] = [
-  { value: 'strength', label: 'Strength (Red) - Armor', icon: '🔴' },
-  { value: 'dexterity', label: 'Dexterity (Green) - Evasion', icon: '🟢' },
-  { value: 'intelligence', label: 'Intelligence (Blue) - Energy Shield', icon: '🔵' },
-  { value: 'str-dex', label: 'Hybrid Str/Dex', icon: '🟡' },
-  { value: 'str-int', label: 'Hybrid Str/Int', icon: '🟣' },
-  { value: 'dex-int', label: 'Hybrid Dex/Int', icon: '🟠' },
+const itemBaseOptions: { value: ItemBase; label: string; icon: React.ReactNode }[] = [
+  { value: 'strength', label: 'Strength (Red) - Armor', icon: <StrengthIcon className="w-5 h-5" /> },
+  { value: 'dexterity', label: 'Dexterity (Green) - Evasion', icon: <DexterityIcon className="w-5 h-5" /> },
+  { value: 'intelligence', label: 'Intelligence (Blue) - Energy Shield', icon: <IntelligenceIcon className="w-5 h-5" /> },
+  { value: 'str-dex', label: 'Hybrid Str/Dex', icon: <span className="flex"><StrengthIcon className="w-4 h-4" /><DexterityIcon className="w-4 h-4 -ml-1" /></span> },
+  { value: 'str-int', label: 'Hybrid Str/Int', icon: <span className="flex"><StrengthIcon className="w-4 h-4" /><IntelligenceIcon className="w-4 h-4 -ml-1" /></span> },
+  { value: 'dex-int', label: 'Hybrid Dex/Int', icon: <span className="flex"><DexterityIcon className="w-4 h-4" /><IntelligenceIcon className="w-4 h-4 -ml-1" /></span> },
 ];
 
 export default function Calculator() {
@@ -95,12 +96,20 @@ export default function Calculator() {
                   <Label className="block text-sm font-medium mb-2">Item Base</Label>
                   <Select value={itemConfig.base} onValueChange={(value: ItemBase) => updateItemConfig({ base: value })}>
                     <SelectTrigger className="w-full bg-poe-dark border-poe-gold/30 text-poe-text">
-                      <SelectValue />
+                      <SelectValue>
+                        <div className="flex items-center gap-2">
+                          {itemBaseOptions.find(opt => opt.value === itemConfig.base)?.icon}
+                          {itemBaseOptions.find(opt => opt.value === itemConfig.base)?.label}
+                        </div>
+                      </SelectValue>
                     </SelectTrigger>
                     <SelectContent className="bg-poe-dark border-poe-gold/30">
                       {itemBaseOptions.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
-                          {option.icon} {option.label}
+                          <div className="flex items-center gap-2">
+                            {option.icon}
+                            <span>{option.label}</span>
+                          </div>
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -110,7 +119,7 @@ export default function Calculator() {
                 <div>
                   <Label className="block text-sm font-medium mb-2">Item Level</Label>
                   <div className="flex items-center gap-2">
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('level', -1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('level', -1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Minus className="w-4 h-4" />
                     </Button>
                     <Input
@@ -121,7 +130,7 @@ export default function Calculator() {
                       max="100"
                       className="text-center bg-poe-dark border-poe-gold/30 text-poe-text"
                     />
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('level', 1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('level', 1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Plus className="w-4 h-4" />
                     </Button>
                   </div>
@@ -174,7 +183,7 @@ export default function Calculator() {
                   <Button
                     variant="outline"
                     onClick={() => setShowBreakdown(true)}
-                    className="bg-poe-gold/20 hover:bg-poe-gold/30 border-poe-gold/30"
+                    className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 border-poe-gold/30 text-poe-dark"
                   >
                     <CalculatorIcon className="w-4 h-4 mr-2" />
                     Cost Breakdown
@@ -182,7 +191,7 @@ export default function Calculator() {
                   <Button
                     variant="outline"
                     onClick={handleCopyResults}
-                    className="bg-poe-orange/20 hover:bg-poe-orange/30 border-poe-orange/30"
+                    className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 border-poe-orange/30 text-poe-dark"
                   >
                     <Copy className="w-4 h-4 mr-2" />
                     Copy Results
@@ -190,7 +199,7 @@ export default function Calculator() {
                   <Button
                     variant="outline"
                     onClick={resetCurrentTab}
-                    className="border-poe-gold/30 hover:border-poe-gold"
+                    className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 border-poe-gold/30 text-poe-dark"
                   >
                     <RotateCcw className="w-4 h-4 mr-2" />
                     Reset
@@ -208,13 +217,13 @@ export default function Calculator() {
                 <div>
                   <Label className="block text-sm font-medium mb-2">Current Sockets</Label>
                   <div className="flex items-center gap-4">
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('currentSockets', -1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('currentSockets', -1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Minus className="w-4 h-4" />
                     </Button>
                     <span className="text-2xl font-gaming font-bold text-poe-gold w-8 text-center">
                       {itemConfig.currentSockets}
                     </span>
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('currentSockets', 1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('currentSockets', 1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Plus className="w-4 h-4" />
                     </Button>
                   </div>
@@ -223,13 +232,13 @@ export default function Calculator() {
                 <div>
                   <Label className="block text-sm font-medium mb-2">Target Sockets</Label>
                   <div className="flex items-center gap-4">
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('targetSockets', -1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('targetSockets', -1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Minus className="w-4 h-4" />
                     </Button>
                     <span className="text-2xl font-gaming font-bold text-poe-gold w-8 text-center">
                       {itemConfig.targetSockets}
                     </span>
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('targetSockets', 1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('targetSockets', 1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Plus className="w-4 h-4" />
                     </Button>
                   </div>
@@ -259,7 +268,7 @@ export default function Calculator() {
                 <div>
                   <Label className="block text-sm font-medium mb-2">Item Quality (%)</Label>
                   <div className="flex items-center gap-2">
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('quality', -1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('quality', -1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Minus className="w-4 h-4" />
                     </Button>
                     <Input
@@ -270,7 +279,7 @@ export default function Calculator() {
                       max="30"
                       className="text-center bg-poe-dark border-poe-gold/30 text-poe-text"
                     />
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('quality', 1)}>
+                    <Button size="sm" variant="outline" onClick={() => adjustValue('quality', 1)} className="bg-[#f5f4f4] hover:bg-[#f5f4f4]/90 text-poe-dark">
                       <Plus className="w-4 h-4" />
                     </Button>
                   </div>
@@ -336,7 +345,7 @@ export default function Calculator() {
             </div>
             <Button
               onClick={handleAddToSession}
-              className="bg-poe-gold text-poe-dark hover:bg-poe-gold/90 font-medium"
+              className="bg-[#f5f4f4] text-poe-dark hover:bg-[#f5f4f4]/90 font-medium border border-poe-gold/30"
             >
               Add to Session
             </Button>

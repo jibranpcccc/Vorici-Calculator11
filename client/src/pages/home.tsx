@@ -32,10 +32,17 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl font-gaming font-bold text-poe-gold mb-4">
                 The Ultimate Path of Exile<br />Crafting Calculator
               </h1>
-              <p className="text-lg text-poe-text-dim max-w-2xl mx-auto">
+              <p className="text-lg text-poe-text-dim max-w-3xl mx-auto mb-6">
                 Calculate Chromatic Orb costs, socket probabilities, and 6-link odds instantly. 
-                Updated for the current league with precise mathematics.
+                The most accurate PoE socket calculator with real-time results, cost optimization, 
+                and advanced crafting strategies. Updated for the current league with precise mathematics.
               </p>
+              <div className="flex flex-wrap gap-2 justify-center mb-8">
+                <Badge variant="secondary" className="bg-poe-gold/20 text-poe-gold">Free Forever</Badge>
+                <Badge variant="secondary" className="bg-green-500/20 text-green-400">Real-Time Results</Badge>
+                <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">All Leagues</Badge>
+                <Badge variant="secondary" className="bg-purple-500/20 text-purple-400">Mobile Optimized</Badge>
+              </div>
             </div>
 
             <CraftingCalculator />

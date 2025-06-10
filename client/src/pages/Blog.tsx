@@ -2,6 +2,8 @@ import { useParams } from 'wouter';
 import { Link } from 'wouter';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import TopCraftingMistakes from './blog/top-5-crafting-mistakes';
+import PoESettlersLeagueCraftingChanges from './blog/poe-settlers-league-crafting-changes';
+import AdvancedSocketStrategies from './blog/advanced-socket-strategies';
 
 export default function Blog() {
   const params = useParams();
@@ -71,7 +73,7 @@ export default function Blog() {
                   </div>
                 </div>
                 <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/blog/poe-3-25-crafting-changes" className="hover:text-poe-orange transition-colors">
+                  <Link href="/blog/poe-settlers-league-crafting-changes" className="hover:text-poe-orange transition-colors">
                     PoE 3.25 Crafting Changes: What You Need to Know
                   </Link>
                 </h2>
@@ -141,6 +143,10 @@ function BlogPost({ slug }: { slug: string }) {
   switch (slug) {
     case 'top-5-crafting-mistakes':
       return <TopCraftingMistakes />;
+    case 'poe-settlers-league-crafting-changes':
+      return <PoESettlersLeagueCraftingChanges />;
+    case 'advanced-socket-strategies':
+      return <AdvancedSocketStrategies />;
     default:
       return (
         <main className="container mx-auto px-4 py-8">

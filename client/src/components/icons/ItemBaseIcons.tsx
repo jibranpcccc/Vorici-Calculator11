@@ -101,4 +101,3 @@ export const FusingOrbIcon = ({ className = "w-5 h-5" }: { className?: string })
     <circle cx="16" cy="16" r="1" fill="#d4af37"/>
   </svg>
 );
-</svg>

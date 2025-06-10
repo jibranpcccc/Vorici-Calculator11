@@ -1,7 +1,34 @@
+import { SEOHead } from '@/components/seo/head';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
+import { Calculator, HelpCircle, Zap, Target, AlertCircle, CheckCircle } from 'lucide-react';
 
 export default function FAQ() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Vorici Calculator FAQ - Path of Exile Crafting Questions",
+    "description": "Frequently asked questions about Path of Exile crafting calculations, socket coloring, linking strategies, and optimal currency usage with Vorici Calculator.",
+    "url": "https://vorici-calculator.com/faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate are the calculations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our calculations maintain 99.9% accuracy, verified through extensive testing against live game data and community validation across multiple leagues."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "How often are formulas updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We update all formulas within 24-48 hours of any Path of Exile patch or league launch to ensure accuracy with current game mechanics."
+        }
+      }
+    ]
+  };
   const faqs = [
     {
       question: "How accurate are the calculator results?",
@@ -46,47 +73,66 @@ export default function FAQ() {
   ];
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-gaming font-bold text-poe-gold mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-poe-text-dim">
-            Everything you need to know about using the Vorici Calculator for Path of Exile crafting optimization.
-          </p>
-        </div>
-
-        <div className="bg-poe-dark-alt rounded-2xl p-8 border border-poe-gold/20">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-poe-gold/20">
-                <AccordionTrigger className="text-left text-poe-gold hover:text-poe-orange font-gaming font-medium">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-poe-text-dim pt-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        <div className="mt-12 text-center">
-          <div className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20">
-            <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">Still Have Questions?</h3>
-            <p className="text-poe-text-dim mb-6">
-              Can't find the answer you're looking for? Check out our comprehensive guides or try the calculator yourself.
+    <div>
+      <SEOHead
+        title="FAQ - Vorici Calculator | Path of Exile Crafting Questions & Answers"
+        description="Get answers to frequently asked questions about Path of Exile crafting calculations, socket optimization, and currency efficiency with Vorici Calculator. 99.9% accurate formulas updated for every league."
+        keywords="vorici calculator faq, poe crafting questions, socket calculator help, chromatic orb questions, jeweller orb help, fusing calculator faq, path of exile crafting guide"
+        canonicalUrl="https://vorici-calculator.com/faq"
+        ogTitle="Vorici Calculator FAQ - Your PoE Crafting Questions Answered"
+        ogDescription="Complete answers to common Path of Exile crafting questions. Learn about calculation accuracy, formula updates, and optimal currency strategies."
+        structuredData={structuredData}
+      />
+      <main className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-heading font-bold text-exalted-gold mb-6">Frequently Asked Questions</h1>
+            <p className="text-xl text-light-slate mb-8 max-w-3xl mx-auto leading-relaxed">
+              Everything you need to know about using the Vorici Calculator for optimal Path of Exile crafting decisions. 
+              Get expert answers to common questions about socket coloring, linking strategies, and currency efficiency.
             </p>
-            <div className="space-y-4">
-              <Link href="/guides" className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block mr-4">
-                Browse Guides
-              </Link>
-              <Link href="/#calculator" className="border border-poe-gold text-poe-gold px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/10 transition-colors inline-block">
-                Try Calculator
-              </Link>
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <HelpCircle className="w-6 h-6 text-exalted-gold" />
+              <span className="text-light-slate font-medium">Quick answers to help you craft smarter</span>
+            </div>
+          </div>
+
+          <div className="card-poe">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-b border-exalted-gold/20">
+                  <AccordionTrigger className="text-left text-exalted-gold hover:text-vibrant-gold font-heading font-medium">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-light-slate pt-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="card-poe">
+              <h3 className="text-3xl font-heading font-bold text-exalted-gold mb-4">Still Have Questions?</h3>
+              <p className="text-light-slate mb-8 text-lg">
+                Can't find the answer you're looking for? Explore our comprehensive guides or start calculating immediately 
+                to see the tool in action.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/guides" className="btn-poe">
+                  <Calculator className="w-5 h-5 mr-2" />
+                  Browse Expert Guides
+                </Link>
+                <Link href="/#calculator" className="btn-secondary">
+                  <Zap className="w-5 h-5 mr-2" />
+                  Try Calculator Now
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

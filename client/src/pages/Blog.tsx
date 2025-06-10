@@ -73,7 +73,7 @@ export default function Blog() {
                   </div>
                 </div>
                 <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/blog/poe-settlers-league-crafting-changes" className="hover:text-poe-orange transition-colors">
+                  <Link href="/blog/poe-league-crafting-changes" className="hover:text-poe-orange transition-colors">
                     PoE 3.25 Crafting Changes: What You Need to Know
                   </Link>
                 </h2>
@@ -144,6 +144,8 @@ function BlogPost({ slug }: { slug: string }) {
     case 'top-5-crafting-mistakes':
       return <TopCraftingMistakes />;
     case 'poe-settlers-league-crafting-changes':
+      return <PoESettlersLeagueCraftingChanges />;
+    case 'poe-league-crafting-changes':
       return <PoESettlersLeagueCraftingChanges />;
     case 'advanced-socket-strategies':
       return <AdvancedSocketStrategies />;

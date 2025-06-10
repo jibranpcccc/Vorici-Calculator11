@@ -92,7 +92,7 @@ export default function Home() {
                 item level requirements, and complex probability mathematics for optimal currency usage.
               </p>
               <div className="text-center">
-                <Link href="/guides/socket-coloring" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
+                <Link href="/guides/socket-coloring-mechanics" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
                   Read our complete socket coloring guide →
                 </Link>
               </div>
@@ -108,7 +108,7 @@ export default function Home() {
                 or continue based on item level constraints and target socket requirements.
               </p>
               <div className="text-center">
-                <Link href="/guides/jeweller-orb-optimization" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
+                <Link href="/guides/path-of-exile-crafting-guide" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
                   Learn advanced jeweller strategies →
                 </Link>
               </div>
@@ -231,7 +231,7 @@ export default function Home() {
               </div>
               <div className="text-sm text-light-slate mb-2">December 15, 2024</div>
               <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
-                <Link href="/blog/crafting-mistakes-guide" className="hover:text-vibrant-gold transition-colors">
+                <Link href="/blog/top-5-crafting-mistakes" className="hover:text-vibrant-gold transition-colors">
                   Top 5 Crafting Mistakes Wasting Your Currency
                 </Link>
               </h3>
@@ -254,7 +254,7 @@ export default function Home() {
               </div>
               <div className="text-sm text-light-slate mb-2">December 12, 2024</div>
               <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
-                <Link href="/blog/settlers-league-crafting" className="hover:text-vibrant-gold transition-colors">
+                <Link href="/blog/poe-league-crafting-changes" className="hover:text-vibrant-gold transition-colors">
                   Settlers League Crafting Changes Analysis
                 </Link>
               </h3>

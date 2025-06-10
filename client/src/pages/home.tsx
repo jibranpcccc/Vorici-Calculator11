@@ -117,45 +117,45 @@ export default function Home() {
 
           {/* How to Use */}
           <section className="mb-16">
-            <Card className="bg-poe-dark-alt border-poe-gold/20">
+            <Card className="bg-dark-slate border-exalted-gold/20">
               <CardContent className="p-8">
-                <h2 className="text-3xl font-gaming font-bold text-poe-gold mb-6 text-center">
+                <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-6 text-center">
                   How to Use The Ultimate Crafting Calculator
                 </h2>
                 
                 <div className="grid md:grid-cols-3 gap-8">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-poe-gold text-poe-dark rounded-full flex items-center justify-center font-gaming font-bold text-xl mx-auto mb-4">
+                    <div className="w-12 h-12 bg-exalted-gold text-charcoal-stone rounded-full flex items-center justify-center font-heading font-bold text-xl mx-auto mb-4">
                       1
                     </div>
-                    <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">
+                    <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
                       Select Your Orb Type
                     </h3>
-                    <p className="text-poe-text-dim">
+                    <p className="text-light-slate">
                       Choose from Chromatic, Jeweller's, or Fusing tabs based on your crafting goal.
                     </p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-poe-gold text-poe-dark rounded-full flex items-center justify-center font-gaming font-bold text-xl mx-auto mb-4">
+                    <div className="w-12 h-12 bg-exalted-gold text-charcoal-stone rounded-full flex items-center justify-center font-heading font-bold text-xl mx-auto mb-4">
                       2
                     </div>
-                    <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">
+                    <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
                       Configure Your Item
                     </h3>
-                    <p className="text-poe-text-dim">
+                    <p className="text-light-slate">
                       Input item base, level, quality, and your desired socket configuration.
                     </p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-poe-gold text-poe-dark rounded-full flex items-center justify-center font-gaming font-bold text-xl mx-auto mb-4">
+                    <div className="w-12 h-12 bg-exalted-gold text-charcoal-stone rounded-full flex items-center justify-center font-heading font-bold text-xl mx-auto mb-4">
                       3
                     </div>
-                    <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">
+                    <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
                       Get Instant Results
                     </h3>
-                    <p className="text-poe-text-dim">
+                    <p className="text-light-slate">
                       View real-time calculations, costs, and optimal crafting strategies.
                     </p>
                   </div>
@@ -164,7 +164,7 @@ export default function Home() {
                 <div className="text-center mt-8">
                   <Link 
                     href="/guides/how-to-use-the-calculator" 
-                    className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
+                    className="btn-poe px-6 py-3 rounded-lg font-medium inline-block"
                   >
                     Read the full step-by-step tutorial
                   </Link>

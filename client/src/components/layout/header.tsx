@@ -21,14 +21,14 @@ export function Header() {
   };
 
   return (
-    <header className="bg-poe-dark-alt border-b border-poe-gold/20 sticky top-0 z-50">
+    <header className="bg-dark-slate border-b border-exalted-gold/20 sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-poe-gold rounded-full flex items-center justify-center">
-              <span className="text-poe-dark font-gaming font-bold text-sm">V</span>
+            <div className="w-8 h-8 bg-exalted-gold rounded-full flex items-center justify-center">
+              <span className="text-charcoal-stone font-heading font-bold text-sm">V</span>
             </div>
-            <h1 className="text-xl font-gaming font-bold text-poe-gold">Vorici Calculator</h1>
+            <h1 className="text-xl font-heading font-bold text-exalted-gold">Vorici Calculator</h1>
           </Link>
           
           {/* Desktop Navigation */}

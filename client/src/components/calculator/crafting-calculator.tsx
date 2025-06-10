@@ -65,34 +65,34 @@ Recommended Method: ${result.recommendedMethod}`;
     
     return (
       <div className="space-y-4">
-        <div className="bg-poe-dark rounded-lg p-4 border border-poe-gold/20">
+        <div className="bg-dark-slate rounded-lg p-4 border border-light-slate/30">
           <div className="flex items-center justify-between">
-            <span className="text-poe-text-dim">Average Cost</span>
-            <span className="text-2xl font-gaming font-bold text-poe-gold">
+            <span className="text-light-slate">Average Cost</span>
+            <span className="text-2xl font-heading font-bold text-exalted-gold">
               {result.averageCost}
             </span>
           </div>
-          <div className="text-sm text-poe-text-dim">
+          <div className="text-sm text-light-slate">
             {calculator.state.activeTab === 'chromatic' && 'Chromatic Orbs'}
             {calculator.state.activeTab === 'jeweller' && "Jeweller's Orbs"}
             {calculator.state.activeTab === 'fusing' && 'Orbs of Fusing'}
           </div>
         </div>
         
-        <div className="bg-poe-dark rounded-lg p-4 border border-poe-gold/20">
+        <div className="bg-dark-slate rounded-lg p-4 border border-light-slate/30">
           <div className="flex items-center justify-between">
-            <span className="text-poe-text-dim">Success Chance</span>
-            <span className="text-2xl font-gaming font-bold text-green-400">
+            <span className="text-light-slate">Success Chance</span>
+            <span className="text-2xl font-heading font-bold text-dexterity-green">
               {result.successChance.toFixed(3)}%
             </span>
           </div>
-          <div className="text-sm text-poe-text-dim">Per attempt</div>
+          <div className="text-sm text-light-slate">Per attempt</div>
         </div>
 
-        <div className="bg-poe-dark rounded-lg p-4 border border-poe-gold/20">
-          <div className="text-poe-text-dim mb-2">Recommended Method</div>
-          <div className="text-poe-gold font-medium">{result.recommendedMethod}</div>
-          <div className="text-sm text-poe-text-dim">
+        <div className="bg-dark-slate rounded-lg p-4 border border-light-slate/30">
+          <div className="text-light-slate mb-2">Recommended Method</div>
+          <div className="text-exalted-gold font-medium font-heading">{result.recommendedMethod}</div>
+          <div className="text-sm text-light-slate">
             {result.recommendedMethod.includes('Bench') 
               ? 'Guaranteed result at fixed cost'
               : 'Statistical average based on probability'
@@ -104,13 +104,13 @@ Recommended Method: ${result.recommendedMethod}`;
         <div className="flex flex-wrap gap-3">
           <Button
             onClick={() => setBreakdownModal({ isOpen: true, type: calculator.state.activeTab })}
-            className="bg-poe-gold/20 hover:bg-poe-gold/30 text-poe-text"
+            className="btn-poe"
           >
             Cost Breakdown
           </Button>
           <Button
             onClick={handleCopyResults}
-            className="bg-poe-orange/20 hover:bg-poe-orange/30 text-poe-text"
+            className="btn-poe"
           >
             <Copy className="w-4 h-4 mr-2" />
             Copy Results
@@ -118,7 +118,7 @@ Recommended Method: ${result.recommendedMethod}`;
           <Button
             onClick={calculator.resetTab}
             variant="outline"
-            className="border-poe-gold/30 hover:border-poe-gold text-poe-text"
+            className="border-exalted-gold/50 hover:border-exalted-gold text-off-white hover:text-exalted-gold"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
             Reset
@@ -129,24 +129,24 @@ Recommended Method: ${result.recommendedMethod}`;
   };
 
   return (
-    <div className="bg-poe-dark-alt rounded-2xl border border-poe-gold/30 p-6 md:p-8 glow-effect max-w-4xl mx-auto">
+    <div className="bg-dark-slate rounded-2xl border border-exalted-gold/30 p-6 md:p-8 glow-gold max-w-4xl mx-auto">
       <Tabs value={calculator.state.activeTab} onValueChange={calculator.setActiveTab as any}>
-        <TabsList className="grid w-full grid-cols-3 bg-transparent border-b border-poe-gold/20 rounded-none h-auto p-0">
+        <TabsList className="grid w-full grid-cols-3 bg-transparent border-b border-exalted-gold/20 rounded-none h-auto p-0">
           <TabsTrigger 
             value="chromatic" 
-            className="data-[state=active]:calculator-tab-active px-6 py-3 rounded-t-lg font-gaming font-medium transition-all"
+            className="calculator-tab"
           >
             Chromatic Orbs
           </TabsTrigger>
           <TabsTrigger 
             value="jeweller" 
-            className="data-[state=active]:calculator-tab-active px-6 py-3 rounded-t-lg font-gaming font-medium transition-all"
+            className="calculator-tab"
           >
             Jeweller's Orbs
           </TabsTrigger>
           <TabsTrigger 
             value="fusing" 
-            className="data-[state=active]:calculator-tab-active px-6 py-3 rounded-t-lg font-gaming font-medium transition-all"
+            className="calculator-tab"
           >
             Orbs of Fusing
           </TabsTrigger>

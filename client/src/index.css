@@ -1,60 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(43, 74%, 66%);
-  --primary-foreground: hsl(0, 0%, 7%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.5rem;
+  /* Classic Wraeclast Gold Palette */
+  --charcoal-stone: #121212;
+  --dark-slate: #1E1E1E;
+  --exalted-gold: #C8B379;
+  --vibrant-gold: #FFD700;
+  --off-white: #F5F5F5;
+  --light-slate: #BDBDBD;
+  --strength-red: #D42B2B;
+  --dexterity-green: #4CAF50;
+  --intelligence-blue: #2196F3;
   
-  /* Path of Exile Theme Colors */
-  --poe-dark: hsl(0, 0%, 7%);
-  --poe-dark-alt: hsl(0, 0%, 12%);
-  --poe-gold: hsl(43, 74%, 66%);
-  --poe-orange: hsl(14, 100%, 60%);
-  --poe-text: hsl(0, 0%, 90%);
-  --poe-text-dim: hsl(0, 0%, 69%);
+  /* Shadcn/UI compatibility colors mapped to PoE theme */
+  --background: var(--charcoal-stone);
+  --foreground: var(--off-white);
+  --muted: var(--dark-slate);
+  --muted-foreground: var(--light-slate);
+  --popover: var(--dark-slate);
+  --popover-foreground: var(--off-white);
+  --card: var(--dark-slate);
+  --card-foreground: var(--off-white);
+  --border: #2A2A2A;
+  --input: #1A1A1A;
+  --primary: var(--exalted-gold);
+  --primary-foreground: var(--charcoal-stone);
+  --secondary: var(--dark-slate);
+  --secondary-foreground: var(--light-slate);
+  --accent: var(--exalted-gold);
+  --accent-foreground: var(--charcoal-stone);
+  --destructive: var(--strength-red);
+  --destructive-foreground: var(--off-white);
+  --ring: var(--exalted-gold);
+  --radius: 0.5rem;
 }
 
 .dark {
-  --background: hsl(0, 0%, 7%);
-  --foreground: hsl(0, 0%, 90%);
-  --muted: hsl(0, 0%, 12%);
-  --muted-foreground: hsl(0, 0%, 69%);
-  --popover: hsl(0, 0%, 7%);
-  --popover-foreground: hsl(0, 0%, 90%);
-  --card: hsl(0, 0%, 7%);
-  --card-foreground: hsl(0, 0%, 90%);
-  --border: hsl(0, 0%, 15%);
-  --input: hsl(0, 0%, 15%);
-  --primary: hsl(43, 74%, 66%);
-  --primary-foreground: hsl(0, 0%, 7%);
-  --secondary: hsl(0, 0%, 12%);
-  --secondary-foreground: hsl(0, 0%, 90%);
-  --accent: hsl(0, 0%, 12%);
-  --accent-foreground: hsl(0, 0%, 90%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
+  /* Dark mode uses the same PoE theme - no changes needed */
+  --background: var(--charcoal-stone);
+  --foreground: var(--off-white);
+  --muted: var(--dark-slate);
+  --muted-foreground: var(--light-slate);
+  --popover: var(--dark-slate);
+  --popover-foreground: var(--off-white);
+  --card: var(--dark-slate);
+  --card-foreground: var(--off-white);
+  --border: #2A2A2A;
+  --input: #1A1A1A;
+  --primary: var(--exalted-gold);
+  --primary-foreground: var(--charcoal-stone);
+  --secondary: var(--dark-slate);
+  --secondary-foreground: var(--light-slate);
+  --accent: var(--exalted-gold);
+  --accent-foreground: var(--charcoal-stone);
+  --destructive: var(--strength-red);
+  --destructive-foreground: var(--off-white);
+  --ring: var(--exalted-gold);
 }
 
 @layer base {
@@ -63,8 +68,29 @@
   }
 
   body {
-    @apply font-sans antialiased bg-poe-dark text-poe-text;
-    font-family: 'Inter', sans-serif;
+    @apply antialiased;
+    background-color: var(--charcoal-stone);
+    color: var(--off-white);
+    font-family: 'Lato', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    color: var(--off-white);
+  }
+  
+  p {
+    color: var(--light-slate);
+  }
+  
+  a {
+    color: var(--exalted-gold);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--vibrant-gold);
+    text-decoration: underline;
   }
   
   html {
@@ -73,81 +99,148 @@
 }
 
 @layer components {
-  .font-gaming {
-    font-family: 'Orbitron', monospace;
+  /* Typography classes */
+  .font-heading {
+    font-family: 'Cinzel', serif;
   }
   
-  .bg-poe-dark {
-    background-color: var(--poe-dark);
+  .font-body {
+    font-family: 'Lato', sans-serif;
   }
   
-  .bg-poe-dark-alt {
-    background-color: var(--poe-dark-alt);
+  /* PoE Theme Color Classes */
+  .bg-charcoal-stone {
+    background-color: var(--charcoal-stone);
   }
   
-  .text-poe-gold {
-    color: var(--poe-gold);
+  .bg-dark-slate {
+    background-color: var(--dark-slate);
   }
   
-  .text-poe-orange {
-    color: var(--poe-orange);
+  .bg-exalted-gold {
+    background-color: var(--exalted-gold);
   }
   
-  .text-poe-text {
-    color: var(--poe-text);
+  .bg-vibrant-gold {
+    background-color: var(--vibrant-gold);
   }
   
-  .text-poe-text-dim {
-    color: var(--poe-text-dim);
+  .text-off-white {
+    color: var(--off-white);
   }
   
-  .text-poe-dark {
-    color: var(--poe-dark);
+  .text-light-slate {
+    color: var(--light-slate);
   }
   
-  .border-poe-gold {
-    border-color: var(--poe-gold);
+  .text-exalted-gold {
+    color: var(--exalted-gold);
   }
   
-  .glow-effect {
-    box-shadow: 0 0 20px hsla(43, 74%, 66%, 0.3);
+  .text-vibrant-gold {
+    color: var(--vibrant-gold);
   }
   
+  .text-strength-red {
+    color: var(--strength-red);
+  }
+  
+  .text-dexterity-green {
+    color: var(--dexterity-green);
+  }
+  
+  .text-intelligence-blue {
+    color: var(--intelligence-blue);
+  }
+  
+  .border-exalted-gold {
+    border-color: var(--exalted-gold);
+  }
+  
+  .border-light-slate {
+    border-color: var(--light-slate);
+  }
+  
+  /* Socket Colors */
   .socket-red {
-    background: linear-gradient(135deg, hsl(0, 73%, 41%), hsl(0, 74%, 36%));
+    background: linear-gradient(135deg, var(--strength-red), #B71C1C);
+    border: 2px solid var(--light-slate);
   }
   
   .socket-green {
-    background: linear-gradient(135deg, hsl(142, 71%, 45%), hsl(142, 73%, 40%));
+    background: linear-gradient(135deg, var(--dexterity-green), #2E7D32);
+    border: 2px solid var(--light-slate);
   }
   
   .socket-blue {
-    background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(217, 91%, 55%));
+    background: linear-gradient(135deg, var(--intelligence-blue), #1565C0);
+    border: 2px solid var(--light-slate);
   }
   
   .socket-white {
-    background: linear-gradient(135deg, hsl(210, 17%, 95%), hsl(210, 16%, 90%));
+    background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
+    border: 2px solid var(--light-slate);
   }
   
   .socket-disabled {
-    background: linear-gradient(135deg, hsl(215, 15%, 25%), hsl(215, 14%, 30%));
+    background: linear-gradient(135deg, #424242, #616161);
+    border: 2px solid var(--light-slate);
   }
   
+  /* Calculator Tab Styling */
   .calculator-tab {
-    @apply px-6 py-3 rounded-t-lg font-gaming font-medium transition-all cursor-pointer;
+    @apply px-6 py-3 rounded-t-lg font-heading font-medium transition-all cursor-pointer;
+    background-color: var(--dark-slate);
+    color: var(--light-slate);
+    border: 1px solid #2A2A2A;
+    border-bottom: none;
   }
   
   .calculator-tab.active {
-    background: linear-gradient(135deg, var(--poe-gold), hsl(43, 74%, 56%));
-    color: var(--poe-dark);
-  }
-  
-  .calculator-tab:not(.active) {
-    background-color: rgba(255, 199, 0, 0.1);
+    background: linear-gradient(135deg, var(--exalted-gold), var(--vibrant-gold));
+    color: var(--charcoal-stone);
+    font-weight: 600;
   }
   
   .calculator-tab:not(.active):hover {
-    background-color: rgba(255, 199, 0, 0.2);
+    background-color: #2A2A2A;
+    color: var(--exalted-gold);
+  }
+  
+  /* Button Styling */
+  .btn-poe {
+    background: linear-gradient(135deg, var(--exalted-gold), #B8A268);
+    color: var(--charcoal-stone);
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-poe:hover {
+    background: linear-gradient(135deg, var(--vibrant-gold), var(--exalted-gold));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(200, 179, 121, 0.3);
+  }
+  
+  /* Input Focus Glow */
+  .input-poe {
+    background-color: var(--input);
+    border: 1px solid var(--light-slate);
+    color: var(--off-white);
+  }
+  
+  .input-poe:focus {
+    border-color: var(--exalted-gold);
+    box-shadow: 0 0 0 2px rgba(200, 179, 121, 0.2);
+  }
+  
+  /* Gold Glow Effect */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(200, 179, 121, 0.3);
+  }
+  
+  .glow-gold-strong {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
   }
 }
 

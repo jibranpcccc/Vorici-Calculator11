@@ -1,0 +1,80 @@
+A website's color palette and UI tones are critical for establishing its identity. For vorici-calculator.info, the goal is to create a look and feel that is immediately recognizable and trustworthy to Path of Exile players.
+
+The design must feel like an authentic extension of the game itself—dark, gritty, and functional, with key highlights that draw from the game's iconic currency and themes.
+
+Here is a full breakdown of the recommended color tone and UI colors.
+Core Design Philosophy: "Authentic Wraeclast"
+
+The aesthetic should be dark, gothic, and professional. It's a tool, so clarity is paramount, but the theme must be respected. We will avoid bright, clean, corporate designs. The primary inspiration is the in-game UI of Path of Exile.
+Recommended Color Palette: "Classic Wraeclast Gold"
+
+This is the safest, most authentic, and highly recommended palette. It mirrors the game's dark stone backgrounds and uses the iconic gold/yellow of high-tier currency as its primary accent.
+Palette Breakdown:
+Role	Color	Hex Code	Rationale & Use-Case
+Primary Background	Charcoal Stone	#121212	A very dark gray, not pure black. It's easy on the eyes for long sessions. This is the main background for the entire site.
+UI Panel / Container	Dark Slate	#1E1E1E	A slightly lighter gray used for containers like the main calculator box, guide cards, and blog post backgrounds. This creates a subtle sense of depth.
+Primary Accent	Exalted Gold	#C8B379	A muted, classy gold, reminiscent of Exalted/Divine Orbs. This is for all interactive elements: buttons, active tabs, links, and selected states.
+Success/Highlight	Vibrant Gold	#FFD700	A brighter gold used for hover effects on buttons and links, or for highlighting important results from a calculation.
+Text (Headings)	Off-White	#F5F5F5	A very light gray for all headings (H1, H2, etc.). Bright and readable without the harshness of pure white.
+Text (Body)	Light Slate	#BDBDBD	A softer light gray for all paragraph text. This creates a clear visual hierarchy between headings and body copy.
+Attribute Red (STR)	Strength Red	#D42B2B	For Strength-related icons and selections within the calculator.
+Attribute Green (DEX)	Dexterity Green	#4CAF50	For Dexterity-related icons and selections.
+Attribute Blue (INT)	Intelligence Blue	#2196F3	For Intelligence-related icons and selections.
+Visual Application of the Color Palette
+
+Here’s how to apply these colors throughout the UI for a cohesive experience:
+
+1. General Site Layout:
+
+    The <body> background will be Charcoal Stone (#121212). For a more advanced look, you can add a very subtle, low-opacity repeating background texture that looks like dark granite or cracked stone.
+    The main content area or any container boxes will use Dark Slate (#1E1E1E) with a faint 1px border of an even lighter gray to make them pop slightly.
+
+2. The All-in-One Calculator UI:
+
+    The calculator's main container will be Dark Slate (#1E1E1E).
+    Tabs ([Chromatic] [Sockets] [Links]):
+        Inactive tabs have Light Slate (#BDBDBD) text.
+        The active tab has Exalted Gold (#C8B379) text with a gold underline.
+    Buttons ([Cost Breakdown], [Reset]):
+        Background: Exalted Gold (#C8B379).
+        Text: Charcoal Stone (#121212).
+        On Hover: The background brightens to Vibrant Gold (#FFD700).
+    Input Fields:
+        Background: A darker version of the panel, e.g., #1A1A1A.
+        Border: A 1px solid border of Light Slate (#BDBDBD).
+        On Focus: The border glows with Exalted Gold (#C8B379).
+    Socket SVGs:
+        The clickable socket circles will have a Light Slate border.
+        When a user clicks to select a color, the SVG's fill should change to the corresponding Attribute Red/Green/Blue.
+
+3. Typography & Links:
+
+    All <h1>, <h2>, etc., headings will use the Off-White (#F5F5F5) color.
+    All paragraph text (<p>) will use the Light Slate (#BDBDBD) color for easy readability.
+    All hyperlinks (<a>) will be the Exalted Gold (#C8B379) color and will not be underlined by default.
+    On link hover, the color should brighten to Vibrant Gold (#FFD700) and gain an underline to provide clear visual feedback.
+
+4. Fonts (Crucial for Theme):
+
+    Headings Font: "Cinzel" (available free on Google Fonts). This font is very similar to the "Trajan Pro" font used in Path of Exile's logo and in-game text, giving it an instantly authentic feel.
+    Body Font: "Lato" or "Roboto" (available free on Google Fonts). Use a clean, highly readable sans-serif font for all paragraph text. The contrast between a serif heading and a sans-serif body is a classic, professional design choice.
+
+Alternative Palettes (If you want a different style)
+Alternative 1: "Corrupted Vaal"
+
+For a more aggressive, blood-magic theme.
+
+    Primary Accent: Blood Red (#A62B2B).
+    Secondary Accent: Muted Gold (#A8915A).
+    Everything else: Remains the same as the "Classic" palette.
+
+Alternative 2: "Betrayal Syndicate"
+
+For a cleaner, more modern dark-mode feel.
+
+    Primary Accent: Bright Cyan (#00BCD4).
+    Secondary Accent: Lime Green (#AEEA00) (for success states).
+    Backgrounds: Can have a slight blue tint (#1A202C).
+    Everything else: Remains the same.
+
+Final Recommendation: Stick with the "Classic Wraeclast Gold" palette. It is timeless, authentic, and perfectly aligned with the expectations of the Path of Exile community. It will make your tool feel like a professional and integral part of the PoE ecosystem.

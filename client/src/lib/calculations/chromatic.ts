@@ -115,8 +115,7 @@ export function calculateChromaticCost(input: ChromaticCalculationInput): Calcul
     recommendedMethod,
     costBreakdown: {
       formula: 'P(color) = (base_weight + attribute_requirement) / total_weight',
-      explanation: `Calculation based on ${item.base} item type with color weights: Red=${weights.red}, Green=${weights.green}, Blue=${weights.blue}`,
-      parameters: {
+      variables: {
         totalWeight,
         redWeight: weights.red,
         greenWeight: weights.green,
@@ -124,6 +123,7 @@ export function calculateChromaticCost(input: ChromaticCalculationInput): Calcul
         probability: probability,
         expectedAttempts: Math.ceil(1 / probability),
       },
+      explanation: `Calculation based on ${item.base} item type with color weights: Red=${weights.red}, Green=${weights.green}, Blue=${weights.blue}`,
     },
   };
 }

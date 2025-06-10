@@ -25,8 +25,8 @@ export interface CalculationResult {
   recommendedMethod: string;
   costBreakdown: {
     formula: string;
+    variables: Record<string, number>;
     explanation: string;
-    parameters: Record<string, number>;
   };
 }
 

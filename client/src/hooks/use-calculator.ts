@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { SocketColor, ItemBase, ItemConfiguration, SocketConfiguration } from '@/lib/calculations/types';
+import { useState, useCallback, useMemo } from 'react';
+import { SocketColor, ItemBase, ItemConfiguration, SocketConfiguration, CalculationResult } from '@/lib/calculations/types';
 import { calculateChromaticCost } from '@/lib/calculations/chromatic';
 import { calculateJewellerCost } from '@/lib/calculations/jeweller';
 import { calculateFusingCost } from '@/lib/calculations/fusing';
@@ -148,23 +148,40 @@ export function useCalculator() {
     });
   }, []);
 
-  // Calculate results based on current state
-  const chromaticResult = calculateChromaticCost({
-    item: state.chromaticItem,
-    targetSockets: state.chromaticSockets,
-  });
+  // Calculate results for each tab
+  const results = useMemo(() => {
+    const chromaticResult = calculateChromaticCost({
+      item: state.chromaticItem,
+      targetSockets: state.chromaticSockets,
+    });
 
-  const jewellerResult = calculateJewellerCost({
-    currentSockets: state.jewellerCurrentSockets,
-    targetSockets: state.jewellerTargetSockets,
-    itemLevel: state.jewellerItemLevel,
-  });
+    const jewellerResult = calculateJewellerCost({
+      currentSockets: state.jewellerCurrentSockets,
+      targetSockets: state.jewellerTargetSockets,
+      itemLevel: state.jewellerItemLevel,
+    });
 
-  const fusingResult = calculateFusingCost({
-    targetLinks: state.fusingTargetLinks,
-    quality: state.fusingQuality,
-    currentLinks: state.fusingCurrentLinks,
-  });
+    const fusingResult = calculateFusingCost({
+      targetLinks: state.fusingTargetLinks,
+      quality: state.fusingQuality,
+      currentLinks: state.fusingCurrentLinks,
+    });
+
+    return {
+      chromatic: chromaticResult,
+      jeweller: jewellerResult,
+      fusing: fusingResult,
+    };
+  }, [
+    state.chromaticItem,
+    state.chromaticSockets,
+    state.jewellerCurrentSockets,
+    state.jewellerTargetSockets,
+    state.jewellerItemLevel,
+    state.fusingTargetLinks,
+    state.fusingQuality,
+    state.fusingCurrentLinks,
+  ]);
 
   return {
     state,
@@ -177,10 +194,6 @@ export function useCalculator() {
     addToSession,
     resetSession,
     resetTab,
-    results: {
-      chromatic: chromaticResult,
-      jeweller: jewellerResult,
-      fusing: fusingResult,
-    },
+    results,
   };
 }

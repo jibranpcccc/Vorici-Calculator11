@@ -50,8 +50,8 @@ export function calculateJewellerCost(input: JewellerCalculationInput): Calculat
       recommendedMethod: 'Impossible: Maximum 6 sockets',
       costBreakdown: {
         formula: 'N/A',
+        variables: {},
         explanation: 'Cannot have more than 6 sockets on any item',
-        parameters: {},
       },
     };
   }
@@ -63,8 +63,8 @@ export function calculateJewellerCost(input: JewellerCalculationInput): Calculat
       recommendedMethod: 'Already achieved',
       costBreakdown: {
         formula: 'N/A',
+        variables: {},
         explanation: 'Current socket count already meets or exceeds target',
-        parameters: {},
       },
     };
   }
@@ -88,8 +88,7 @@ export function calculateJewellerCost(input: JewellerCalculationInput): Calculat
     recommendedMethod,
     costBreakdown: {
       formula: 'Expected_Cost = 1 / P(target_sockets) * adjustment_factor',
-      explanation: `Based on item level ${itemLevel}, probability of ${targetSockets} sockets is ${(targetProb * 100).toFixed(2)}%`,
-      parameters: {
+      variables: {
         itemLevel,
         targetSockets,
         currentSockets,
@@ -97,6 +96,7 @@ export function calculateJewellerCost(input: JewellerCalculationInput): Calculat
         rawExpectedCost: Math.ceil(1 / targetProb),
         adjustedCost: averageCost,
       },
+      explanation: `Based on item level ${itemLevel}, probability of ${targetSockets} sockets is ${(targetProb * 100).toFixed(2)}%`,
     },
   };
 }

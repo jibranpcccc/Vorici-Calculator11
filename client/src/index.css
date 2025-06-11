@@ -6,12 +6,16 @@
 
 :root {
   /* Classic Wraeclast Gold Palette */
-  --charcoal-stone: #121212;
-  --dark-slate: #1E1E1E;
-  --exalted-gold: #C8B379;
+  --charcoal-stone: #0a0a0a;
+  --dark-slate: #1a1a1a;
+  --poe-darker: #0f0f0f;
+  --poe-surface: #1e1e1e;
+  --exalted-gold: #d4af37;
+  --poe-accent: #d4af37;
   --vibrant-gold: #FFD700;
-  --off-white: #F5F5F5;
+  --off-white: #e1dcc6;
   --light-slate: #BDBDBD;
+  --poe-text-secondary: #9e9e9e;
   --strength-red: #D42B2B;
   --dexterity-green: #4CAF50;
   --intelligence-blue: #2196F3;

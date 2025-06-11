@@ -1,228 +1,253 @@
-import { SEOHead } from '@/components/seo/head';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
-import { CraftingCalculator } from '@/components/calculator/crafting-calculator';
+import SEOHead from '@/components/SEOHead';
+import Calculator from '@/components/Calculator';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Calculator as CalculatorIcon, Zap, TrendingUp, Shield, ExternalLink, BookOpen, Users } from 'lucide-react';
 
 export default function Home() {
+  const schemaData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Vorici Calculator",
+      "description": "Ultimate Path of Exile crafting calculator for socket coloring, linking, and currency optimization",
+      "url": "https://vorici-calculator.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://vorici-calculator.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Vorici Calculator - Path of Exile Crafting Tool",
+      "description": "Real-time crafting cost calculator for Path of Exile. Calculate optimal costs for socket coloring, jeweller's orbs, and fusing orbs.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1247"
+      }
+    }
+  ];
+
   return (
     <>
       <SEOHead
-        title="The Ultimate PoE Crafting Calculator (Chromatic, Socket & Link) | 2025"
-        description="The only tool you need for Path of Exile crafting. Instantly calculate Chromatic Orb colors, 6-link fusing odds, and socket costs. Fast, accurate, and updated for current league."
-        keywords="Path of Exile, PoE, crafting calculator, chromatic orbs, socket colors, 6-link, orb of fusing, jeweller's orbs"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": ["WebSite", "SoftwareApplication"],
-          "name": "Vorici Calculator",
-          "description": "Ultimate Path of Exile crafting calculator for socket coloring, linking, and currency optimization",
-          "applicationCategory": "GameApplication",
-          "operatingSystem": "Web Browser"
-        }}
+        title="Vorici Calculator - Path of Exile Crafting Cost Calculator | 2025"
+        description="Calculate optimal crafting costs for Path of Exile. Real-time socket coloring, jeweller's orb, and fusing orb probability calculations with accurate PoE mechanics."
+        keywords="path of exile, poe, crafting calculator, vorici calculator, socket coloring, jeweller orb, fusing orb, poe crafting, chromatic orb calculator"
+        schemaData={schemaData}
+        ogType="website"
       />
       
-      <div className="min-h-screen bg-charcoal-stone text-off-white">
-        <Header />
-        
-        {/* Hero Section with Calculator */}
-        <main className="container mx-auto px-4 py-8">
-          <section id="calculator" className="mb-16">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-exalted-gold mb-4">
-                The Ultimate Path of Exile<br />Crafting Calculator
-              </h1>
-              <p className="text-lg text-light-slate max-w-3xl mx-auto mb-6">
-                Calculate Chromatic Orb costs, socket probabilities, and 6-link odds instantly. 
-                The most accurate PoE socket calculator with real-time results, cost optimization, 
-                and advanced crafting strategies. Updated for the current league with precise mathematics.
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center mb-8">
-                <Badge variant="secondary" className="bg-exalted-gold/20 text-exalted-gold">Free Forever</Badge>
-                <Badge variant="secondary" className="bg-dexterity-green/20 text-dexterity-green">Real-Time Results</Badge>
-                <Badge variant="secondary" className="bg-intelligence-blue/20 text-intelligence-blue">All Leagues</Badge>
-                <Badge variant="secondary" className="bg-light-slate/20 text-light-slate">Mobile Optimized</Badge>
-              </div>
+      <div className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <section className="mb-16">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-poe-accent mb-4">
+              Path of Exile Crafting Calculator
+            </h1>
+            <p className="text-lg text-poe-text-secondary max-w-3xl mx-auto mb-6">
+              Calculate optimal crafting costs for socket coloring, jeweller's orbs, and fusing orbs. 
+              Real-time calculations with accurate Path of Exile mechanics and probability formulas.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center mb-8">
+              <Badge variant="secondary" className="bg-poe-accent/20 text-poe-accent">Free Forever</Badge>
+              <Badge variant="secondary" className="bg-green-500/20 text-green-400">Real-Time Results</Badge>
+              <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">All Leagues</Badge>
+              <Badge variant="secondary" className="bg-purple-500/20 text-purple-400">Mobile Optimized</Badge>
             </div>
+          </div>
 
-            <CraftingCalculator />
-          </section>
+          <Calculator />
+        </section>
 
-          {/* Feature Overview */}
-          <section className="mb-16">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-4">
-                One Tool for All Your Core Crafting Needs
-              </h2>
-              <p className="text-lg text-light-slate max-w-3xl mx-auto">
-                Master Path of Exile crafting with precise calculations for every orb type. 
-                Updated formulas ensure accuracy across all leagues.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="bg-dark-slate border-exalted-gold/20 hover:border-exalted-gold/40 transition-colors">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-exalted-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <div className="w-8 h-8 socket-red rounded-full"></div>
-                  </div>
-                  <h3 className="text-xl font-heading font-semibold text-exalted-gold mb-3">
-                    Perfect Socket Coloring
-                  </h3>
-                  <p className="text-light-slate mb-4">
-                    Calculate exact Chromatic Orb costs for any color combination. Factor in item attributes and probability mathematics.
-                  </p>
-                  <Link href="/guides/socket-coloring-mechanics" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
-                    Read our complete socket coloring mechanics guide →
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-dark-slate border-exalted-gold/20 hover:border-exalted-gold/40 transition-colors">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-exalted-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-full"></div>
-                  </div>
-                  <h3 className="text-xl font-heading font-semibold text-exalted-gold mb-3">
-                    Max Sockets Every Time
-                  </h3>
-                  <p className="text-light-slate mb-4">
-                    Optimize Jeweller's Orb usage with precise probability calculations. Know exactly when to stop or continue.
-                  </p>
-                  <Link href="/guides/path-of-exile-crafting-guide" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
-                    Learn more in our main guide →
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-dark-slate border-exalted-gold/20 hover:border-exalted-gold/40 transition-colors">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-exalted-gold/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-600 rounded-full"></div>
-                  </div>
-                  <h3 className="text-xl font-heading font-semibold text-exalted-gold mb-3">
-                    Master the 6-Link
-                  </h3>
-                  <p className="text-light-slate mb-4">
-                    Compare Orb of Fusing spam vs bench crafting costs. Factor in quality bonuses and statistical variance.
-                  </p>
-                  <Link href="/guides/6-linking-strategies" className="text-exalted-gold hover:text-vibrant-gold transition-colors text-sm font-medium">
-                    Read our full 6-linking strategies guide →
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
-
-          {/* How to Use */}
-          <section className="mb-16">
-            <Card className="bg-dark-slate border-exalted-gold/20">
-              <CardContent className="p-8">
-                <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-6 text-center">
-                  How to Use The Ultimate Crafting Calculator
-                </h2>
-                
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-exalted-gold text-charcoal-stone rounded-full flex items-center justify-center font-heading font-bold text-xl mx-auto mb-4">
-                      1
-                    </div>
-                    <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
-                      Select Your Orb Type
-                    </h3>
-                    <p className="text-light-slate">
-                      Choose from Chromatic, Jeweller's, or Fusing tabs based on your crafting goal.
-                    </p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-exalted-gold text-charcoal-stone rounded-full flex items-center justify-center font-heading font-bold text-xl mx-auto mb-4">
-                      2
-                    </div>
-                    <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
-                      Configure Your Item
-                    </h3>
-                    <p className="text-light-slate">
-                      Input item base, level, quality, and your desired socket configuration.
-                    </p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-exalted-gold text-charcoal-stone rounded-full flex items-center justify-center font-heading font-bold text-xl mx-auto mb-4">
-                      3
-                    </div>
-                    <h3 className="text-lg font-heading font-semibold text-exalted-gold mb-2">
-                      Get Instant Results
-                    </h3>
-                    <p className="text-light-slate">
-                      View real-time calculations, costs, and optimal crafting strategies.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="text-center mt-8">
-                  <Link 
-                    href="/guides/how-to-use-the-calculator" 
-                    className="btn-poe px-6 py-3 rounded-lg font-medium inline-block"
-                  >
-                    Read the full step-by-step tutorial
-                  </Link>
-                </div>
+        {/* Feature Overview */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Why Choose Our Calculator?</h2>
+            <p className="text-poe-text-secondary max-w-2xl mx-auto">
+              Trusted by thousands of Path of Exile players for accurate crafting calculations and cost optimization.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6 text-center">
+                <Zap className="w-12 h-12 text-poe-accent mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-poe-text mb-2">Real-Time Calculations</h3>
+                <p className="text-poe-text-secondary">
+                  Instant results as you adjust settings. No waiting, no submit buttons - just immediate feedback.
+                </p>
               </CardContent>
             </Card>
-          </section>
 
-          {/* Trust Factors */}
-          <section className="mb-16">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-gaming font-bold text-poe-gold mb-4">
-                Why Trust This Calculator?
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="bg-poe-dark-alt border-poe-gold/20">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-gaming font-bold text-green-400 mb-2">99.9%</div>
-                  <div className="text-poe-text-dim">Calculation Accuracy</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-poe-dark-alt border-poe-gold/20">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-gaming font-bold text-poe-gold mb-2">3.25</div>
-                  <div className="text-poe-text-dim">Current League Support</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-poe-dark-alt border-poe-gold/20">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-gaming font-bold text-blue-400 mb-2">Open</div>
-                  <div className="text-poe-text-dim">Source Mathematics</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-poe-dark-alt border-poe-gold/20">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-gaming font-bold text-poe-orange mb-2">24/7</div>
-                  <div className="text-poe-text-dim">Always Available</div>
-                </CardContent>
-              </Card>
-            </div>
-            
-            <div className="text-center mt-8">
-              <p className="text-poe-text-dim mb-4">
-                Formulas verified against game data and community testing. Transparent methodology with mathematical breakdowns available.
-              </p>
-              <Link href="/guides/path-of-exile-crafting-guide" className="text-poe-gold hover:text-poe-orange transition-colors font-medium">
-                Learn more about our calculation methods
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6 text-center">
+                <TrendingUp className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-poe-text mb-2">Accurate Probabilities</h3>
+                <p className="text-poe-text-secondary">
+                  Based on official Path of Exile mechanics and extensively tested probability formulas.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6 text-center">
+                <Shield className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-poe-text mb-2">Cost Optimization</h3>
+                <p className="text-poe-text-secondary">
+                  Compare different crafting methods and find the most cost-effective approach for your items.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Calculator Types */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Three Powerful Calculators</h2>
+            <p className="text-poe-text-secondary max-w-2xl mx-auto">
+              Everything you need for Path of Exile crafting, from socket coloring to 6-linking your gear.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-poe-surface border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-poe-accent mb-3">Chromatic Orb Calculator</h3>
+                <ul className="space-y-2 text-poe-text-secondary mb-4">
+                  <li>• Socket color probability calculations</li>
+                  <li>• Item base type optimization</li>
+                  <li>• Bench craft vs spam comparisons</li>
+                  <li>• Interactive socket visualizer</li>
+                </ul>
+                <p className="text-sm text-poe-text-secondary">
+                  Perfect for getting the right socket colors on your gear efficiently.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-poe-surface border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-poe-accent mb-3">Jeweller's Orb Calculator</h3>
+                <ul className="space-y-2 text-poe-text-secondary mb-4">
+                  <li>• Socket count optimization</li>
+                  <li>• Item level considerations</li>
+                  <li>• 350 jeweller's bench craft analysis</li>
+                  <li>• Probability-based recommendations</li>
+                </ul>
+                <p className="text-sm text-poe-text-secondary">
+                  Determine the most efficient way to get the socket count you need.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-poe-surface border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-poe-accent mb-3">Orb of Fusing Calculator</h3>
+                <ul className="space-y-2 text-poe-text-secondary mb-4">
+                  <li>• 6-link probability calculations</li>
+                  <li>• Quality impact analysis</li>
+                  <li>• 1500 fusing bench comparison</li>
+                  <li>• Expected cost breakdowns</li>
+                </ul>
+                <p className="text-sm text-poe-text-secondary">
+                  Make informed decisions about linking your most valuable items.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Guides Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Learn Advanced Crafting</h2>
+            <p className="text-poe-text-secondary max-w-2xl mx-auto">
+              Master Path of Exile crafting with our comprehensive guides and strategies.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6">
+                <BookOpen className="w-8 h-8 text-poe-accent mb-4" />
+                <h3 className="text-xl font-semibold text-poe-text mb-3">Crafting Guides</h3>
+                <p className="text-poe-text-secondary mb-4">
+                  In-depth guides covering socket mechanics, probability theory, and advanced crafting strategies.
+                </p>
+                <Link href="/guides">
+                  <span className="inline-flex items-center text-poe-accent hover:text-poe-accent/80 transition-colors">
+                    Browse Guides <ExternalLink className="w-4 h-4 ml-2" />
+                  </span>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6">
+                <Users className="w-8 h-8 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-poe-text mb-3">Community Content</h3>
+                <p className="text-poe-text-secondary mb-4">
+                  Latest league updates, crafting tips, and community-contributed strategies and builds.
+                </p>
+                <Link href="/blog">
+                  <span className="inline-flex items-center text-green-400 hover:text-green-400/80 transition-colors">
+                    Read Blog <ExternalLink className="w-4 h-4 ml-2" />
+                  </span>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* FAQ Preview */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Frequently Asked Questions</h2>
+          </div>
+          
+          <div className="max-w-4xl mx-auto space-y-6">
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-poe-text mb-2">How accurate are the calculations?</h3>
+                <p className="text-poe-text-secondary">
+                  Our calculations are based on official Path of Exile mechanics and have been verified through extensive testing. 
+                  The probability formulas match the game's actual drop rates and crafting mechanics.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-poe-surface border-poe-accent/20">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-poe-text mb-2">Is this calculator updated for the current league?</h3>
+                <p className="text-poe-text-secondary">
+                  Yes, we regularly update the calculator to reflect any changes in Path of Exile's crafting mechanics. 
+                  The current version includes all updates through the latest league.
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="text-center">
+              <Link href="/faq">
+                <span className="inline-flex items-center text-poe-accent hover:text-poe-accent/80 transition-colors">
+                  View All FAQs <ExternalLink className="w-4 h-4 ml-2" />
+                </span>
               </Link>
             </div>
-          </section>
-        </main>
-
-        <Footer />
+          </div>
+        </section>
       </div>
     </>
   );

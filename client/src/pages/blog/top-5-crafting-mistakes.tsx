@@ -97,10 +97,10 @@ export default function TopFiveCraftingMistakes() {
           </header>
 
           {/* Article Content */}
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none content-bg rounded-lg p-8">
             {/* Introduction */}
             <section className="mb-12">
-              <p className="text-poe-text mb-6 text-lg leading-relaxed">
+              <p className="text-readable mb-6 text-lg leading-relaxed">
                 Picture this: you've just found the perfect item base for your build. The excitement builds as you prepare to craft it into something amazing. Fast forward an hour later, and you're staring at your empty currency tab, wondering where it all went wrong. We've all been there.
               </p>
 

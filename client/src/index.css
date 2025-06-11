@@ -11,7 +11,7 @@
   --exalted-gold: #C8B379;
   --vibrant-gold: #FFD700;
   --off-white: #F5F5F5;
-  --light-slate: #BDBDBD;
+  --light-slate: #E0E0E0;
   --strength-red: #D42B2B;
   --dexterity-green: #4CAF50;
   --intelligence-blue: #2196F3;
@@ -81,6 +81,20 @@
   
   p {
     color: var(--light-slate);
+  }
+  
+  /* Content readability improvements */
+  .content-bg {
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(200, 179, 121, 0.2);
+  }
+  
+  .text-readable {
+    color: #F0F0F0;
+  }
+  
+  .text-readable-dim {
+    color: #D0D0D0;
   }
   
   a {

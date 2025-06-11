@@ -75,7 +75,7 @@ export default function SocketColoringMechanics() {
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-poe-gold mb-6">
               A Deep Dive into Socket Coloring Mechanics
             </h1>
-            <p className="text-xl text-poe-text-dim leading-relaxed mb-6">
+            <p className="text-xl text-readable-dim leading-relaxed mb-6">
               Understanding socket coloring mechanics is essential for any serious Path of Exile player. This comprehensive guide explains the exact formulas, probability calculations, and advanced strategies that determine how Chromatic Orbs interact with your items to produce the socket colors you need.
             </p>
             <div className="flex items-center gap-4 text-sm text-poe-text-dim">
@@ -116,10 +116,10 @@ export default function SocketColoringMechanics() {
           </Card>
 
           {/* Article Content */}
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none content-bg rounded-lg p-8">
             {/* Introduction Section */}
             <section className="mb-12">
-              <p className="text-poe-text mb-6 text-lg leading-relaxed">
+              <p className="text-readable mb-6 text-lg leading-relaxed">
                 Path of Exile's socket coloring system is governed by precise mathematical formulas that the <Link href="/" className="text-poe-gold hover:text-poe-orange transition-colors">Vorici Calculator</Link> uses to provide accurate cost estimates. 
                 By the end of this guide, you'll understand exactly why getting 6 blue sockets on a Strength-based chest piece 
                 costs thousands of Chromatic Orbs, while achieving the same result on an Intelligence item requires just a few attempts.
@@ -130,7 +130,7 @@ export default function SocketColoringMechanics() {
                   <Zap className="w-6 h-6 text-poe-gold mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">Key Takeaway</h3>
-                    <p className="text-poe-text">
+                    <p className="text-readable">
                       Socket colors are weighted based on item attribute requirements. High Strength requirements heavily favor red sockets, 
                       Dexterity favors green, and Intelligence favors blue. Understanding this weighting is crucial for cost-effective crafting.
                     </p>
@@ -144,7 +144,7 @@ export default function SocketColoringMechanics() {
                 How Item Attributes Determine Socket Color Weighting
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 The foundation of socket coloring mechanics lies in attribute requirements. Every item in Path of Exile has specific 
                 Strength, Dexterity, and Intelligence requirements that directly influence socket color probability. Items with higher 
                 attribute requirements in one stat will heavily favor the corresponding socket color.

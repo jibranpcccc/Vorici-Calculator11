@@ -106,78 +106,58 @@ export function useCoreWebVitals() {
     // Only track in production
     if (import.meta.env.DEV) return;
 
-    const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
-    
-    function getCLS(onPerfEntry: (metric: any) => void) {
-      if (typeof onPerfEntry === 'function') {
-        import('web-vitals').then(({ getCLS }) => {
-          getCLS(onPerfEntry);
+    const sendToAnalytics = (metric: any) => {
+      // Send to Google Analytics if available
+      if (import.meta.env.VITE_GA_MEASUREMENT_ID && 'gtag' in window) {
+        (window as any).gtag('event', metric.name, {
+          event_category: 'Web Vitals',
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          event_label: metric.id,
+          non_interaction: true,
         });
       }
-    }
+    };
 
-    function getFID(onPerfEntry: (metric: any) => void) {
-      if (typeof onPerfEntry === 'function') {
-        import('web-vitals').then(({ getFID }) => {
-          getFID(onPerfEntry);
+    // Manual performance tracking with native APIs
+    if ('performance' in window && 'PerformanceObserver' in window) {
+      try {
+        // Track Largest Contentful Paint
+        const lcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          sendToAnalytics({ name: 'LCP', value: lastEntry.startTime, id: 'observer' });
         });
-      }
-    }
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
-    function getFCP(onPerfEntry: (metric: any) => void) {
-      if (typeof onPerfEntry === 'function') {
-        import('web-vitals').then(({ getFCP }) => {
-          getFCP(onPerfEntry);
-        });
-      }
-    }
-
-    function getLCP(onPerfEntry: (metric: any) => void) {
-      if (typeof onPerfEntry === 'function') {
-        import('web-vitals').then(({ getLCP }) => {
-          getLCP(onPerfEntry);
-        });
-      }
-    }
-
-    function getTTFB(onPerfEntry: (metric: any) => void) {
-      if (typeof onPerfEntry === 'function') {
-        import('web-vitals').then(({ getTTFB }) => {
-          getTTFB(onPerfEntry);
-        });
-      }
-    }
-
-    function sendToAnalytics(metric: any) {
-      // Send to your analytics service
-      if (import.meta.env.VITE_GA_MEASUREMENT_ID) {
-        const body = JSON.stringify({
-          dsn: import.meta.env.VITE_GA_MEASUREMENT_ID,
-          id: metric.id,
-          page: window.location.pathname,
-          href: window.location.href,
-          event_name: metric.name,
-          value: metric.value.toString(),
-          speed: 'web-vitals'
-        });
-
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon(vitalsUrl, body);
-        } else {
-          fetch(vitalsUrl, {
-            body,
-            method: 'POST',
-            keepalive: true
+        // Track First Contentful Paint
+        const fcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach(entry => {
+            if (entry.name === 'first-contentful-paint') {
+              sendToAnalytics({ name: 'FCP', value: entry.startTime, id: 'observer' });
+            }
           });
-        }
+        });
+        fcpObserver.observe({ entryTypes: ['paint'] });
+
+        // Track Layout Shift
+        const clsObserver = new PerformanceObserver((list) => {
+          let clsValue = 0;
+          list.getEntries().forEach((entry: any) => {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+            }
+          });
+          if (clsValue > 0) {
+            sendToAnalytics({ name: 'CLS', value: clsValue, id: 'observer' });
+          }
+        });
+        clsObserver.observe({ entryTypes: ['layout-shift'] });
+
+      } catch (e) {
+        console.warn('Performance monitoring unavailable');
       }
     }
-
-    getCLS(sendToAnalytics);
-    getFID(sendToAnalytics);
-    getFCP(sendToAnalytics);
-    getLCP(sendToAnalytics);
-    getTTFB(sendToAnalytics);
   }, []);
 }
 

@@ -16,6 +16,7 @@ import { OpenGraphOptimizer } from "@/components/OpenGraphOptimizer";
 import { AccessibilityValidationPanel, SkipNavigation } from "@/components/AccessibilityOptimizer";
 import { ContentQualityPanel } from "@/components/ContentQualityOptimizer";
 import { PerformanceOptimizer, PerformancePanel } from "@/components/PerformanceOptimizer";
+import { PerformanceBooster, useCoreWebVitals, ResourceHints } from "@/components/PerformanceBooster";
 import { lazy, Suspense } from "react";
 import Home from "@/pages/home";
 
@@ -31,6 +32,7 @@ const NotFound = lazy(() => import("@/pages/NotFound"));
 function Router() {
   useAnalytics();
   useImageValidation();
+  useCoreWebVitals();
   
   return (
     <div className="min-h-screen bg-poe-dark text-poe-text">
@@ -40,6 +42,8 @@ function Router() {
       <HeadingStructureFixer />
       <OpenGraphOptimizer />
       <PerformanceOptimizer />
+      <PerformanceBooster />
+      <ResourceHints />
       <Header />
       <Breadcrumbs />
       <main id="main-content">

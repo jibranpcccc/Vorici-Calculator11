@@ -8,7 +8,7 @@ export default function Header() {
   const [location] = useLocation();
 
   const navigation = [
-    { name: 'Calculator', href: '/#calculator' },
+    { name: 'Calculator', href: '#calculator' },
     { name: 'Guides', href: '/guides' },
     { name: 'Blog', href: '/blog' },
     { name: 'FAQ', href: '/faq' },
@@ -43,7 +43,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className="hover:text-poe-gold transition-colors"
-                onClick={item.href === '/#calculator' ? scrollToCalculator : undefined}
+                onClick={item.href === '#calculator' ? scrollToCalculator : undefined}
               >
                 {item.name}
               </Link>
@@ -72,7 +72,7 @@ export default function Header() {
                   className="hover:text-poe-gold transition-colors"
                   onClick={(e) => {
                     setIsMenuOpen(false);
-                    if (item.href === '/#calculator') scrollToCalculator(e);
+                    if (item.href === '#calculator') scrollToCalculator(e);
                   }}
                 >
                   {item.name}

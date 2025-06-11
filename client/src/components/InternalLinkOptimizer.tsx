@@ -14,7 +14,7 @@ interface InternalLinkProps {
 const linkMapping = {
   // Calculator links
   '/': 'Path of Exile Crafting Calculator - Home',
-  '/#calculator': 'Interactive Crafting Calculator',
+  '#calculator': 'Interactive Crafting Calculator',
   '/#chromatic': 'Chromatic Orb Calculator',
   '/#jeweller': 'Jeweller\'s Orb Calculator', 
   '/#fusing': 'Orb of Fusing Calculator',

@@ -7,15 +7,9 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { SEOValidationPanel } from "@/components/SEOValidator";
-import { LinkValidationPanel } from "@/components/LinkValidator";
-import { CanonicalURLManager, URLStructureValidator } from "@/components/CanonicalURLManager";
-import { HeadingStructureFixer } from "@/components/HeadingValidator";
-import { useImageValidation } from "@/components/ImageOptimizer";
+import { CanonicalURLManager } from "@/components/CanonicalURLManager";
 import { OpenGraphOptimizer } from "@/components/OpenGraphOptimizer";
-import { AccessibilityValidationPanel, SkipNavigation } from "@/components/AccessibilityOptimizer";
-import { ContentQualityPanel } from "@/components/ContentQualityOptimizer";
-import { PerformanceOptimizer, PerformancePanel } from "@/components/PerformanceOptimizer";
+import { SkipNavigation } from "@/components/AccessibilityOptimizer";
 import Home from "@/pages/home";
 import Guides from "@/pages/Guides";
 import Blog from "@/pages/Blog";
@@ -27,16 +21,12 @@ import NotFound from "@/pages/NotFound";
 
 function Router() {
   useAnalytics();
-  useImageValidation();
   
   return (
     <div className="min-h-screen bg-poe-dark text-poe-text">
       <SkipNavigation />
       <CanonicalURLManager />
-      <URLStructureValidator />
-      <HeadingStructureFixer />
       <OpenGraphOptimizer />
-      <PerformanceOptimizer />
       <Header />
       <Breadcrumbs />
       <main id="main-content">
@@ -54,11 +44,6 @@ function Router() {
         </Switch>
       </main>
       <Footer />
-      <SEOValidationPanel />
-      <LinkValidationPanel />
-      <AccessibilityValidationPanel />
-      <ContentQualityPanel />
-      <PerformancePanel />
     </div>
   );
 }

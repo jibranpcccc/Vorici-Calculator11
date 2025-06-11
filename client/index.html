@@ -72,6 +72,18 @@
     <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-medium.woff2" as="font" type="font/woff2" crossorigin>
     
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preconnect to critical third-party origins -->
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    
+    <!-- Resource hints for performance -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="prefetch" href="/fonts/inter-semibold.woff2">
+    <link rel="prefetch" href="/fonts/inter-bold.woff2">
+    
     <!-- Open Graph Tags -->
     <meta property="og:title" content="The Ultimate PoE Crafting Calculator" />
     <meta property="og:description" content="Calculate Chromatic Orb costs, socket probabilities, and 6-link odds instantly for Path of Exile." />

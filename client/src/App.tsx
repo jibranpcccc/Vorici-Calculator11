@@ -16,14 +16,17 @@ import { OpenGraphOptimizer } from "@/components/OpenGraphOptimizer";
 import { AccessibilityValidationPanel, SkipNavigation } from "@/components/AccessibilityOptimizer";
 import { ContentQualityPanel } from "@/components/ContentQualityOptimizer";
 import { PerformanceOptimizer, PerformancePanel } from "@/components/PerformanceOptimizer";
+import { lazy, Suspense } from "react";
 import Home from "@/pages/home";
-import Guides from "@/pages/Guides";
-import Blog from "@/pages/Blog";
-import FAQ from "@/pages/FAQ";
-import About from "@/pages/About";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfService from "@/pages/TermsOfService";
-import NotFound from "@/pages/NotFound";
+
+// Lazy load non-critical pages to reduce initial bundle size
+const Guides = lazy(() => import("@/pages/Guides"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const FAQ = lazy(() => import("@/pages/FAQ"));
+const About = lazy(() => import("@/pages/About"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Router() {
   useAnalytics();
@@ -42,15 +45,51 @@ function Router() {
       <main id="main-content">
         <Switch>
           <Route path="/" component={Home} />
-          <Route path="/guides" component={Guides} />
-          <Route path="/guides/:slug" component={Guides} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/blog/:slug" component={Blog} />
-          <Route path="/faq" component={FAQ} />
-          <Route path="/about" component={About} />
-          <Route path="/privacy-policy" component={PrivacyPolicy} />
-          <Route path="/terms" component={TermsOfService} />
-          <Route component={NotFound} />
+          <Route path="/guides" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <Guides />
+            </Suspense>
+          )} />
+          <Route path="/guides/:slug" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <Guides />
+            </Suspense>
+          )} />
+          <Route path="/blog" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <Blog />
+            </Suspense>
+          )} />
+          <Route path="/blog/:slug" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <Blog />
+            </Suspense>
+          )} />
+          <Route path="/faq" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <FAQ />
+            </Suspense>
+          )} />
+          <Route path="/about" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <About />
+            </Suspense>
+          )} />
+          <Route path="/privacy-policy" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <PrivacyPolicy />
+            </Suspense>
+          )} />
+          <Route path="/terms" component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <TermsOfService />
+            </Suspense>
+          )} />
+          <Route component={() => (
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-poe-accent"></div></div>}>
+              <NotFound />
+            </Suspense>
+          )} />
         </Switch>
       </main>
       <Footer />

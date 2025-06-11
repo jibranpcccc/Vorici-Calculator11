@@ -63,13 +63,10 @@ export default {
         },
         "poe-dark": "var(--poe-dark)",
         "poe-dark-alt": "var(--poe-dark-alt)",
-        "poe-darker": "var(--poe-darker)",
-        "poe-surface": "var(--poe-surface)",
         "poe-gold": "var(--poe-gold)",
         "poe-orange": "var(--poe-orange)",
         "poe-text": "var(--poe-text)",
         "poe-text-dim": "var(--poe-text-dim)",
-        "poe-text-secondary": "var(--poe-text-secondary)",
       },
       keyframes: {
         "accordion-down": {

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'wouter';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import SEOHead from '@/components/SEOHead';
 import Calculator from '@/components/Calculator';
@@ -15,7 +15,7 @@ export default function POESocketCalculator() {
         title="Path of Exile Socket Calculator - Chromatic, Jeweller & Fusing Orb Calculator"
         description="Free PoE socket calculator for chromatic orb costs, jeweller orb requirements, and fusing orb probabilities. Instant calculations with precise mathematics for all socket combinations."
         keywords="PoE socket calculator, Path of Exile calculator, chromatic orb calculator, jeweller orb calculator, fusing orb calculator, socket coloring calculator"
-        schemaData={{
+        structuredData={{
           "@context": "https://schema.org",
           "@type": ["WebApplication", "SoftwareApplication"],
           "name": "Path of Exile Socket Calculator",

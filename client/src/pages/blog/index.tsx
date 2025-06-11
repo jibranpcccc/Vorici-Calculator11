@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'wouter';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import SEOHead from '@/components/SEOHead';
 import { Calendar, Clock, User, TrendingUp, Zap, Target } from 'lucide-react';
@@ -86,7 +86,7 @@ export default function BlogIndex() {
         title="Path of Exile Crafting Blog - Latest Strategies & Updates | Vorici Calculator"
         description="Stay updated with the latest Path of Exile crafting strategies, league updates, and optimization techniques. Expert analysis and guides for PoE crafters."
         keywords="Path of Exile blog, PoE crafting strategies, league updates, socket coloring guides, 6-link tips, crafting optimization"
-        schemaData={{
+        structuredData={{
           "@context": "https://schema.org",
           "@type": "Blog",
           "name": "Vorici Calculator Blog",

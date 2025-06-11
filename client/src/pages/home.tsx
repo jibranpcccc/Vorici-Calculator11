@@ -158,9 +158,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="calculator">
-            <Calculator />
-          </div>
+          <Calculator />
         </section>
 
         {/* How the Calculator Works */}

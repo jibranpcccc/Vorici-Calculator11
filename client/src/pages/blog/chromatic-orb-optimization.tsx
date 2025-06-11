@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Link } from 'wouter';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import SEOHead from '@/components/SEOHead';
 import { Calendar, Clock, User, TrendingUp, Calculator, Lightbulb, Target } from 'lucide-react';
@@ -16,7 +16,7 @@ export default function ChromaticOrbOptimization() {
         title="Advanced Chromatic Orb Strategies: Save 50% on Socket Coloring | PoE Guide"
         description="Master chromatic orb optimization in Path of Exile. Learn the jeweller method, cost-effective color combinations, and mathematical strategies to save currency."
         keywords="chromatic orb guide, PoE socket coloring, jeweller method, chromatic orb calculator, Path of Exile crafting optimization"
-        schemaData={{
+        structuredData={{
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": "Advanced Chromatic Orb Strategies: Save 50% on Socket Coloring",

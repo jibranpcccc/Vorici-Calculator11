@@ -3,20 +3,8 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useAnalytics } from "@/hooks/use-analytics";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { SEOValidationPanel } from "@/components/SEOValidator";
-import { LinkValidationPanel } from "@/components/LinkValidator";
-import { CanonicalURLManager, URLStructureValidator } from "@/components/CanonicalURLManager";
-import { HeadingStructureFixer } from "@/components/HeadingValidator";
-import { useImageValidation } from "@/components/ImageOptimizer";
-import { OpenGraphOptimizer } from "@/components/OpenGraphOptimizer";
-import { AccessibilityValidationPanel, SkipNavigation } from "@/components/AccessibilityOptimizer";
-import { ContentQualityPanel } from "@/components/ContentQualityOptimizer";
-import { PerformanceOptimizer, PerformancePanel } from "@/components/PerformanceOptimizer";
-import { PerformanceBooster, useCoreWebVitals, ResourceHints } from "@/components/PerformanceBooster";
 import { lazy, Suspense } from "react";
 import Home from "@/pages/home";
 
@@ -30,22 +18,9 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Router() {
-  useAnalytics();
-  useImageValidation();
-  useCoreWebVitals();
-  
   return (
     <div className="min-h-screen bg-poe-dark text-poe-text">
-      <SkipNavigation />
-      <CanonicalURLManager />
-      <URLStructureValidator />
-      <HeadingStructureFixer />
-      <OpenGraphOptimizer />
-      <PerformanceOptimizer />
-      <PerformanceBooster />
-      <ResourceHints />
       <Header />
-      <Breadcrumbs />
       <main id="main-content">
         <Switch>
           <Route path="/" component={Home} />
@@ -97,11 +72,6 @@ function Router() {
         </Switch>
       </main>
       <Footer />
-      <SEOValidationPanel />
-      <LinkValidationPanel />
-      <AccessibilityValidationPanel />
-      <ContentQualityPanel />
-      <PerformancePanel />
     </div>
   );
 }

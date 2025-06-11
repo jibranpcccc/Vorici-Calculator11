@@ -396,8 +396,13 @@ export default function AdvancedSocketStrategies() {
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 justify-center">
                   <Link 
-                    href="#calculator"
+                    href="/"
                     className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors"
+                    onClick={() => {
+                      setTimeout(() => {
+                        document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }}
                   >
                     Calculate Advanced Strategies
                   </Link>

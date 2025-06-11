@@ -22,6 +22,7 @@ import Blog from "@/pages/Blog";
 import FAQ from "@/pages/FAQ";
 import About from "@/pages/About";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
 import NotFound from "@/pages/NotFound";
 
 function Router() {
@@ -48,6 +49,7 @@ function Router() {
           <Route path="/faq" component={FAQ} />
           <Route path="/about" component={About} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route path="/terms" component={TermsOfService} />
           <Route component={NotFound} />
         </Switch>
       </main>

@@ -120,7 +120,7 @@ export default function Home() {
               Vorici Calculator – Instant Off-Colour Odds & Crafting Cost Guide
             </h1>
             <p className="text-xl text-poe-text-secondary max-w-4xl mx-auto mb-8">
-              Calculate socket colour probabilities instantly with live charts and updated bench costs for Path of Exile.
+              Get instant results for socket colors and crafting costs. Live charts and current league data included.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-8">
               <Button 
@@ -166,10 +166,10 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-poe-text mb-4">How the Calculator Works</h2>
             <p className="text-poe-text-secondary max-w-3xl mx-auto mb-6">
-              Our algorithm uses verified Path of Exile mechanics to calculate socket colour probabilities based on item base types, 
-              attribute requirements, and crafting methods. All formulas are transparently available in our 
+              Our tool uses verified game mechanics to determine odds based on your item's base type and attribute requirements. 
+              All calculations are transparent and available in our 
               <a href="https://github.com/vorici-calculator" target="_blank" rel="noopener noreferrer" className="text-poe-accent hover:underline inline-flex items-center ml-1">
-                GitHub repository <ExternalLink className="w-4 h-4 ml-1" />
+                open source code <ExternalLink className="w-4 h-4 ml-1" />
               </a>.
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-poe-text mb-4">Socket-Colour Probability Charts</h2>
             <p className="text-poe-text-secondary max-w-2xl mx-auto mb-8">
-              Live charts that update in real-time as you change calculator inputs. Toggle between Standard and Tainted Chromatic calculations.
+              Interactive charts show probability data for different item bases. Compare standard and tainted chromatic methods.
             </p>
           </div>
           
@@ -216,7 +216,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-poe-text mb-4">Crafting Bench Costs (Patch 3.25 & PoE 2 Beta)</h2>
             <p className="text-poe-text-secondary max-w-2xl mx-auto mb-4">
-              Sortable table of all crafting bench recipes with current costs and probability comparisons.
+              Compare bench recipe costs with expected orb usage. Updated for current league mechanics.
             </p>
             <Badge variant="secondary" className="bg-green-500/20 text-green-400">
               <Calendar className="w-3 h-3 mr-1" />

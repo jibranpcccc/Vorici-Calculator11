@@ -20,9 +20,9 @@ export default function Footer() {
           <div>
             <h4 className="font-gaming font-semibold text-poe-gold mb-4">Tools</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#calculator" className="text-poe-text-dim hover:text-poe-gold transition-colors">Chromatic Calculator</a></li>
-              <li><a href="/#calculator" className="text-poe-text-dim hover:text-poe-gold transition-colors">Socket Calculator</a></li>
-              <li><a href="/#calculator" className="text-poe-text-dim hover:text-poe-gold transition-colors">Linking Calculator</a></li>
+              <li><button onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })} className="text-poe-text-dim hover:text-poe-gold transition-colors text-left">Chromatic Calculator</button></li>
+              <li><button onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })} className="text-poe-text-dim hover:text-poe-gold transition-colors text-left">Socket Calculator</button></li>
+              <li><button onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })} className="text-poe-text-dim hover:text-poe-gold transition-colors text-left">Linking Calculator</button></li>
             </ul>
           </div>
           
@@ -40,7 +40,7 @@ export default function Footer() {
             <h4 className="font-gaming font-semibold text-poe-gold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/privacy-policy" className="text-poe-text-dim hover:text-poe-gold transition-colors">Privacy Policy</Link></li>
-              <li><a href="/terms" className="text-poe-text-dim hover:text-poe-gold transition-colors">Terms of Service</a></li>
+              <li><Link href="/terms" className="text-poe-text-dim hover:text-poe-gold transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

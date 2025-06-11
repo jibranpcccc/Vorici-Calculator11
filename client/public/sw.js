@@ -1,17 +1,20 @@
 // Service Worker for caching and offline functionality
 
-const CACHE_NAME = 'vorici-calculator-v2-perf';
+const CACHE_NAME = 'vorici-calculator-v3-prod';
+const STATIC_CACHE = 'static-v3';
+const RUNTIME_CACHE = 'runtime-v3';
+
 const STATIC_ASSETS = [
   '/',
-  '/fonts/inter-regular.woff2',
-  '/fonts/inter-medium.woff2',
-  '/fonts/inter-semibold.woff2',
-  '/fonts/inter-bold.woff2',
   '/manifest.json'
 ];
 
-const DYNAMIC_CACHE = 'vorici-dynamic-v2';
-const FONT_CACHE = 'vorici-fonts-v2';
+const FONT_ASSETS = [
+  '/fonts/inter-regular.woff2',
+  '/fonts/inter-medium.woff2',
+  '/fonts/inter-semibold.woff2',
+  '/fonts/inter-bold.woff2'
+];
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {

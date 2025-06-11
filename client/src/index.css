@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap');
+/* Using local Inter fonts instead of external fonts for better performance */
 
 @tailwind base;
 @tailwind components;

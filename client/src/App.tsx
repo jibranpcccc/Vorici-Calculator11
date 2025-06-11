@@ -6,13 +6,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useAnalytics } from "@/hooks/use-analytics";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Home from "@/pages/home";
 import Guides from "@/pages/Guides";
 import Blog from "@/pages/Blog";
 import FAQ from "@/pages/FAQ";
 import About from "@/pages/About";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import NotFound from "@/pages/not-found";
+import NotFound from "@/pages/NotFound";
 
 function Router() {
   useAnalytics();
@@ -20,17 +21,20 @@ function Router() {
   return (
     <div className="min-h-screen bg-poe-dark text-poe-text">
       <Header />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/guides" component={Guides} />
-        <Route path="/guides/:slug" component={Guides} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/blog/:slug" component={Blog} />
-        <Route path="/faq" component={FAQ} />
-        <Route path="/about" component={About} />
-        <Route path="/privacy-policy" component={PrivacyPolicy} />
-        <Route component={NotFound} />
-      </Switch>
+      <Breadcrumbs />
+      <main>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/guides" component={Guides} />
+          <Route path="/guides/:slug" component={Guides} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/blog/:slug" component={Blog} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/about" component={About} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
       <Footer />
     </div>
   );

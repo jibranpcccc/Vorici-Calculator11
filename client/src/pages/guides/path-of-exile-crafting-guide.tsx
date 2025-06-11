@@ -100,8 +100,13 @@ export default function PathOfExileCraftingGuide() {
                   </p>
                 </div>
                 <Link 
-                  href="/#calculator"
+                  href="/"
                   className="bg-poe-gold text-poe-dark px-4 py-2 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors flex items-center"
+                  onClick={() => {
+                    setTimeout(() => {
+                      document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
                 >
                   <Calculator className="w-4 h-4 mr-2" />
                   Try Calculator

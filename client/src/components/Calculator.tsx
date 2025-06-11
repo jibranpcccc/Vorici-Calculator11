@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/hooks/use-toast';
 import { useCalculations } from '@/hooks/useCalculations';
 import SocketVisualizer from './SocketVisualizer';
@@ -117,23 +118,23 @@ export default function Calculator() {
                 </div>
 
                 <div>
-                  <Label className="block text-sm font-medium mb-2">Item Level</Label>
-                  <div className="flex items-center gap-2">
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('level', -1)} className="bg-poe-gold hover:bg-poe-gold/90 text-poe-dark border-poe-gold">
-                      <Minus className="w-4 h-4" />
-                    </Button>
-                    <Input
-                      type="number"
-                      value={itemConfig.level}
-                      onChange={(e) => updateItemConfig({ level: parseInt(e.target.value) || 70 })}
-                      min="1"
-                      max="100"
-                      className="text-center bg-poe-dark border-poe-gold/30 text-poe-text focus:border-poe-gold focus:ring-1 focus:ring-poe-gold"
-                      aria-label="Item Level"
+                  <Label className="block text-sm font-medium mb-3">
+                    Item Level: <span className="text-poe-gold font-gaming">{itemConfig.level}</span>
+                  </Label>
+                  <div className="space-y-3">
+                    <Slider
+                      value={[itemConfig.level]}
+                      onValueChange={(value) => updateItemConfig({ level: value[0] })}
+                      min={1}
+                      max={100}
+                      step={1}
+                      className="w-full"
                     />
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('level', 1)} className="bg-poe-gold hover:bg-poe-gold/90 text-poe-dark border-poe-gold">
-                      <Plus className="w-4 h-4" />
-                    </Button>
+                    <div className="flex justify-between text-xs text-poe-text-dim">
+                      <span>Level 1</span>
+                      <span>Level 50</span>
+                      <span>Level 100</span>
+                    </div>
                   </div>
                 </div>
 
@@ -267,23 +268,23 @@ export default function Calculator() {
                 <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">Link Configuration</h3>
                 
                 <div>
-                  <Label className="block text-sm font-medium mb-2">Item Quality (%)</Label>
-                  <div className="flex items-center gap-2">
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('quality', -1)} className="bg-poe-gold hover:bg-poe-gold/90 text-poe-dark border-poe-gold">
-                      <Minus className="w-4 h-4" />
-                    </Button>
-                    <Input
-                      type="number"
-                      value={itemConfig.quality}
-                      onChange={(e) => updateItemConfig({ quality: parseInt(e.target.value) || 20 })}
-                      min="0"
-                      max="30"
-                      className="text-center bg-poe-dark border-poe-gold/30 text-poe-text focus:border-poe-gold focus:ring-1 focus:ring-poe-gold"
-                      aria-label="Item Quality Percentage"
+                  <Label className="block text-sm font-medium mb-3">
+                    Item Quality: <span className="text-poe-gold font-gaming">{itemConfig.quality}%</span>
+                  </Label>
+                  <div className="space-y-3">
+                    <Slider
+                      value={[itemConfig.quality]}
+                      onValueChange={(value) => updateItemConfig({ quality: value[0] })}
+                      min={0}
+                      max={30}
+                      step={1}
+                      className="w-full"
                     />
-                    <Button size="sm" variant="outline" onClick={() => adjustValue('quality', 1)} className="bg-poe-gold hover:bg-poe-gold/90 text-poe-dark border-poe-gold">
-                      <Plus className="w-4 h-4" />
-                    </Button>
+                    <div className="flex justify-between text-xs text-poe-text-dim">
+                      <span>0%</span>
+                      <span>20% (Perfect)</span>
+                      <span>30% (Hillock)</span>
+                    </div>
                   </div>
                 </div>
 

@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/seo/head';
+import SEOHead from '@/components/SEOHead';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
 import { Calculator, HelpCircle, Zap, Target, AlertCircle, CheckCircle } from 'lucide-react';
@@ -88,9 +88,7 @@ export default function FAQ() {
         description="Get answers to frequently asked questions about Path of Exile crafting calculations, socket optimization, and currency efficiency with Vorici Calculator. 99.9% accurate formulas updated for every league."
         keywords="vorici calculator faq, poe crafting questions, socket calculator help, chromatic orb questions, jeweller orb help, fusing calculator faq, path of exile crafting guide"
         canonicalUrl="https://vorici-calculator.com/faq"
-        ogTitle="Vorici Calculator FAQ - Your PoE Crafting Questions Answered"
-        ogDescription="Complete answers to common Path of Exile crafting questions. Learn about calculation accuracy, formula updates, and optimal currency strategies."
-        structuredData={structuredData}
+        schemaData={structuredData}
       />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">

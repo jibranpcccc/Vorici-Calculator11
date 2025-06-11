@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { SEOHead } from '@/components/seo/head';
+import SEOHead from '@/components/SEOHead';
 import { Calculator, Users, Shield, Zap, Award, Target, Code, BookOpen, TrendingUp, CheckCircle } from 'lucide-react';
 
 export default function About() {
@@ -25,9 +25,7 @@ export default function About() {
         description="Learn about the expert team behind Vorici Calculator, serving 100k+ Path of Exile players with 99.9% accurate crafting calculations. Discover our methodology, experience, and commitment to the PoE community."
         keywords="vorici calculator team, path of exile experts, poe crafting methodology, socket calculator accuracy, crafting tool developers, poe community tools"
         canonicalUrl="https://vorici-calculator.com/about"
-        ogTitle="About Vorici Calculator - The Team Behind PoE's #1 Crafting Tool"
-        ogDescription="Meet the experts who created Path of Exile's most trusted crafting calculator. 8+ years of PoE experience, 99.9% accuracy, serving 100k+ players worldwide."
-        structuredData={structuredData}
+        schemaData={structuredData}
       />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">

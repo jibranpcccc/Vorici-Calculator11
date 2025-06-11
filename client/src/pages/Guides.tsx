@@ -1,6 +1,7 @@
 import { useParams } from 'wouter';
 import { Link } from 'wouter';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, BookOpen, Calculator, Zap, Target } from 'lucide-react';
+import SEOHead from '@/components/SEOHead';
 import PathOfExileCraftingGuide from './guides/path-of-exile-crafting-guide';
 import SocketColoringMechanics from './guides/socket-coloring-mechanics';
 import SixLinkingStrategies from './guides/6-linking-strategies';

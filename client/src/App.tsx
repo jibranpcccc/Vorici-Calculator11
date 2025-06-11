@@ -17,7 +17,6 @@ import { AccessibilityValidationPanel, SkipNavigation } from "@/components/Acces
 import { ContentQualityPanel } from "@/components/ContentQualityOptimizer";
 import { PerformanceOptimizer, PerformancePanel } from "@/components/PerformanceOptimizer";
 import { PerformanceBooster, useCoreWebVitals, ResourceHints } from "@/components/PerformanceBooster";
-import { ProductionOptimizer, BundleAnalyzer } from "@/components/ProductionOptimizer";
 import { lazy, Suspense } from "react";
 import Home from "@/pages/home";
 
@@ -45,8 +44,6 @@ function Router() {
       <PerformanceOptimizer />
       <PerformanceBooster />
       <ResourceHints />
-      <ProductionOptimizer />
-      <BundleAnalyzer />
       <Header />
       <Breadcrumbs />
       <main id="main-content">

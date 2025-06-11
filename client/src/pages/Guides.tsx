@@ -62,29 +62,29 @@ export default function Guides() {
         schemaData={schemaData}
       />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 guide-content">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-poe-accent mb-4">Path of Exile Crafting Guides</h1>
-            <p className="text-lg text-poe-text-secondary max-w-3xl mx-auto">
+          <div className="text-center mb-12 content-bg">
+            <h1 className="text-4xl font-bold text-readable-bright mb-4">Path of Exile Crafting Guides</h1>
+            <p className="text-lg text-readable max-w-3xl mx-auto">
               Master the art of crafting with our comprehensive guides covering every aspect of socket manipulation and currency optimization.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <article className="bg-poe-surface rounded-xl p-6 border border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+            <article className="enhanced-card rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300 shadow-lg">
               <div className="flex items-start gap-4">
                 <BookOpen className="w-12 h-12 text-poe-accent mt-2" />
                 <div className="flex-1">
-                  <h2 className="text-xl font-semibold text-poe-text mb-2">
-                    <Link href="/guides/path-of-exile-crafting-guide" className="hover:text-poe-accent transition-colors">
+                  <h2 className="text-xl font-semibold text-amber-300 mb-2">
+                    <Link href="/guides/path-of-exile-crafting-guide" className="content-link hover:text-amber-200 transition-colors">
                       The Complete Path of Exile Crafting Guide
                     </Link>
                   </h2>
-                  <p className="text-poe-text-secondary mb-3">
+                  <p className="text-readable mb-3">
                     The ultimate 3000+ word resource covering all core crafting mechanics, from basic currency usage to advanced techniques.
                   </p>
-                  <div className="flex items-center gap-2 text-sm text-poe-accent">
+                  <div className="flex items-center gap-2 text-sm text-amber-400">
                     <span>Main Pillar Guide</span>
                     <span>•</span>
                     <span>~15 min read</span>

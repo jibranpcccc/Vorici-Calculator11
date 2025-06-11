@@ -57,23 +57,23 @@ export default function Blog() {
         schemaData={schemaData}
       />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 blog-content">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-poe-accent mb-4">Path of Exile Crafting Blog</h1>
-            <p className="text-lg text-poe-text-secondary max-w-3xl mx-auto">
+          <div className="text-center mb-12 content-bg">
+            <h1 className="text-4xl font-bold text-readable-bright mb-4">Path of Exile Crafting Blog</h1>
+            <p className="text-lg text-readable max-w-3xl mx-auto">
               Expert crafting strategies, league updates, and optimization guides for efficient Path of Exile currency usage.
             </p>
           </div>
 
         <div className="space-y-8">
-          <article className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
+          <article className="enhanced-card rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300 shadow-lg">
             <div className="flex items-start gap-6">
               <div className="w-32 h-24 bg-gradient-to-br from-poe-dark to-poe-dark-alt rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-3xl">⚒️</span>
               </div>
               <div className="flex-1">
-                <div className="flex items-center gap-4 text-sm text-poe-text-dim mb-2">
+                <div className="flex items-center gap-4 text-sm text-readable-muted mb-2">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     December 15, 2024
@@ -83,12 +83,12 @@ export default function Blog() {
                     5 min read
                   </div>
                 </div>
-                <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/blog/top-5-crafting-mistakes" className="hover:text-poe-orange transition-colors">
+                <h2 className="text-xl font-gaming font-semibold text-amber-300 mb-2">
+                  <Link href="/blog/top-5-crafting-mistakes" className="content-link hover:text-amber-200 transition-colors">
                     Top 5 Crafting Mistakes That Are Wasting Your Currency
                   </Link>
                 </h2>
-                <p className="text-poe-text-dim mb-3">
+                <p className="text-readable mb-3">
                   Are you wasting currency? Avoid these top 5 common Path of Exile crafting mistakes when coloring, socketing, and linking your gear. Learn to craft smarter.
                 </p>
                 <div className="flex items-center gap-2">

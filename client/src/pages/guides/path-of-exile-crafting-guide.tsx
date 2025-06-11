@@ -116,13 +116,13 @@ export default function PathOfExileCraftingGuide() {
           </Card>
 
           {/* Article Content */}
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none content-bg rounded-lg p-8">
             <section className="mb-12">
               <h2 className="text-3xl font-heading font-bold text-poe-gold mb-6">
                 Introduction to Path of Exile Crafting
               </h2>
               
-              <p className="text-poe-text mb-6 text-lg leading-relaxed">
+              <p className="text-readable mb-6 text-lg leading-relaxed">
                 Path of Exile crafting guide: Crafting in Path of Exile represents one of the most sophisticated item creation systems in any action RPG. Unlike games where you simply find or purchase your gear, PoE empowers players to create items that can surpass even the most legendary unique items when crafted with skill and knowledge. This system rewards understanding, patience, and strategic thinking above simple luck.
               </p>
 

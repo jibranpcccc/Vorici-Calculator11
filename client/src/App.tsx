@@ -35,6 +35,7 @@ function Router() {
       <URLStructureValidator />
       <HeadingStructureFixer />
       <OpenGraphOptimizer />
+      <PerformanceOptimizer />
       <Header />
       <Breadcrumbs />
       <main id="main-content">
@@ -55,6 +56,7 @@ function Router() {
       <LinkValidationPanel />
       <AccessibilityValidationPanel />
       <ContentQualityPanel />
+      <PerformancePanel />
     </div>
   );
 }

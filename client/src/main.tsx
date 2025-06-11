@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import "./simple.css";
 
 // Simple test component to verify React is working
 function TestApp() {

@@ -313,7 +313,7 @@ export default function TopFiveCraftingMistakes() {
                   className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-flex items-center"
                 >
                   <Calculator className="w-4 h-4 mr-2" />
-                  Stop guessing and use our free crafting calculator to know the real cost
+                  Stop guessing and use the Vorici Calculator to know the real cost
                 </Link>
               </div>
             </section>
@@ -416,7 +416,7 @@ export default function TopFiveCraftingMistakes() {
               </div>
 
               <p className="text-poe-text">
-                Remember: the goal isn't to avoid all risk in crafting—it's to take calculated risks with full knowledge of the potential outcomes. Smart crafters don't get lucky more often; they just put themselves in positions where luck matters less.
+                Remember: the goal isn't to avoid all risk in crafting—it's to take calculated risks with full knowledge of the potential outcomes. Smart crafters don't get lucky more often; they just put themselves in positions where luck matters less. The <Link href="/" className="text-poe-gold hover:text-poe-orange transition-colors">Vorici Calculator</Link> provides the mathematical foundation for every decision.
               </p>
             </section>
           </article>

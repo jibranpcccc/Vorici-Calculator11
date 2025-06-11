@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <SEOHead
-        title="Vorici Calculator - Path of Exile Crafting Calculator | Socket Colors, Links & Orbs"
+        title="Vorici Calculator - #1 Path of Exile Crafting Tool | Chromatic, Jeweller's & Fusing Orbs"
         description="The most accurate Path of Exile crafting calculator for chromatic orbs, jeweller's orbs, and orbs of fusing. Calculate optimal costs, compare strategies, and maximize your currency efficiency with real-time calculations."
         keywords="path of exile calculator, poe crafting calculator, chromatic orb calculator, jeweller orb calculator, fusing orb calculator, poe socket calculator, vorici calculator, path of exile tools, poe currency optimization"
         canonicalUrl="https://vorici-calculator.com"
@@ -44,10 +44,10 @@ export default function Home() {
         {/* Hero Section */}
         <section className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-heading font-bold text-exalted-gold mb-6">
-            Master Path of Exile Crafting
+            Vorici Calculator - Path of Exile Crafting Tool
           </h1>
           <p className="text-xl md:text-2xl text-light-slate mb-8 max-w-4xl mx-auto leading-relaxed">
-            The most accurate and comprehensive crafting calculator trusted by over <strong className="text-exalted-gold">100,000 players</strong> worldwide. 
+            The most accurate and comprehensive <strong className="text-exalted-gold">Vorici Calculator</strong> trusted by over <strong className="text-exalted-gold">100,000 players</strong> worldwide. 
             Optimize your currency with real-time calculations for chromatic orbs, jeweller's orbs, and orbs of fusing.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">

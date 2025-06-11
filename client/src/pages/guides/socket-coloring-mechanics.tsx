@@ -445,10 +445,10 @@ export default function SocketColoringMechanics() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2 group-hover:text-poe-orange transition-colors">
-                    Calculate Your Costs Now
+                    Use the Vorici Calculator Now
                   </h3>
                   <p className="text-poe-text-dim text-sm">
-                    Use our calculator to apply what you've learned
+                    Apply socket coloring mechanics with our free calculator
                   </p>
                 </div>
                 <Calculator className="w-6 h-6 text-poe-gold group-hover:text-poe-orange transition-colors" />

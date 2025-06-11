@@ -48,7 +48,8 @@ const validRoutes = [
   '/blog/poe-settlers-league-crafting-changes',
   '/faq',
   '/about',
-  '/privacy-policy'
+  '/privacy-policy',
+  '/terms'
 ];
 
 export function useLinkValidation(): LinkValidationReport {

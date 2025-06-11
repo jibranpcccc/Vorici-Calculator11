@@ -100,7 +100,7 @@ export default function SixLinkingStrategies() {
                   </p>
                 </div>
                 <Link 
-                  href="/#calculator"
+                  href="#calculator"
                   className="bg-poe-gold text-poe-dark px-4 py-2 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors flex items-center"
                 >
                   <Calculator className="w-4 h-4 mr-2" />
@@ -526,7 +526,7 @@ export default function SixLinkingStrategies() {
           {/* Navigation Links */}
           <div className="grid md:grid-cols-2 gap-6 mt-12 pt-8 border-t border-poe-gold/20">
             <Link 
-              href="/#calculator"
+              href="#calculator"
               className="bg-poe-gold/10 border border-poe-gold/30 rounded-lg p-6 hover:bg-poe-gold/20 transition-colors group"
             >
               <div className="flex items-center justify-between">

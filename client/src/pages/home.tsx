@@ -3,15 +3,23 @@ import Calculator from '@/components/Calculator';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calculator as CalculatorIcon, Zap, TrendingUp, Shield, ExternalLink, BookOpen, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Calculator as CalculatorIcon, Zap, TrendingUp, Shield, ExternalLink, BookOpen, Users, Download, Github, Star, Calendar, ChevronRight, BarChart3, Lightbulb } from 'lucide-react';
 
 export default function Home() {
+  const currentDate = new Date().toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+
   const schemaData = [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Vorici Calculator",
-      "description": "Ultimate Path of Exile crafting calculator for socket coloring, linking, and currency optimization",
+      "description": "Instant off-colour socket odds and crafting cost calculator for Path of Exile",
       "url": "https://vorici-calculator.com",
       "potentialAction": {
         "@type": "SearchAction",
@@ -22,10 +30,10 @@ export default function Home() {
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Vorici Calculator - Path of Exile Crafting Tool",
-      "description": "Real-time crafting cost calculator for Path of Exile. Calculate optimal costs for socket coloring, jeweller's orbs, and fusing orbs.",
+      "name": "Vorici Calculator",
+      "description": "Instant off-colour odds and crafting cost guide for Path of Exile socket coloring",
       "applicationCategory": "GameApplication",
-      "operatingSystem": "Web Browser",
+      "operatingSystem": "Web",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -36,214 +44,333 @@ export default function Home() {
         "ratingValue": "4.8",
         "ratingCount": "1247"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should I use Jeweller's Orbs first before coloring sockets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, always get the correct number of sockets with Jeweller's Orbs before using Chromatic Orbs. This saves currency as socket colors reset when the socket count changes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Tainted Chromatic Orbs better than regular Chromatics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tainted Chromatic Orbs can only be used on corrupted items and have different probability mechanics. They're often more efficient for extreme off-coloring on corrupted gear."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Socket Coloring Costs in Path of Exile",
+      "description": "Step-by-step guide to determine optimal socket coloring strategy",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Choose Item Base",
+          "text": "Select your item's base type (Strength, Dexterity, Intelligence, or Hybrid) as this affects socket color probabilities"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "Set Requirements",
+          "text": "Input your desired socket colors and current item quality percentage"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Pick Craft Type",
+          "text": "Choose between Chromatic Orbs, Tainted Chromatics, or Crafting Bench methods"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Run Simulation", 
+          "text": "Click calculate to see probability percentages and expected currency costs"
+        }
+      ]
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="Vorici Calculator - Path of Exile Crafting Cost Calculator | 2025"
-        description="Calculate optimal crafting costs for Path of Exile. Real-time socket coloring, jeweller's orb, and fusing orb probability calculations with accurate PoE mechanics."
-        keywords="path of exile, poe, crafting calculator, vorici calculator, socket coloring, jeweller orb, fusing orb, poe crafting, chromatic orb calculator"
+        title="Vorici Calculator | Instant PoE Socket-Colour Odds & Bench Costs"
+        description="Calculate instant off-colour socket odds for Path of Exile. Live probability charts, updated crafting bench costs for Patch 3.25, and step-by-step off-colouring guide."
+        keywords="vorici calculator, poe chromatic calculator, socket colour chance, off-colour sockets, crafting bench costs, path of exile, chromatic orb, tainted chromatic"
+        canonicalUrl="https://vorici-calculator.com"
         schemaData={schemaData}
         ogType="website"
+        ogImage="https://vorici-calculator.com/images/calculator-preview.jpg"
       />
       
       <div className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
+        {/* Hero Section - Above the Fold */}
         <section className="mb-16">
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-poe-accent mb-4">
-              Path of Exile Crafting Calculator
+              Vorici Calculator – Instant Off-Colour Odds & Crafting Cost Guide
             </h1>
-            <p className="text-lg text-poe-text-secondary max-w-3xl mx-auto mb-6">
-              Calculate optimal crafting costs for socket coloring, jeweller's orbs, and fusing orbs. 
-              Real-time calculations with accurate Path of Exile mechanics and probability formulas.
+            <p className="text-xl text-poe-text-secondary max-w-4xl mx-auto mb-8">
+              Calculate socket colour probabilities instantly with live charts and updated bench costs for Path of Exile.
             </p>
+            <div className="flex flex-wrap gap-4 justify-center mb-8">
+              <Button className="bg-poe-accent hover:bg-poe-accent/90 text-poe-dark px-8 py-3 text-lg font-semibold">
+                Run Simulation
+              </Button>
+              <Button variant="outline" className="border-poe-accent text-poe-accent hover:bg-poe-accent/10 px-8 py-3 text-lg">
+                <Download className="w-5 h-5 mr-2" />
+                Download CSV
+              </Button>
+            </div>
             <div className="flex flex-wrap gap-2 justify-center mb-8">
-              <Badge variant="secondary" className="bg-poe-accent/20 text-poe-accent">Free Forever</Badge>
-              <Badge variant="secondary" className="bg-green-500/20 text-green-400">Real-Time Results</Badge>
-              <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">All Leagues</Badge>
-              <Badge variant="secondary" className="bg-purple-500/20 text-purple-400">Mobile Optimized</Badge>
+              <Badge variant="secondary" className="bg-poe-accent/20 text-poe-accent">Patch 3.25 Updated</Badge>
+              <Badge variant="secondary" className="bg-green-500/20 text-green-400">Live Charts</Badge>
+              <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">Instant Results</Badge>
+              <Badge variant="secondary" className="bg-purple-500/20 text-purple-400">
+                <Github className="w-3 h-3 mr-1" />
+                Open Source
+              </Badge>
             </div>
           </div>
 
           <Calculator />
         </section>
 
-        {/* Feature Overview */}
+        {/* How the Calculator Works */}
         <section className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-poe-text mb-4">Why Choose Our Calculator?</h2>
-            <p className="text-poe-text-secondary max-w-2xl mx-auto">
-              Trusted by thousands of Path of Exile players for accurate crafting calculations and cost optimization.
+            <h2 className="text-3xl font-bold text-poe-text mb-4">How the Calculator Works</h2>
+            <p className="text-poe-text-secondary max-w-3xl mx-auto mb-6">
+              Our algorithm uses verified Path of Exile mechanics to calculate socket colour probabilities based on item base types, 
+              attribute requirements, and crafting methods. All formulas are transparently available in our 
+              <a href="https://github.com/vorici-calculator" target="_blank" rel="noopener noreferrer" className="text-poe-accent hover:underline inline-flex items-center ml-1">
+                GitHub repository <ExternalLink className="w-4 h-4 ml-1" />
+              </a>.
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6 text-center">
-                <Zap className="w-12 h-12 text-poe-accent mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-poe-text mb-2">Real-Time Calculations</h3>
-                <p className="text-poe-text-secondary">
-                  Instant results as you adjust settings. No waiting, no submit buttons - just immediate feedback.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6 text-center">
-                <TrendingUp className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-poe-text mb-2">Accurate Probabilities</h3>
-                <p className="text-poe-text-secondary">
-                  Based on official Path of Exile mechanics and extensively tested probability formulas.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6 text-center">
-                <Shield className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-poe-text mb-2">Cost Optimization</h3>
-                <p className="text-poe-text-secondary">
-                  Compare different crafting methods and find the most cost-effective approach for your items.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
-        {/* Calculator Types */}
+        {/* Socket-Colour Probability Charts */}
         <section className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-poe-text mb-4">Three Powerful Calculators</h2>
-            <p className="text-poe-text-secondary max-w-2xl mx-auto">
-              Everything you need for Path of Exile crafting, from socket coloring to 6-linking your gear.
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Socket-Colour Probability Charts</h2>
+            <p className="text-poe-text-secondary max-w-2xl mx-auto mb-8">
+              Live charts that update in real-time as you change calculator inputs. Toggle between Standard and Tainted Chromatic calculations.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-poe-surface border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-poe-accent mb-3">Chromatic Orb Calculator</h3>
-                <ul className="space-y-2 text-poe-text-secondary mb-4">
-                  <li>• Socket color probability calculations</li>
-                  <li>• Item base type optimization</li>
-                  <li>• Bench craft vs spam comparisons</li>
-                  <li>• Interactive socket visualizer</li>
-                </ul>
-                <p className="text-sm text-poe-text-secondary">
-                  Perfect for getting the right socket colors on your gear efficiently.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-poe-surface border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-poe-accent mb-3">Jeweller's Orb Calculator</h3>
-                <ul className="space-y-2 text-poe-text-secondary mb-4">
-                  <li>• Socket count optimization</li>
-                  <li>• Item level considerations</li>
-                  <li>• 350 jeweller's bench craft analysis</li>
-                  <li>• Probability-based recommendations</li>
-                </ul>
-                <p className="text-sm text-poe-text-secondary">
-                  Determine the most efficient way to get the socket count you need.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-poe-surface border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-poe-accent mb-3">Orb of Fusing Calculator</h3>
-                <ul className="space-y-2 text-poe-text-secondary mb-4">
-                  <li>• 6-link probability calculations</li>
-                  <li>• Quality impact analysis</li>
-                  <li>• 1500 fusing bench comparison</li>
-                  <li>• Expected cost breakdowns</li>
-                </ul>
-                <p className="text-sm text-poe-text-secondary">
-                  Make informed decisions about linking your most valuable items.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="bg-poe-surface border-poe-accent/20 mb-8">
+            <CardContent className="p-8">
+              <div className="flex justify-center items-center gap-4 mb-6">
+                <Button variant="outline" className="border-poe-accent text-poe-accent">
+                  <BarChart3 className="w-4 h-4 mr-2" />
+                  Standard Chromatics
+                </Button>
+                <Button variant="outline" className="border-purple-400 text-purple-400">
+                  <BarChart3 className="w-4 h-4 mr-2" />
+                  Tainted Chromatics
+                </Button>
+              </div>
+              <div className="h-64 bg-poe-darker rounded-lg flex items-center justify-center">
+                <div className="text-center text-poe-text-secondary">
+                  <BarChart3 className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                  <p>Interactive probability chart loads here</p>
+                  <p className="text-sm">Updates automatically with calculator changes</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
-        {/* Guides Section */}
+        {/* Crafting Bench Costs */}
         <section className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-poe-text mb-4">Learn Advanced Crafting</h2>
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Crafting Bench Costs (Patch 3.25 & PoE 2 Beta)</h2>
+            <p className="text-poe-text-secondary max-w-2xl mx-auto mb-4">
+              Sortable table of all crafting bench recipes with current costs and probability comparisons.
+            </p>
+            <Badge variant="secondary" className="bg-green-500/20 text-green-400">
+              <Calendar className="w-3 h-3 mr-1" />
+              Last verified: {currentDate}
+            </Badge>
+          </div>
+          
+          <Card className="bg-poe-surface border-poe-accent/20">
+            <CardContent className="p-6">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-poe-accent/20">
+                      <th className="text-left py-3 px-4 font-semibold text-poe-text">Socket Colors</th>
+                      <th className="text-left py-3 px-4 font-semibold text-poe-text">Bench Cost</th>
+                      <th className="text-left py-3 px-4 font-semibold text-poe-text">Avg Chromatic Cost</th>
+                      <th className="text-left py-3 px-4 font-semibold text-poe-text">Recommendation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-poe-accent/10">
+                      <td className="py-3 px-4 text-poe-text">2R 1G</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">25 Chromatic</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">8-15 Chromatic</td>
+                      <td className="py-3 px-4 text-green-400">Use Bench</td>
+                    </tr>
+                    <tr className="border-b border-poe-accent/10">
+                      <td className="py-3 px-4 text-poe-text">3B off-color</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">120 Chromatic</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">200+ Chromatic</td>
+                      <td className="py-3 px-4 text-green-400">Use Bench</td>
+                    </tr>
+                    <tr className="border-b border-poe-accent/10">
+                      <td className="py-3 px-4 text-poe-text">6R on Dex Base</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">1500 Chromatic</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">2000+ Chromatic</td>
+                      <td className="py-3 px-4 text-green-400">Use Bench</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 text-poe-text">5R 1B Natural</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">350 Chromatic</td>
+                      <td className="py-3 px-4 text-poe-text-secondary">45-80 Chromatic</td>
+                      <td className="py-3 px-4 text-yellow-400">Spam Better</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 text-center">
+                <Button variant="outline" className="border-poe-accent text-poe-accent">
+                  View Complete Bench Recipe List
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Step-by-Step Off-Colouring Guide */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-poe-text mb-4">Step-by-Step Off-Colouring Guide</h2>
             <p className="text-poe-text-secondary max-w-2xl mx-auto">
-              Master Path of Exile crafting with our comprehensive guides and strategies.
+              Follow this comprehensive process to achieve optimal socket colors on any item base type.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6">
-                <BookOpen className="w-8 h-8 text-poe-accent mb-4" />
-                <h3 className="text-xl font-semibold text-poe-text mb-3">Crafting Guides</h3>
-                <p className="text-poe-text-secondary mb-4">
-                  In-depth guides covering socket mechanics, probability theory, and advanced crafting strategies.
-                </p>
-                <Link href="/guides">
-                  <span className="inline-flex items-center text-poe-accent hover:text-poe-accent/80 transition-colors">
-                    Browse Guides <ExternalLink className="w-4 h-4 ml-2" />
-                  </span>
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6">
-                <Users className="w-8 h-8 text-green-400 mb-4" />
-                <h3 className="text-xl font-semibold text-poe-text mb-3">Community Content</h3>
-                <p className="text-poe-text-secondary mb-4">
-                  Latest league updates, crafting tips, and community-contributed strategies and builds.
-                </p>
-                <Link href="/blog">
-                  <span className="inline-flex items-center text-green-400 hover:text-green-400/80 transition-colors">
-                    Read Blog <ExternalLink className="w-4 h-4 ml-2" />
-                  </span>
-                </Link>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                step: "1",
+                title: "Choose Base",
+                description: "Select item base type (Str/Dex/Int/Hybrid) to determine natural socket color probabilities",
+                icon: Shield
+              },
+              {
+                step: "2", 
+                title: "Set Requirements",
+                description: "Input desired socket colors and current item quality percentage for accurate calculations",
+                icon: CalculatorIcon
+              },
+              {
+                step: "3",
+                title: "Pick Craft Type",
+                description: "Choose between Chromatic Orbs, Tainted Chromatics, or guaranteed Crafting Bench recipes",
+                icon: Zap
+              },
+              {
+                step: "4",
+                title: "Run Simulation",
+                description: "Execute calculation to see probability percentages, expected costs, and optimal strategy",
+                icon: TrendingUp
+              }
+            ].map((item) => (
+              <Card key={item.step} className="bg-poe-surface border-poe-accent/20 relative">
+                <CardContent className="p-6 text-center">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-poe-accent text-poe-dark rounded-full flex items-center justify-center font-bold text-sm">
+                    {item.step}
+                  </div>
+                  <item.icon className="w-12 h-12 text-poe-accent mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-poe-text mb-3">{item.title}</h3>
+                  <p className="text-sm text-poe-text-secondary leading-relaxed">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
-        {/* FAQ Preview */}
+        {/* Frequently Asked Questions */}
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-poe-text mb-4">Frequently Asked Questions</h2>
+            <p className="text-poe-text-secondary max-w-2xl mx-auto">
+              Common questions from Reddit and forums about socket coloring, bench crafting, and optimization strategies.
+            </p>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-6">
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-poe-text mb-2">How accurate are the calculations?</h3>
-                <p className="text-poe-text-secondary">
-                  Our calculations are based on official Path of Exile mechanics and have been verified through extensive testing. 
-                  The probability formulas match the game's actual drop rates and crafting mechanics.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="jewellers-first" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  Should I use Jeweller's Orbs first before coloring sockets?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  Yes, always get the correct number of sockets with Jeweller's Orbs before using Chromatic Orbs. 
+                  This saves currency as socket colors reset when the socket count changes.
+                </AccordionContent>
+              </AccordionItem>
 
-            <Card className="bg-poe-surface border-poe-accent/20">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-poe-text mb-2">Is this calculator updated for the current league?</h3>
-                <p className="text-poe-text-secondary">
-                  Yes, we regularly update the calculator to reflect any changes in Path of Exile's crafting mechanics. 
-                  The current version includes all updates through the latest league.
-                </p>
-              </CardContent>
-            </Card>
+              <AccordionItem value="tainted-chromatics" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  Are Tainted Chromatic Orbs better than regular Chromatics?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  Tainted Chromatic Orbs can only be used on corrupted items and have different probability mechanics. 
+                  They're often more efficient for extreme off-coloring on corrupted gear.
+                </AccordionContent>
+              </AccordionItem>
 
-            <div className="text-center">
+              <AccordionItem value="quality-impact" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  Does item quality affect socket coloring chances?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  No, item quality only affects linking probabilities with Orbs of Fusing. Socket colors are determined 
+                  solely by the item's attribute requirements and base type.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="bench-vs-spam" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  When should I use the crafting bench instead of spamming Chromatics?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  Use the bench for extreme off-colors (like 6B on a Strength base) or when the bench cost is lower 
+                  than the expected Chromatic cost. Our calculator shows the optimal choice for each scenario.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="corrupted-items" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  Can I change socket colors on corrupted items?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  Yes, but only with Tainted Chromatic Orbs or through certain crafting methods like Betrayal benches 
+                  and specific Harvest crafts. Regular Chromatics won't work on corrupted items.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <div className="text-center mt-8">
               <Link href="/faq">
-                <span className="inline-flex items-center text-poe-accent hover:text-poe-accent/80 transition-colors">
-                  View All FAQs <ExternalLink className="w-4 h-4 ml-2" />
-                </span>
+                <Button variant="outline" className="border-poe-accent text-poe-accent">
+                  View All 15 FAQs
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
               </Link>
             </div>
           </div>

@@ -1,0 +1,103 @@
+Recommended homepage information architecture
+pgsql
+Copy
+<H1> Vorici Calculator – Instant Off-Colour Odds & Crafting Cost Guide </H1>
+
+<Above-the-fold>
+  • Short hero copy (one sentence) + calculator widget
+  • CTA: “Run Simulation”  │  Secondary: “Download CSV”
+
+<H2> How the Calculator Works </H2>
+  • Brief algorithm explanation with link to GitHub repo
+
+<H2> Socket-Colour Probability Charts </H2>
+  • Live chart that updates when users change inputs
+  • Toggle for Standard vs. Tainted Chromatics
+
+<H2> Crafting Bench Costs (Patch 3.25 & PoE 2 Beta) </H2>
+  • Table of bench recipes, sortable by colour combo
+  • “Last verified: <date>” badge for trust
+
+<H2> Step-by-Step Off-Colouring Guide </H2>
+  • Sub-steps: Choose Base → Set Requirements → Pick Craft Type → Run Simulation → Apply
+  • Inline GIFs or short mp4 loops
+
+<H2> Frequently Asked Questions </H2>
+  • 10 concise Q&As pulled from Reddit & forums (e.g., “Should I use Jeweller’s first?”)
+
+<H2> Advanced Tips </H2>
+  • Using Betrayal Benches, Harvest, Tainted Chromatics
+  • Link out to PoE Wiki & patch notes for authority
+
+<H2> Changelog & Data Sources </H2>
+  • Dynamic list, commits auto-pulled from GitHub
+  • Citations to PoE Wiki, dev Manifestos
+
+<Footer>
+  • Author bio (experience, PoE account), contact, sitemap
+On-page SEO checklist for “perfect” rankings
+Keyword targeting
+
+Primary: “Vorici Calculator” in title, URL, H1, first 100 words.
+
+Secondary: “PoE chromatic calculator”, “socket colour chance”, “off-colour sockets”, “crafting bench costs”.
+
+Use synonyms naturally in H2/H3s and image alt tags.
+
+Meta elements
+
+Title tag ≤ 60 chars: “Vorici Calculator | Instant PoE Socket-Colour Odds & Bench Costs”.
+
+Meta description 150–160 chars: promise quick calculation, live charts, updated craft costs.
+
+Add og: & Twitter Card tags for rich sharing of the chart thumbnail.
+
+Structured data
+
+FAQPage schema for the Q&A section.
+
+HowTo schema for the step-by-step block.
+
+SoftwareApplication schema pointing to the calculator (name, operatingSystem=“Web”, offers=“Free”).
+
+Core Web Vitals
+
+Keep main JS for the calculator under 30 KB gzip; lazy-load charts.
+
+Preload critical fonts; serve images in AVIF/WebP.
+
+Internal linking
+
+From blog articles on Chromatic Orbs, socket linking, and PoE crafting guides to the homepage with varied anchor text (“chromatic probability”, “Vorici bench calculator”, etc.).
+
+External/E-A-T signals
+
+Link to PoE Wiki and official patch notes for factual backing 
+poewiki.net
+.
+
+Display GitHub stars / last commit.
+
+Collect user testimonials (tweet/Reddit embeds) near the footer.
+
+Content freshness
+
+Schedule a cron job to scrape new patch notes and flag any bench-cost changes. Auto-update the “Last verified” badge.
+
+Engagement hooks
+
+Offer CSV export; share button copies a Reddit-formatted result string.
+
+Embed a concise YouTube explainer (own channel) – videos rank and keep visitors.
+
+Link-building angles
+
+Create a public API endpoint (“GET /api/v1/vorici?str=…”) – devs & streamers will link.
+
+Publish quarterly “Socket-colour RNG report” infographic for outreach.
+
+Accessibility & localisation
+
+ARIA labels on the form; colour-blind-friendly palette in charts.
+
+Provide translations for RU, PT-BR, etc., mirroring PoE client languages.

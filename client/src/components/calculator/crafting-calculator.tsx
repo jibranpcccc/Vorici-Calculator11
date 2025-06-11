@@ -9,6 +9,7 @@ import { SessionTracker } from './session-tracker';
 import { CostBreakdownModal } from './cost-breakdown-modal';
 import { Copy, RotateCcw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { trackCalculatorUsage, trackResultAction, trackSessionAction } from '@/lib/analytics';
 
 export function CraftingCalculator() {
   const calculator = useCalculator();
@@ -39,6 +40,7 @@ Recommended Method: ${result.recommendedMethod}`;
 
     try {
       await navigator.clipboard.writeText(text);
+      trackResultAction('copy', calculator.state.activeTab);
       toast({
         title: "Results copied!",
         description: "Calculation results copied to clipboard",
@@ -53,10 +55,12 @@ Recommended Method: ${result.recommendedMethod}`;
   };
 
   const handleAddToSession = () => {
-    calculator.addToSession(getCurrentCost());
+    const cost = getCurrentCost();
+    calculator.addToSession(cost);
+    trackSessionAction('add_to_session', cost);
     toast({
       title: "Added to session",
-      description: `${getCurrentCost()} orbs added to session tracker`,
+      description: `${cost} orbs added to session tracker`,
     });
   };
 
@@ -119,7 +123,10 @@ Recommended Method: ${result.recommendedMethod}`;
         {/* Action Buttons */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
           <button
-            onClick={() => setBreakdownModal({ isOpen: true, type: calculator.state.activeTab })}
+            onClick={() => {
+              setBreakdownModal({ isOpen: true, type: calculator.state.activeTab });
+              trackResultAction('breakdown', calculator.state.activeTab);
+            }}
             className="btn-poe flex items-center justify-center"
           >
             📊 Cost Breakdown
@@ -132,7 +139,10 @@ Recommended Method: ${result.recommendedMethod}`;
             Copy Results
           </button>
           <button
-            onClick={calculator.resetTab}
+            onClick={() => {
+              calculator.resetTab();
+              trackResultAction('reset', calculator.state.activeTab);
+            }}
             className="btn-secondary flex items-center justify-center"
           >
             <RotateCcw className="w-4 h-4 mr-2" />

@@ -99,13 +99,19 @@
 }
 
 @layer components {
-  /* Typography classes */
+  /* Typography classes - using Inter font stack */
   .font-heading {
-    font-family: 'Cinzel', serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
   }
   
   .font-body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .font-gaming {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
   }
   
   /* PoE Theme Color Classes */
@@ -152,6 +158,68 @@
   .text-intelligence-blue {
     color: var(--intelligence-blue);
   }
+  
+  /* PoE Theme Component Classes */
+  .card-poe {
+    background-color: var(--dark-slate);
+    border: 1px solid rgba(200, 179, 121, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  
+  .btn-poe {
+    background-color: var(--exalted-gold);
+    color: var(--charcoal-stone);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-poe:hover {
+    background-color: var(--vibrant-gold);
+  }
+  
+  .btn-secondary {
+    background-color: var(--dark-slate);
+    border: 1px solid rgba(200, 179, 121, 0.3);
+    color: var(--exalted-gold);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(200, 179, 121, 0.1);
+  }
+  
+  /* Additional utility classes */
+  .bg-poe-dark { background-color: var(--charcoal-stone); }
+  .bg-poe-surface { background-color: var(--dark-slate); }
+  .bg-poe-darker { background-color: #0a0a0a; }
+  .text-poe-text { color: var(--off-white); }
+  .text-poe-text-secondary { color: var(--light-slate); }
+  .text-poe-gold { color: var(--exalted-gold); }
+  .text-poe-accent { color: var(--exalted-gold); }
+  .text-poe-orange { color: #ff6b35; }
+  .text-poe-text-dim { color: var(--light-slate); }
+  .border-poe-accent { border-color: var(--exalted-gold); }
+  .border-poe-gold { border-color: var(--exalted-gold); }
+  .bg-poe-accent { background-color: var(--exalted-gold); }
+  .bg-poe-gold { background-color: var(--exalted-gold); }
+  .bg-poe-orange { background-color: #ff6b35; }
   
   .border-exalted-gold {
     border-color: var(--exalted-gold);

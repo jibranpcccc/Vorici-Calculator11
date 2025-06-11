@@ -93,7 +93,7 @@ export default function SixLinkingStrategies() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">
-                    Calculate your 6-link odds with our calculator
+                    Calculate your 6-link odds with the Vorici Calculator
                   </h3>
                   <p className="text-poe-text-dim">
                     Use our Orbs of Fusing calculator to determine the most cost-effective approach for your specific item
@@ -141,7 +141,7 @@ export default function SixLinkingStrategies() {
               
               <p className="text-poe-text mb-6">
                 Understanding the base probability mechanics is crucial for making informed decisions about your linking strategy. 
-                Each Orb of Fusing rerolls all socket links on an item, with probabilities that depend on the item's quality and socket count.
+                The <Link href="/" className="text-poe-gold hover:text-poe-orange transition-colors">Vorici Calculator</Link> uses these exact probabilities to provide real-time cost analysis for any item configuration.
               </p>
 
               <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
@@ -532,10 +532,10 @@ export default function SixLinkingStrategies() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2 group-hover:text-poe-orange transition-colors">
-                    Calculate Your 6-Link Odds
+                    Use the Vorici Calculator for 6-Link Planning
                   </h3>
                   <p className="text-poe-text-dim text-sm">
-                    Use our fusing calculator to plan your linking strategy
+                    Calculate exact fusing odds and plan your linking strategy
                   </p>
                 </div>
                 <Calculator className="w-6 h-6 text-poe-gold group-hover:text-poe-orange transition-colors" />

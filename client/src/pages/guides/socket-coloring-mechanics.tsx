@@ -115,7 +115,7 @@ export default function SocketColoringMechanics() {
             {/* Introduction Section */}
             <section className="mb-12">
               <p className="text-poe-text mb-6 text-lg leading-relaxed">
-                Path of Exile's socket coloring system is governed by precise mathematical formulas that many players find mysterious. 
+                Path of Exile's socket coloring system is governed by precise mathematical formulas that the <Link href="/" className="text-poe-gold hover:text-poe-orange transition-colors">Vorici Calculator</Link> uses to provide accurate cost estimates. 
                 By the end of this guide, you'll understand exactly why getting 6 blue sockets on a Strength-based chest piece 
                 costs thousands of Chromatic Orbs, while achieving the same result on an Intelligence item requires just a few attempts.
               </p>

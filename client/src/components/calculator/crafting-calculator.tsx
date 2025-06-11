@@ -146,8 +146,8 @@ Recommended Method: ${result.recommendedMethod}`;
   return (
     <div className="card-poe max-w-6xl mx-auto">
       <div className="mb-8">
-        <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-2">Path of Exile Crafting Calculator</h2>
-        <p className="text-light-slate">Calculate the optimal costs for socket coloring, jeweller's orbs, and fusing orbs</p>
+        <h2 className="text-3xl font-heading font-bold text-exalted-gold mb-2">Vorici Calculator - Path of Exile Crafting Tool</h2>
+        <p className="text-light-slate">Calculate the optimal costs for socket coloring, jeweller's orbs, and fusing orbs with real-time probability analysis</p>
       </div>
       
       <Tabs value={calculator.state.activeTab} onValueChange={calculator.setActiveTab as any}>

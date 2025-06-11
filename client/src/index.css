@@ -5,10 +5,13 @@
 :root {
   /* Path of Exile Color Palette */
   --poe-dark: #0a0a0a;
+  --poe-dark-alt: #1a1a1a;
+  --poe-darker: #050505;
   --poe-surface: #1a1a1a;
   --poe-accent: #d4af37;
   --poe-text: #e1dcc6;
   --poe-text-dim: #b8b8b8;
+  --poe-text-secondary: #999999;
   --poe-gold: #d4af37;
   --poe-orange: #ff6b35;
   

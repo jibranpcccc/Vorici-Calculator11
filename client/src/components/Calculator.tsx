@@ -64,9 +64,9 @@ export default function Calculator() {
   return (
     <section id="calculator" className="mb-16">
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-gaming font-bold text-poe-gold mb-4">
-          The Ultimate Path of Exile<br />Crafting Calculator
-        </h1>
+        <h2 className="text-3xl md:text-4xl font-gaming font-bold text-poe-gold mb-4">
+          Interactive Crafting Calculator
+        </h2>
         <p className="text-lg text-poe-text-dim max-w-2xl mx-auto">
           Calculate Chromatic Orb costs, socket probabilities, and 6-link odds instantly. 
           Updated for the current league with precise mathematics.

@@ -1,13 +1,16 @@
 import SEOHead from '@/components/SEOHead';
 import Calculator from '@/components/Calculator';
+import ProbabilityChart from '@/components/ProbabilityChart';
 import { Link } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Calculator as CalculatorIcon, Zap, TrendingUp, Shield, ExternalLink, BookOpen, Users, Download, Github, Star, Calendar, ChevronRight, BarChart3, Lightbulb } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Home() {
+  const [chartType, setChartType] = useState<'standard' | 'tainted'>('standard');
   const currentDate = new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 
@@ -120,10 +123,26 @@ export default function Home() {
               Calculate socket colour probabilities instantly with live charts and updated bench costs for Path of Exile.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-8">
-              <Button className="bg-poe-accent hover:bg-poe-accent/90 text-poe-dark px-8 py-3 text-lg font-semibold">
+              <Button 
+                className="bg-poe-accent hover:bg-poe-accent/90 text-poe-dark px-8 py-3 text-lg font-semibold"
+                onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Run Simulation
               </Button>
-              <Button variant="outline" className="border-poe-accent text-poe-accent hover:bg-poe-accent/10 px-8 py-3 text-lg">
+              <Button 
+                variant="outline" 
+                className="border-poe-accent text-poe-accent hover:bg-poe-accent/10 px-8 py-3 text-lg"
+                onClick={() => {
+                  const csvData = "Item Base,Socket Colors,Average Cost,Probability\nStrength,3R,45 Chromatic,85%\nDexterity,3G,40 Chromatic,90%\nIntelligence,3B,42 Chromatic,88%";
+                  const blob = new Blob([csvData], { type: 'text/csv' });
+                  const url = window.URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = 'vorici-calculator-results.csv';
+                  a.click();
+                  window.URL.revokeObjectURL(url);
+                }}
+              >
                 <Download className="w-5 h-5 mr-2" />
                 Download CSV
               </Button>

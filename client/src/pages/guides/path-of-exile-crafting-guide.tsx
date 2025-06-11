@@ -437,7 +437,7 @@ export default function PathOfExileCraftingGuide() {
                   <CardContent>
                     <div className="space-y-3">
                       <Link 
-                        href="/#calculator"
+                        href="#calculator"
                         className="block text-poe-gold hover:text-poe-orange transition-colors"
                       >
                         Our Ultimate Crafting Calculator →

@@ -294,7 +294,7 @@ export default function PoESettlersLeagueCraftingChanges() {
                     in 23% more scenarios than before, particularly for off-color combinations and guaranteed linking.
                   </p>
                   <Link 
-                    href="/#calculator"
+                    href="#calculator"
                     className="bg-intelligence-blue text-white px-4 py-2 rounded-lg font-gaming font-medium hover:bg-intelligence-blue/90 transition-colors inline-block"
                   >
                     Test Updated Calculator
@@ -516,7 +516,7 @@ export default function PoESettlersLeagueCraftingChanges() {
                 enhanced quality scaling, and current market conditions for optimal recommendations.
               </p>
               <Link 
-                href="/#calculator"
+                href="#calculator"
                 className="bg-poe-gold text-poe-dark px-8 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
               >
                 Try Updated Calculator

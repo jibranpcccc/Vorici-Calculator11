@@ -249,7 +249,7 @@ export default function About() {
                   data-driven crafting decisions and proven optimization strategies.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/#calculator" className="btn-poe">
+                  <Link href="#calculator" className="btn-poe">
                     <Calculator className="w-5 h-5 mr-2" />
                     Start Calculating Now
                   </Link>

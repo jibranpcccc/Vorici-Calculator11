@@ -172,7 +172,7 @@ export default function Blog() {
             <Link href="/guides" className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block mr-4">
               Read Our Guides
             </Link>
-            <Link href="/#calculator" className="border border-poe-gold text-poe-gold px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/10 transition-colors inline-block">
+            <Link href="#calculator" className="border border-poe-gold text-poe-gold px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/10 transition-colors inline-block">
               Try Calculator
             </Link>
           </div>

@@ -213,7 +213,7 @@ export default function BlogIndex() {
                   Join thousands of Path of Exile crafters optimizing their currency.
                 </p>
                 <Link 
-                  href="/#calculator"
+                  href="#calculator"
                   className="bg-poe-gold text-poe-dark px-8 py-4 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
                 >
                   Try Our Calculator

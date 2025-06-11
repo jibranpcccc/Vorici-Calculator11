@@ -403,7 +403,7 @@ export default function ChromaticOrbOptimization() {
                     socket combination. Get real-time cost comparisons and make informed crafting decisions.
                   </p>
                   <Link 
-                    href="/#calculator"
+                    href="#calculator"
                     className="bg-poe-gold text-poe-dark px-8 py-4 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
                   >
                     Calculate Your Optimal Strategy

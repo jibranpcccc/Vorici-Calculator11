@@ -131,7 +131,7 @@ export default function FAQ() {
                   <Calculator className="w-5 h-5 mr-2" />
                   Browse Expert Guides
                 </Link>
-                <Link href="/#calculator" className="btn-secondary">
+                <Link href="#calculator" className="btn-secondary">
                   <Zap className="w-5 h-5 mr-2" />
                   Try Calculator Now
                 </Link>

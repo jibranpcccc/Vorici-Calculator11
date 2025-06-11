@@ -65,7 +65,7 @@ export default function HowToUseCalculator() {
                     Open the calculator in a new tab and follow this tutorial step-by-step for hands-on learning.
                   </p>
                   <Link 
-                    href="/#calculator"
+                    href="#calculator"
                     className="bg-poe-gold text-poe-dark px-4 py-2 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
                   >
                     Open Calculator
@@ -636,7 +636,7 @@ export default function HowToUseCalculator() {
                 our comprehensive crafting calculator.
               </p>
               <Link 
-                href="/#calculator"
+                href="#calculator"
                 className="bg-poe-gold text-poe-dark px-8 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block"
               >
                 Use the Calculator Now

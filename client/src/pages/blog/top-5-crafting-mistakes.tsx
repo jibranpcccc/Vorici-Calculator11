@@ -309,7 +309,7 @@ export default function TopFiveCraftingMistakes() {
                   <li>• When to stop and cut your losses</li>
                 </ul>
                 <Link 
-                  href="/#calculator"
+                  href="#calculator"
                   className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-flex items-center"
                 >
                   <Calculator className="w-4 h-4 mr-2" />

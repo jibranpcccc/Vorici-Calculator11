@@ -19,8 +19,58 @@
     }
     </script>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Critical CSS Inline -->
+    <style>
+      /* Font Face Declarations */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('/fonts/inter-regular.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/inter-medium.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/inter-semibold.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('/fonts/inter-bold.woff2') format('woff2');
+      }
+      
+      /* Critical above-the-fold styles */
+      *{box-sizing:border-box;margin:0;padding:0}
+      html{scroll-behavior:smooth}
+      body{font-family:Inter,system-ui,sans-serif;background:#0a0a0a;color:#e1dcc6;line-height:1.6}
+      .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+      
+      /* Header critical styles */
+      header{background:#0a0a0a;border-bottom:1px solid rgba(225,220,198,.1);position:sticky;top:0;z-index:50}
+      
+      /* Button critical styles */
+      .btn-primary{background:#d4af37;color:#0a0a0a;padding:.75rem 2rem;border-radius:.5rem;font-weight:600;border:none;cursor:pointer}
+      .btn-primary:hover{background:rgba(212,175,55,.9)}
+      
+      /* Hide non-critical content initially */
+      .defer-load{opacity:0;transform:translateY(20px)}
+    </style>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-medium.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="The Ultimate PoE Crafting Calculator" />

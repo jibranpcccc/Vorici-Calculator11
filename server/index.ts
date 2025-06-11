@@ -1,8 +1,44 @@
 import express, { type Request, Response, NextFunction } from "express";
+import compression from "compression";
+import helmet from "helmet";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+
+// Security headers
+app.use(helmet({
+  contentSecurityPolicy: false, // Allow inline styles for critical CSS
+  crossOriginEmbedderPolicy: false
+}));
+
+// Compression middleware - must be early in pipeline
+app.use(compression({
+  filter: (req, res) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  },
+  threshold: 1024, // Only compress files larger than 1KB
+  level: 6 // Balance between speed and compression ratio
+}));
+
+// Performance headers
+app.use((req, res, next) => {
+  // Cache static assets aggressively
+  if (req.url.match(/\.(js|css|woff2|webp|png|jpg|svg|ico)$/)) {
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+  
+  // Add performance headers
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

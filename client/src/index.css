@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap');
+/* Using system fonts for better performance and no loading issues */
 
 @tailwind base;
 @tailwind components;
@@ -75,11 +75,11 @@
     @apply antialiased;
     background-color: var(--charcoal-stone);
     color: var(--off-white);
-    font-family: 'Lato', sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', serif;
+    font-family: system-ui, -apple-system, sans-serif;
     color: var(--off-white);
   }
   
@@ -105,11 +105,17 @@
 @layer components {
   /* Typography classes */
   .font-heading {
-    font-family: 'Cinzel', serif;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 600;
   }
   
   .font-body {
-    font-family: 'Lato', sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-gaming {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 700;
   }
   
   /* PoE Theme Color Classes */

@@ -12,6 +12,10 @@ import { LinkValidationPanel } from "@/components/LinkValidator";
 import { CanonicalURLManager, URLStructureValidator } from "@/components/CanonicalURLManager";
 import { HeadingStructureFixer } from "@/components/HeadingValidator";
 import { useImageValidation } from "@/components/ImageOptimizer";
+import { OpenGraphOptimizer } from "@/components/OpenGraphOptimizer";
+import { AccessibilityValidationPanel, SkipNavigation } from "@/components/AccessibilityOptimizer";
+import { ContentQualityPanel } from "@/components/ContentQualityOptimizer";
+import { PerformanceOptimizer, PerformancePanel } from "@/components/PerformanceOptimizer";
 import Home from "@/pages/home";
 import Guides from "@/pages/Guides";
 import Blog from "@/pages/Blog";
@@ -26,12 +30,14 @@ function Router() {
   
   return (
     <div className="min-h-screen bg-poe-dark text-poe-text">
+      <SkipNavigation />
       <CanonicalURLManager />
       <URLStructureValidator />
       <HeadingStructureFixer />
+      <OpenGraphOptimizer />
       <Header />
       <Breadcrumbs />
-      <main>
+      <main id="main-content">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/guides" component={Guides} />
@@ -47,6 +53,8 @@ function Router() {
       <Footer />
       <SEOValidationPanel />
       <LinkValidationPanel />
+      <AccessibilityValidationPanel />
+      <ContentQualityPanel />
     </div>
   );
 }

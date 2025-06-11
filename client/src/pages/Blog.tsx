@@ -1,6 +1,7 @@
 import { useParams } from 'wouter';
 import { Link } from 'wouter';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, BookOpen, TrendingUp } from 'lucide-react';
+import SEOHead from '@/components/SEOHead';
 import TopCraftingMistakes from './blog/top-5-crafting-mistakes';
 import PoESettlersLeagueCraftingChanges from './blog/poe-settlers-league-crafting-changes';
 import PoELeagueCraftingChanges from './blog/poe-league-crafting-changes';
@@ -14,15 +15,56 @@ export default function Blog() {
     return <BlogPost slug={slug} />;
   }
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Vorici Calculator Blog",
+    "description": "Expert Path of Exile crafting strategies, league updates, and optimization guides for efficient currency usage.",
+    "url": "https://vorici-calculator.com/blog",
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Top 5 Crafting Mistakes That Are Wasting Your Currency",
+        "description": "Avoid these common Path of Exile crafting mistakes when coloring, socketing, and linking gear.",
+        "url": "https://vorici-calculator.com/blog/top-5-crafting-mistakes",
+        "datePublished": "2024-12-15",
+        "author": {
+          "@type": "Organization",
+          "name": "Vorici Calculator Team"
+        }
+      },
+      {
+        "@type": "BlogPosting", 
+        "headline": "PoE Settlers League Crafting Changes",
+        "description": "Complete analysis of crafting mechanic changes in Path of Exile Settlers League.",
+        "url": "https://vorici-calculator.com/blog/poe-settlers-league-crafting-changes",
+        "datePublished": "2024-12-10",
+        "author": {
+          "@type": "Organization",
+          "name": "Vorici Calculator Team"
+        }
+      }
+    ]
+  };
+
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-gaming font-bold text-poe-gold mb-4">The Vorici Calculator Blog</h1>
-          <p className="text-lg text-poe-text-dim">
-            The official blog for crafting strategies, league updates, patch analysis, and expert Path of Exile tips.
-          </p>
-        </div>
+    <>
+      <SEOHead
+        title="Path of Exile Crafting Blog | Expert Strategies & League Updates"
+        description="Expert Path of Exile crafting strategies, league updates, and optimization guides. Stay updated with the latest crafting meta and currency efficiency tips."
+        keywords="path of exile blog, poe crafting strategies, league updates, crafting meta, poe tips, vorici calculator blog"
+        canonicalUrl="https://vorici-calculator.com/blog"
+        schemaData={schemaData}
+      />
+      
+      <main className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-poe-accent mb-4">Path of Exile Crafting Blog</h1>
+            <p className="text-lg text-poe-text-secondary max-w-3xl mx-auto">
+              Expert crafting strategies, league updates, and optimization guides for efficient Path of Exile currency usage.
+            </p>
+          </div>
 
         <div className="space-y-8">
           <article className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
@@ -137,6 +179,7 @@ export default function Blog() {
         </div>
       </div>
     </main>
+    </>
   );
 }
 

@@ -15,120 +15,160 @@ export default function Guides() {
     return <GuideDetail slug={slug} />;
   }
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Path of Exile Crafting Guides",
+    "description": "Comprehensive guides for Path of Exile crafting optimization, socket coloring mechanics, and currency efficiency strategies.",
+    "url": "https://vorici-calculator.com/guides",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Article",
+          "position": 1,
+          "name": "Complete Path of Exile Crafting Guide",
+          "url": "https://vorici-calculator.com/guides/path-of-exile-crafting-guide"
+        },
+        {
+          "@type": "Article", 
+          "position": 2,
+          "name": "Socket Coloring Mechanics Guide",
+          "url": "https://vorici-calculator.com/guides/socket-coloring-mechanics"
+        },
+        {
+          "@type": "Article",
+          "position": 3, 
+          "name": "6-Linking Strategies Guide",
+          "url": "https://vorici-calculator.com/guides/6-linking-strategies"
+        },
+        {
+          "@type": "Article",
+          "position": 4,
+          "name": "How to Use the Calculator",
+          "url": "https://vorici-calculator.com/guides/how-to-use-the-calculator"
+        }
+      ]
+    }
+  };
+
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-gaming font-bold text-poe-gold mb-4">Path of Exile Crafting Guides</h1>
-          <p className="text-lg text-poe-text-dim">
-            Master the art of crafting with our comprehensive guides covering every aspect of socket manipulation and currency optimization.
-          </p>
+    <>
+      <SEOHead
+        title="Path of Exile Crafting Guides | Expert Strategies & Socket Optimization"
+        description="Master Path of Exile crafting with our comprehensive guides. Learn socket coloring mechanics, 6-linking strategies, and currency optimization techniques for efficient crafting."
+        keywords="path of exile guides, poe crafting guide, socket coloring guide, 6 link guide, poe crafting strategies, vorici calculator guides"
+        canonicalUrl="https://vorici-calculator.com/guides"
+        schemaData={schemaData}
+      />
+      
+      <main className="container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-poe-accent mb-4">Path of Exile Crafting Guides</h1>
+            <p className="text-lg text-poe-text-secondary max-w-3xl mx-auto">
+              Master the art of crafting with our comprehensive guides covering every aspect of socket manipulation and currency optimization.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <article className="bg-poe-surface rounded-xl p-6 border border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <div className="flex items-start gap-4">
+                <BookOpen className="w-12 h-12 text-poe-accent mt-2" />
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-poe-text mb-2">
+                    <Link href="/guides/path-of-exile-crafting-guide" className="hover:text-poe-accent transition-colors">
+                      The Complete Path of Exile Crafting Guide
+                    </Link>
+                  </h2>
+                  <p className="text-poe-text-secondary mb-3">
+                    The ultimate 3000+ word resource covering all core crafting mechanics, from basic currency usage to advanced techniques.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-poe-accent">
+                    <span>Main Pillar Guide</span>
+                    <span>•</span>
+                    <span>~15 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article className="bg-poe-surface rounded-xl p-6 border border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <div className="flex items-start gap-4">
+                <Target className="w-12 h-12 text-green-400 mt-2" />
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-poe-text mb-2">
+                    <Link href="/guides/socket-coloring-mechanics" className="hover:text-poe-accent transition-colors">
+                      Socket Coloring Mechanics Guide
+                    </Link>
+                  </h2>
+                  <p className="text-poe-text-secondary mb-3">
+                    Deep dive into chromatic orb mechanics, probability calculations, and optimal socket coloring strategies.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-poe-accent">
+                    <span>Technical Guide</span>
+                    <span>•</span>
+                    <span>~10 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article className="bg-poe-surface rounded-xl p-6 border border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <div className="flex items-start gap-4">
+                <Zap className="w-12 h-12 text-blue-400 mt-2" />
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-poe-text mb-2">
+                    <Link href="/guides/6-linking-strategies" className="hover:text-poe-accent transition-colors">
+                      6-Linking Strategies Guide
+                    </Link>
+                  </h2>
+                  <p className="text-poe-text-secondary mb-3">
+                    Master the art of 6-linking with probability analysis, quality optimization, and cost-effective strategies.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-poe-accent">
+                    <span>Strategy Guide</span>
+                    <span>•</span>
+                    <span>~12 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article className="bg-poe-surface rounded-xl p-6 border border-poe-accent/20 hover:border-poe-accent/40 transition-colors">
+              <div className="flex items-start gap-4">
+                <Calculator className="w-12 h-12 text-purple-400 mt-2" />
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-poe-text mb-2">
+                    <Link href="/guides/how-to-use-the-calculator" className="hover:text-poe-accent transition-colors">
+                      How to Use the Calculator
+                    </Link>
+                  </h2>
+                  <p className="text-poe-text-secondary mb-3">
+                    Step-by-step tutorial for maximizing the calculator's features and understanding probability results.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-poe-accent">
+                    <span>Tutorial</span>
+                    <span>•</span>
+                    <span>~8 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div className="text-center bg-poe-surface rounded-xl p-8 border border-poe-accent/20">
+            <h3 className="text-2xl font-bold text-poe-text mb-4">Need More Advanced Content?</h3>
+            <p className="text-poe-text-secondary mb-6">
+              Looking for more specific guidance? Check out our blog for league-specific updates and advanced techniques.
+            </p>
+            <Link href="/blog" className="bg-poe-accent text-poe-dark px-6 py-3 rounded-lg font-medium hover:bg-poe-accent/90 transition-colors inline-block">
+              Browse Blog Posts
+            </Link>
+          </div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <article className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">📖</span>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/guides/path-of-exile-crafting-guide" className="hover:text-poe-orange transition-colors">
-                    The Complete Path of Exile Crafting Guide
-                  </Link>
-                </h2>
-                <p className="text-poe-text-dim mb-3">
-                  The ultimate 3000+ word resource covering all core crafting mechanics, from basic currency usage to advanced techniques.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-poe-gold">
-                  <span>Main Pillar Guide</span>
-                  <span>•</span>
-                  <span>~15 min read</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <div className="w-8 h-8 bg-gradient-to-br from-red-500 via-green-500 to-blue-500 rounded-full"></div>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/guides/socket-coloring-mechanics" className="hover:text-poe-orange transition-colors">
-                    Socket Coloring Mechanics: A Deep Dive
-                  </Link>
-                </h2>
-                <p className="text-poe-text-dim mb-3">
-                  Learn the exact mathematics behind Chromatic Orbs, attribute weighting, and off-coloring strategies.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-poe-gold">
-                  <span>Technical Guide</span>
-                  <span>•</span>
-                  <span>~8 min read</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-600 rounded-full"></div>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/guides/6-linking-strategies" className="hover:text-poe-orange transition-colors">
-                    The Ultimate Guide to 6-Linking
-                  </Link>
-                </h2>
-                <p className="text-poe-text-dim mb-3">
-                  Master the art of 6-linking with detailed cost analysis, quality impact, and bench vs spam strategies.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-poe-gold">
-                  <span>Strategy Guide</span>
-                  <span>•</span>
-                  <span>~8 min read</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article className="bg-poe-dark-alt rounded-xl p-6 border border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-poe-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">🎯</span>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-xl font-gaming font-semibold text-poe-gold mb-2">
-                  <Link href="/guides/how-to-use-the-calculator" className="hover:text-poe-orange transition-colors">
-                    How to Use Our Crafting Calculator
-                  </Link>
-                </h2>
-                <p className="text-poe-text-dim mb-3">
-                  Step-by-step tutorial with screenshots showing how to get the most out of every calculator feature.
-                </p>
-                <div className="flex items-center gap-2 text-sm text-poe-gold">
-                  <span>Tutorial</span>
-                  <span>•</span>
-                  <span>~5 min read</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-poe-text-dim mb-4">
-            Looking for more specific guidance? Check out our blog for league-specific updates and advanced techniques.
-          </p>
-          <Link href="/blog" className="bg-poe-gold text-poe-dark px-6 py-3 rounded-lg font-gaming font-medium hover:bg-poe-gold/90 transition-colors inline-block">
-            Browse Blog Posts
-          </Link>
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 
@@ -144,15 +184,16 @@ function GuideDetail({ slug }: { slug: string }) {
       return <HowToUseCalculator />;
     default:
       return (
-        <main className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl font-gaming font-bold text-poe-gold mb-4">Guide Not Found</h1>
-            <p className="text-poe-text-dim mb-6">The guide you're looking for doesn't exist.</p>
-            <Link href="/guides" className="text-poe-gold hover:text-poe-orange transition-colors">
-              ← Back to Guides
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-poe-text mb-4">Guide Not Found</h1>
+            <p className="text-poe-text-secondary mb-8">The guide you're looking for doesn't exist.</p>
+            <Link href="/guides" className="bg-poe-accent text-poe-dark px-6 py-3 rounded-lg hover:bg-poe-accent/90 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2 inline" />
+              Back to Guides
             </Link>
           </div>
-        </main>
+        </div>
       );
   }
 }

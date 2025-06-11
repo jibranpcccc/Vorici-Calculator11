@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/seo/head';
+import SEOHead from '@/components/SEOHead';
 
 export default function PrivacyPolicy() {
   const structuredData = {
@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
         title="Privacy Policy | Vorici Calculator - Path of Exile Crafting Tool"
         description="Privacy policy for Vorici Calculator explaining data collection, usage, and protection practices for Path of Exile crafting tool users."
         canonicalUrl="https://vorici-calculator.com/privacy-policy"
-        structuredData={structuredData}
+        schemaData={structuredData}
       />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">

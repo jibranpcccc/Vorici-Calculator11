@@ -31,20 +31,20 @@ export default function ChromaticOrbOptimization() {
         }}
       />
       
-      <div className="min-h-screen bg-poe-dark text-poe-text">
+      <div className="min-h-screen bg-poe-dark text-readable">
         <Header />
         
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 blog-content guide-content">
           <article className="max-w-4xl mx-auto">
             {/* Article Header */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-4">
                 <Badge className="bg-green-500/20 text-green-400">Strategy Guide</Badge>
-                <div className="flex items-center gap-1 text-sm text-poe-text-dim">
+                <div className="flex items-center gap-1 text-sm text-readable-muted">
                   <Calendar className="w-4 h-4" />
                   January 2, 2025
                 </div>
-                <div className="flex items-center gap-1 text-sm text-poe-text-dim">
+                <div className="flex items-center gap-1 text-sm text-readable-muted">
                   <Clock className="w-4 h-4" />
                   12 min read
                 </div>
@@ -54,7 +54,7 @@ export default function ChromaticOrbOptimization() {
                 Advanced Chromatic Orb Strategies: Save 50% on Socket Coloring
               </h1>
               
-              <p className="text-xl text-poe-text-dim leading-relaxed">
+              <p className="text-xl text-readable-muted leading-relaxed">
                 Discover the mathematical secrets behind efficient socket coloring in Path of Exile. 
                 Learn when to use the jeweller method versus direct chromatic spamming, and master 
                 the art of currency optimization for any color combination.
@@ -70,9 +70,9 @@ export default function ChromaticOrbOptimization() {
             <div className="prose prose-invert max-w-none space-y-8">
               
               {/* Introduction */}
-              <Card className="bg-poe-dark-alt border-poe-gold/30">
+              <Card className="content-section border-poe-gold/30">
                 <CardContent className="p-6">
-                  <p className="text-poe-text-dim leading-relaxed">
+                  <p className="text-readable-muted leading-relaxed">
                     Socket coloring in Path of Exile is one of the most expensive aspects of crafting, 
                     often consuming hundreds or thousands of chromatic orbs for off-color combinations. 
                     However, with the right mathematical understanding and strategic approach, you can 
@@ -88,12 +88,12 @@ export default function ChromaticOrbOptimization() {
                   The Mathematics Behind Socket Colors
                 </h2>
                 
-                <p className="text-poe-text-dim mb-4">
+                <p className="text-readable-muted mb-4">
                   Understanding the probability system is crucial for optimization. Each item base has 
                   different socket color weights based on its attribute requirements:
                 </p>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/30 mb-6">
+                <Card className="content-section border-poe-gold/30 mb-6">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Base Color Probabilities</CardTitle>
                   </CardHeader>
@@ -132,10 +132,10 @@ export default function ChromaticOrbOptimization() {
 
                 <div className="bg-poe-dark rounded-lg p-6 border border-poe-gold/20 mb-6">
                   <h4 className="font-semibold text-poe-gold mb-3">Expected Value Calculation</h4>
-                  <p className="text-poe-text-dim mb-3">
+                  <p className="text-readable-muted mb-3">
                     For multiple sockets, we multiply individual probabilities:
                   </p>
-                  <div className="bg-poe-dark-alt rounded p-4 border border-poe-gold/10">
+                  <div className="content-section rounded p-4 border border-poe-gold/10">
                     <code className="text-green-400 block mb-2">
                       3R2G on Strength Base = (0.45)³ × (0.25)² × C(5,3) = 0.091 × 0.0625 × 10 = 0.057 (5.7%)
                     </code>
@@ -153,18 +153,18 @@ export default function ChromaticOrbOptimization() {
                   The 50 Orb Rule: When to Switch Strategies
                 </h2>
                 
-                <p className="text-poe-text-dim mb-4">
+                <p className="text-readable-muted mb-4">
                   The critical threshold for strategy switching is approximately 50 chromatic orbs. 
                   Above this cost, alternative methods become more efficient:
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <Card className="bg-poe-dark-alt border-green-500/30">
+                  <Card className="content-section border-green-500/30">
                     <CardHeader>
                       <CardTitle className="text-green-400">Direct Chromatic Method</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-poe-text-dim mb-3">Use when expected cost &lt; 50 orbs</p>
+                      <p className="text-sm text-readable-muted mb-3">Use when expected cost &lt; 50 orbs</p>
                       <ul className="text-sm space-y-1">
                         <li>• Simple and fast</li>
                         <li>• Best for on-color combinations</li>
@@ -174,12 +174,12 @@ export default function ChromaticOrbOptimization() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-poe-dark-alt border-yellow-500/30">
+                  <Card className="content-section border-yellow-500/30">
                     <CardHeader>
                       <CardTitle className="text-yellow-400">Jeweller Method</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-poe-text-dim mb-3">Use when expected cost &gt; 50 orbs</p>
+                      <p className="text-sm text-readable-muted mb-3">Use when expected cost &gt; 50 orbs</p>
                       <ul className="text-sm space-y-1">
                         <li>• Dramatically reduces off-color costs</li>
                         <li>• Requires jeweller orbs</li>
@@ -198,17 +198,17 @@ export default function ChromaticOrbOptimization() {
                   The Jeweller Method: Step-by-Step Guide
                 </h2>
                 
-                <p className="text-poe-text-dim mb-4">
+                <p className="text-readable-muted mb-4">
                   This technique exploits the fact that socket colors are determined when you add 
                   sockets, not when you reroll them. Here's how it works:
                 </p>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/30 mb-6">
+                <Card className="content-section border-poe-gold/30 mb-6">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Method Overview</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ol className="space-y-3 text-poe-text-dim">
+                    <ol className="space-y-3 text-readable-muted">
                       <li>
                         <strong className="text-poe-gold">Step 1:</strong> Use jeweller orbs to reduce item to 1 socket
                       </li>
@@ -230,7 +230,7 @@ export default function ChromaticOrbOptimization() {
 
                 <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6">
                   <h4 className="font-semibold text-yellow-400 mb-2">💡 Pro Tip: The 2-Socket Trick</h4>
-                  <p className="text-sm text-poe-text-dim">
+                  <p className="text-sm text-readable-muted">
                     For extremely off-color combinations (like 6B on a strength base), you can use the 
                     2-socket method: Get 2 correct sockets, then use jeweller orbs to go 2→3→2→3 until 
                     the 3rd socket is correct. This is more efficient than the 1-socket method for very rare colors.
@@ -244,12 +244,12 @@ export default function ChromaticOrbOptimization() {
                   Real-World Cost Comparisons
                 </h2>
                 
-                <p className="text-poe-text-dim mb-4">
+                <p className="text-readable-muted mb-4">
                   Let's examine specific scenarios where the jeweller method saves significant currency:
                 </p>
 
                 <div className="space-y-6">
-                  <Card className="bg-poe-dark-alt border-poe-gold/30">
+                  <Card className="content-section border-poe-gold/30">
                     <CardHeader>
                       <CardTitle className="text-poe-gold">Example 1: 5B1R on Strength Chest</CardTitle>
                     </CardHeader>
@@ -276,7 +276,7 @@ export default function ChromaticOrbOptimization() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-poe-dark-alt border-poe-gold/30">
+                  <Card className="content-section border-poe-gold/30">
                     <CardHeader>
                       <CardTitle className="text-poe-gold">Example 2: 4G2R on Intelligence Base</CardTitle>
                     </CardHeader>
@@ -292,7 +292,7 @@ export default function ChromaticOrbOptimization() {
                         </div>
                         <div>
                           <h5 className="font-semibold text-yellow-400 mb-2">Recommendation</h5>
-                          <p className="text-sm text-poe-text-dim">
+                          <p className="text-sm text-readable-muted">
                             Use direct chromatic method. Cost is below the 50-orb threshold, 
                             making the jeweller method less efficient due to setup time.
                           </p>
@@ -309,11 +309,11 @@ export default function ChromaticOrbOptimization() {
                   Market Price Optimization
                 </h2>
                 
-                <p className="text-poe-text-dim mb-4">
+                <p className="text-readable-muted mb-4">
                   Currency exchange rates fluctuate throughout leagues. Monitor these ratios to optimize your approach:
                 </p>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/30 mb-6">
+                <Card className="content-section border-poe-gold/30 mb-6">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Key Exchange Rates to Watch</CardTitle>
                   </CardHeader>
@@ -321,7 +321,7 @@ export default function ChromaticOrbOptimization() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h5 className="font-semibold text-poe-gold mb-3">Early League (Week 1-2)</h5>
-                        <ul className="text-sm space-y-1 text-poe-text-dim">
+                        <ul className="text-sm space-y-1 text-readable-muted">
                           <li>• Chromatics: 12-15:1c</li>
                           <li>• Jewellers: 20-25:1c</li>
                           <li>• Fusings: 2-2.5:1c</li>
@@ -330,7 +330,7 @@ export default function ChromaticOrbOptimization() {
                       </div>
                       <div>
                         <h5 className="font-semibold text-poe-gold mb-3">Mid-Late League</h5>
-                        <ul className="text-sm space-y-1 text-poe-text-dim">
+                        <ul className="text-sm space-y-1 text-readable-muted">
                           <li>• Chromatics: 8-10:1c</li>
                           <li>• Jewellers: 15-20:1c</li>
                           <li>• Fusings: 1.5-2:1c</li>
@@ -343,7 +343,7 @@ export default function ChromaticOrbOptimization() {
 
                 <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-6">
                   <h4 className="font-semibold text-blue-400 mb-2">📊 Daily Rate Checking</h4>
-                  <p className="text-sm text-poe-text-dim">
+                  <p className="text-sm text-readable-muted">
                     Check currency exchange rates daily on the official trade site. A 20% change in 
                     jeweller:chromatic ratio can flip the optimal strategy for borderline cases.
                   </p>
@@ -357,15 +357,15 @@ export default function ChromaticOrbOptimization() {
                 </h2>
                 
                 <div className="space-y-6">
-                  <Card className="bg-poe-dark-alt border-purple-500/30">
+                  <Card className="content-section border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-purple-400">The Hybrid Approach</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-poe-text-dim mb-3">
+                      <p className="text-readable-muted mb-3">
                         For moderately difficult combinations (50-150 chromatics), consider a hybrid approach:
                       </p>
-                      <ol className="text-sm space-y-1 text-poe-text-dim">
+                      <ol className="text-sm space-y-1 text-readable-muted">
                         <li>1. Try direct chromatic for 50-100 attempts</li>
                         <li>2. If unsuccessful, switch to jeweller method</li>
                         <li>3. This balances time investment with potential lucky outcomes</li>
@@ -373,15 +373,15 @@ export default function ChromaticOrbOptimization() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-poe-dark-alt border-orange-500/30">
+                  <Card className="content-section border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-orange-400">Bulk Purchase Strategy</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-poe-text-dim mb-3">
+                      <p className="text-readable-muted mb-3">
                         When planning major socket projects:
                       </p>
-                      <ul className="text-sm space-y-1 text-poe-text-dim">
+                      <ul className="text-sm space-y-1 text-readable-muted">
                         <li>• Buy currency in bulk for better rates (5-10% savings)</li>
                         <li>• Calculate total project costs before starting</li>
                         <li>• Consider opportunity cost of currency sitting unused</li>
@@ -398,7 +398,7 @@ export default function ChromaticOrbOptimization() {
                   <h2 className="text-2xl font-gaming font-bold text-poe-gold mb-4">
                     Apply These Strategies Now
                   </h2>
-                  <p className="text-poe-text-dim mb-6 max-w-2xl mx-auto">
+                  <p className="text-readable-muted mb-6 max-w-2xl mx-auto">
                     Use our advanced chromatic calculator to determine the optimal strategy for your specific 
                     socket combination. Get real-time cost comparisons and make informed crafting decisions.
                   </p>
@@ -417,9 +417,9 @@ export default function ChromaticOrbOptimization() {
                   Key Takeaways
                 </h2>
                 
-                <Card className="bg-poe-dark-alt border-poe-gold/30">
+                <Card className="content-section border-poe-gold/30">
                   <CardContent className="p-6">
-                    <ul className="space-y-3 text-poe-text-dim">
+                    <ul className="space-y-3 text-readable-muted">
                       <li>
                         <strong className="text-poe-gold">The 50 Orb Rule:</strong> Switch to jeweller method when expected chromatic cost exceeds 50 orbs
                       </li>
@@ -449,7 +449,7 @@ export default function ChromaticOrbOptimization() {
                 </div>
                 <div>
                   <div className="font-semibold text-poe-gold">Vorici Calculator Team</div>
-                  <div className="text-sm text-poe-text-dim">Expert Path of Exile crafting analysis and tools</div>
+                  <div className="text-sm text-readable-muted">Expert Path of Exile crafting analysis and tools</div>
                 </div>
               </div>
             </div>

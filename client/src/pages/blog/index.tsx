@@ -95,17 +95,17 @@ export default function BlogIndex() {
         }}
       />
       
-      <div className="min-h-screen bg-poe-dark text-poe-text">
+      <div className="min-h-screen bg-poe-dark text-readable">
         <Header />
         
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 blog-content guide-content">
           <div className="max-w-6xl mx-auto">
             {/* Hero Section */}
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-gaming font-bold text-poe-gold mb-4">
                 Path of Exile Crafting Blog
               </h1>
-              <p className="text-xl text-poe-text-dim max-w-2xl mx-auto">
+              <p className="text-xl text-readable-muted max-w-2xl mx-auto">
                 Expert strategies, league updates, and mathematical analysis for optimal crafting in Path of Exile.
               </p>
             </div>
@@ -118,14 +118,14 @@ export default function BlogIndex() {
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {featuredPosts.map((post) => (
-                  <Card key={post.id} className="bg-poe-dark-alt border-poe-gold/30 hover:border-poe-gold/60 transition-colors group">
+                  <Card key={post.id} className="content-section border-poe-gold/30 hover:border-poe-gold/60 transition-colors group">
                     <div className="aspect-video bg-gradient-to-br from-poe-gold/20 to-poe-orange/20 rounded-t-lg flex items-center justify-center">
                       <div className="text-poe-gold/60 text-6xl">📊</div>
                     </div>
                     <CardHeader>
                       <div className="flex items-center gap-2 mb-2">
                         <Badge className={post.categoryColor}>{post.category}</Badge>
-                        <div className="flex items-center gap-1 text-sm text-poe-text-dim">
+                        <div className="flex items-center gap-1 text-sm text-readable-muted">
                           <Calendar className="w-4 h-4" />
                           {new Date(post.date).toLocaleDateString()}
                         </div>
@@ -137,9 +137,9 @@ export default function BlogIndex() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-poe-text-dim mb-4">{post.excerpt}</p>
+                      <p className="text-readable-muted mb-4">{post.excerpt}</p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1 text-sm text-poe-text-dim">
+                        <div className="flex items-center gap-1 text-sm text-readable-muted">
                           <Clock className="w-4 h-4" />
                           {post.readTime}
                         </div>
@@ -164,7 +164,7 @@ export default function BlogIndex() {
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {regularPosts.map((post) => (
-                  <Card key={post.id} className="bg-poe-dark-alt border-poe-gold/30 hover:border-poe-gold/60 transition-colors group">
+                  <Card key={post.id} className="content-section border-poe-gold/30 hover:border-poe-gold/60 transition-colors group">
                     <div className="aspect-video bg-gradient-to-br from-poe-gold/10 to-poe-orange/10 rounded-t-lg flex items-center justify-center">
                       <div className="text-poe-gold/40 text-4xl">📝</div>
                     </div>
@@ -179,13 +179,13 @@ export default function BlogIndex() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-poe-text-dim mb-4 line-clamp-3">{post.excerpt}</p>
+                      <p className="text-sm text-readable-muted mb-4 line-clamp-3">{post.excerpt}</p>
                       <div className="flex items-center justify-between text-sm">
-                        <div className="flex items-center gap-1 text-poe-text-dim">
+                        <div className="flex items-center gap-1 text-readable-muted">
                           <Calendar className="w-3 h-3" />
                           {new Date(post.date).toLocaleDateString()}
                         </div>
-                        <div className="flex items-center gap-1 text-poe-text-dim">
+                        <div className="flex items-center gap-1 text-readable-muted">
                           <Clock className="w-3 h-3" />
                           {post.readTime}
                         </div>
@@ -208,7 +208,7 @@ export default function BlogIndex() {
                 <h2 className="text-2xl font-gaming font-bold text-poe-gold mb-4">
                   Stay Updated with League Changes
                 </h2>
-                <p className="text-poe-text-dim mb-6 max-w-2xl mx-auto">
+                <p className="text-readable-muted mb-6 max-w-2xl mx-auto">
                   Get notified when we publish new crafting guides, calculator updates, and league-specific strategies.
                   Join thousands of Path of Exile crafters optimizing their currency.
                 </p>

@@ -48,15 +48,15 @@ export default function TopFiveCraftingMistakes() {
         structuredData={structuredData}
       />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 blog-content guide-content">
         {/* Breadcrumb */}
         <nav className="mb-6">
-          <ol className="flex items-center space-x-2 text-sm text-poe-text-dim">
+          <ol className="flex items-center space-x-2 text-sm text-readable-muted">
             <li><Link href="/" className="hover:text-poe-gold transition-colors">Home</Link></li>
             <li>/</li>
             <li><Link href="/blog" className="hover:text-poe-gold transition-colors">Blog</Link></li>
             <li>/</li>
-            <li className="text-poe-text">Top 5 Crafting Mistakes</li>
+            <li className="text-readable">Top 5 Crafting Mistakes</li>
           </ol>
         </nav>
 
@@ -75,12 +75,12 @@ export default function TopFiveCraftingMistakes() {
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-poe-gold mb-6">
               Top 5 Crafting Mistakes That Are Wasting Your Currency
             </h1>
-            <p className="text-xl text-poe-text-dim leading-relaxed mb-6">
+            <p className="text-xl text-readable-muted leading-relaxed mb-6">
               Every Path of Exile player has felt the sting of a failed craft. Whether it's burning through hundreds of Chromatic Orbs or watching thousands of Orbs of Fusing disappear without results, crafting mistakes can drain your currency faster than any other activity in the game. Learn to identify and avoid these costly errors.
             </p>
             
             {/* Article Meta */}
-            <div className="flex items-center gap-6 text-sm text-poe-text-dim border-b border-poe-gold/20 pb-6">
+            <div className="flex items-center gap-6 text-sm text-readable-muted border-b border-poe-gold/20 pb-6">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 <span>December 15, 2024</span>
@@ -104,7 +104,7 @@ export default function TopFiveCraftingMistakes() {
                 Picture this: you've just found the perfect item base for your build. The excitement builds as you prepare to craft it into something amazing. Fast forward an hour later, and you're staring at your empty currency tab, wondering where it all went wrong. We've all been there.
               </p>
 
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 Crafting in Path of Exile is unforgiving. A single poor decision can cost you more currency than most players see in weeks. But here's the good news: most expensive mistakes are completely avoidable once you understand what causes them.
               </p>
 
@@ -113,7 +113,7 @@ export default function TopFiveCraftingMistakes() {
                   <AlertTriangle className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-red-400 mb-2">The True Cost of Mistakes</h3>
-                    <p className="text-poe-text">
+                    <p className="text-readable">
                       Our analysis of over 10,000 crafting sessions shows that players who make these common mistakes spend 300-500% more currency than those who avoid them. The difference between success and bankruptcy often comes down to knowledge, not luck.
                     </p>
                   </div>
@@ -128,16 +128,16 @@ export default function TopFiveCraftingMistakes() {
                 Ignoring Item Attribute Requirements
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 The most expensive mistake new crafters make is attempting to get socket colors that fight against the item's natural tendencies. Trying to roll 4 blue sockets on a pure Strength helmet isn't just difficult—it's financially ruinous.
               </p>
 
-              <Card className="bg-poe-dark-alt border-poe-gold/20 mb-6">
+              <Card className="content-section border-poe-gold/20 mb-6">
                 <CardHeader>
                   <CardTitle className="text-poe-gold">Real Example: The 2,000 Chromatic Disaster</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-poe-text mb-4">
+                  <p className="text-readable mb-4">
                     A player spent 2,184 Chromatic Orbs trying to get 3 blue, 1 green socket on a Strength-based chest piece. The probability? About 0.05%, meaning they should have expected to spend around 2,000 Chromatics anyway.
                   </p>
                   <div className="bg-poe-dark p-4 rounded border border-poe-gold/30">
@@ -149,7 +149,7 @@ export default function TopFiveCraftingMistakes() {
 
               <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-6 mb-8">
                 <h4 className="text-lg font-semibold text-green-400 mb-3">How to Avoid This Mistake:</h4>
-                <ul className="text-poe-text space-y-2">
+                <ul className="text-readable space-y-2">
                   <li>• Always check item attribute requirements before attempting socket coloring</li>
                   <li>• Learn the probability breakpoints: if success chance is below 1%, consider alternative methods</li>
                   <li>• Master the Jeweller's Method for extreme off-coloring scenarios</li>
@@ -165,11 +165,11 @@ export default function TopFiveCraftingMistakes() {
                 Not Using 20% Quality Before Fusing
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 This mistake might seem small, but it's devastatingly expensive. Item quality directly affects linking success rates, and the difference between 0% and 20% quality can literally double your costs.
               </p>
 
-              <Card className="bg-poe-dark-alt border-poe-gold/20 mb-6">
+              <Card className="content-section border-poe-gold/20 mb-6">
                 <CardHeader>
                   <CardTitle className="text-poe-gold">The Mathematics of Quality</CardTitle>
                 </CardHeader>
@@ -184,7 +184,7 @@ export default function TopFiveCraftingMistakes() {
                           <th className="text-center py-3 text-poe-gold">Total Cost</th>
                         </tr>
                       </thead>
-                      <tbody className="text-poe-text">
+                      <tbody className="text-readable">
                         <tr className="border-b border-poe-gold/10">
                           <td className="py-3">0% Quality</td>
                           <td className="text-center">~1,000 Fusings</td>
@@ -205,12 +205,12 @@ export default function TopFiveCraftingMistakes() {
 
               <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
                 <h4 className="text-lg font-semibold text-yellow-400 mb-3">Why Players Skip Quality:</h4>
-                <ul className="text-poe-text space-y-2 mb-4">
+                <ul className="text-readable space-y-2 mb-4">
                   <li>• "It's only a small improvement" (wrong—it's massive)</li>
                   <li>• "I don't want to spend the currency upfront" (false economy)</li>
                   <li>• "I'll get lucky anyway" (hope is not a strategy)</li>
                 </ul>
-                <p className="text-poe-text">
+                <p className="text-readable">
                   <Link href="/guides/6-linking-strategies" className="text-poe-gold hover:text-poe-orange transition-colors">Learn more about quality's impact in our 6-linking strategies guide</Link>
                 </p>
               </div>
@@ -223,7 +223,7 @@ export default function TopFiveCraftingMistakes() {
                 Using the Wrong Vorici Bench Craft
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 The crafting bench offers multiple ways to achieve similar results, but they have vastly different costs and applications. Using the wrong craft can waste hundreds of orbs or miss opportunities for guaranteed results.
               </p>
 
@@ -233,7 +233,7 @@ export default function TopFiveCraftingMistakes() {
                     <CardTitle className="text-red-400">Common Mistake</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3 text-sm">
+                    <p className="text-readable mb-3 text-sm">
                       Using "At least 1 red, 1 green, 1 blue socket" (120 Chromatics) when you actually need 3 red sockets specifically.
                     </p>
                     <div className="text-xs">
@@ -247,7 +247,7 @@ export default function TopFiveCraftingMistakes() {
                     <CardTitle className="text-green-400">Smart Approach</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3 text-sm">
+                    <p className="text-readable mb-3 text-sm">
                       Use "3 red sockets" craft (120 Chromatics) for exactly what you need, or calculate if Chromatic spam would be cheaper.
                     </p>
                     <div className="text-xs">
@@ -257,9 +257,9 @@ export default function TopFiveCraftingMistakes() {
                 </Card>
               </div>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <h4 className="text-lg font-semibold text-poe-gold mb-3">Key Bench Craft Guidelines:</h4>
-                <ul className="text-poe-text space-y-2">
+                <ul className="text-readable space-y-2">
                   <li>• Use guaranteed color crafts only when the probability of achieving the result naturally is very low</li>
                   <li>• The 1,500 Fusing 6-link craft is worth it when you've already spent 800+ Fusings without success</li>
                   <li>• Quality crafts are almost always worth the investment before attempting socket work</li>
@@ -275,11 +275,11 @@ export default function TopFiveCraftingMistakes() {
                 Guessing Instead of Calculating
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 This is the big one. The mistake that separates successful crafters from currency-broke dreamers. Too many players rely on "gut feeling" or "it should be easy" instead of understanding the actual mathematics involved.
               </p>
 
-              <Card className="bg-poe-dark-alt border-poe-gold/20 mb-6">
+              <Card className="content-section border-poe-gold/20 mb-6">
                 <CardHeader>
                   <CardTitle className="text-poe-gold flex items-center">
                     <TrendingDown className="w-5 h-5 mr-2" />
@@ -287,7 +287,7 @@ export default function TopFiveCraftingMistakes() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-poe-text mb-4">
+                  <p className="text-readable mb-4">
                     Human intuition is terrible at probability. What "feels" like it should happen in 10-20 attempts might actually have a 0.1% success rate, requiring thousands of attempts. Meanwhile, combinations that seem impossible might be achievable in just a few tries.
                   </p>
                   <div className="bg-red-900/20 border border-red-500/30 p-4 rounded">
@@ -299,10 +299,10 @@ export default function TopFiveCraftingMistakes() {
 
               <div className="bg-poe-gold/10 border border-poe-gold/30 rounded-lg p-6 mb-8">
                 <h4 className="text-lg font-semibold text-poe-gold mb-3">Stop Guessing, Start Calculating</h4>
-                <p className="text-poe-text mb-4">
+                <p className="text-readable mb-4">
                   Every crafting decision should be informed by mathematics, not hope. Before you start any socket operation, you should know:
                 </p>
-                <ul className="text-poe-text space-y-2 mb-4">
+                <ul className="text-readable space-y-2 mb-4">
                   <li>• The exact probability of success</li>
                   <li>• The expected currency cost</li>
                   <li>• Alternative methods and their costs</li>
@@ -325,12 +325,12 @@ export default function TopFiveCraftingMistakes() {
                 Crafting on a Bad Base Item
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 The foundation of any craft is the base item itself. Using the wrong base—whether due to low item level, poor implicit modifiers, or inadequate socket potential—can make even perfect crafting execution worthless.
               </p>
 
               <div className="space-y-6">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Critical Base Properties</CardTitle>
                   </CardHeader>
@@ -358,7 +358,7 @@ export default function TopFiveCraftingMistakes() {
 
                 <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-yellow-400 mb-3">The "Good Enough" Trap</h4>
-                  <p className="text-poe-text mb-3">
+                  <p className="text-readable mb-3">
                     Many players settle for "good enough" base items to save currency upfront, then spend far more trying to craft around the base's limitations. A slightly more expensive base with better properties often results in a dramatically more valuable final product.
                   </p>
                   <div className="bg-poe-dark p-4 rounded border border-yellow-500/30">
@@ -375,13 +375,13 @@ export default function TopFiveCraftingMistakes() {
                 Craft Smarter, Not Harder
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 Every one of these mistakes is avoidable with knowledge and preparation. The players who consistently profit from crafting aren't luckier—they're more informed. They understand the mathematics, respect the probabilities, and make decisions based on data rather than hope.
               </p>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">Your Action Plan:</h3>
-                <ol className="text-poe-text space-y-3">
+                <ol className="text-readable space-y-3">
                   <li className="flex items-start">
                     <span className="bg-poe-gold text-poe-dark w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
                     <div>
@@ -415,7 +415,7 @@ export default function TopFiveCraftingMistakes() {
                 </ol>
               </div>
 
-              <p className="text-poe-text">
+              <p className="text-readable">
                 Remember: the goal isn't to avoid all risk in crafting—it's to take calculated risks with full knowledge of the potential outcomes. Smart crafters don't get lucky more often; they just put themselves in positions where luck matters less. The <Link href="/" className="text-poe-gold hover:text-poe-orange transition-colors">Vorici Calculator</Link> provides the mathematical foundation for every decision.
               </p>
             </section>
@@ -423,10 +423,10 @@ export default function TopFiveCraftingMistakes() {
 
           {/* Related Content */}
           <div className="grid md:grid-cols-2 gap-6 mt-12 pt-8 border-t border-poe-gold/20">
-            <Card className="bg-poe-dark-alt border-poe-gold/30">
+            <Card className="content-section border-poe-gold/30">
               <CardContent className="p-6">
                 <h4 className="font-gaming font-semibold text-poe-gold mb-3">Socket Coloring Mechanics</h4>
-                <p className="text-poe-text-dim mb-4 text-sm">
+                <p className="text-readable-muted mb-4 text-sm">
                   Master the art of socket coloring with our comprehensive guide covering all the strategies mentioned in this article.
                 </p>
                 <Link 
@@ -438,10 +438,10 @@ export default function TopFiveCraftingMistakes() {
               </CardContent>
             </Card>
 
-            <Card className="bg-poe-dark-alt border-poe-gold/30">
+            <Card className="content-section border-poe-gold/30">
               <CardContent className="p-6">
                 <h4 className="font-gaming font-semibold text-poe-gold mb-3">6-Linking Strategies</h4>
-                <p className="text-poe-text-dim mb-4 text-sm">
+                <p className="text-readable-muted mb-4 text-sm">
                   Learn when to use quality, when to choose the crafting bench, and how to optimize your linking approach.
                 </p>
                 <Link 
@@ -462,7 +462,7 @@ export default function TopFiveCraftingMistakes() {
               </div>
               <div>
                 <div className="font-semibold text-poe-gold">Vorici Calculator Team</div>
-                <div className="text-sm text-poe-text-dim">Expert Path of Exile crafting analysis and tools</div>
+                <div className="text-sm text-readable-muted">Expert Path of Exile crafting analysis and tools</div>
               </div>
             </div>
           </div>

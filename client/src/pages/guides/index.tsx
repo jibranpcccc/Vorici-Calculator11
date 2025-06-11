@@ -50,15 +50,15 @@ export default function GuidesIndex() {
         keywords="Path of Exile guides, PoE crafting tutorial, socket coloring guide, 6-link guide, crafting bench guide"
       />
       
-      <div className="min-h-screen bg-poe-dark text-poe-text">
+      <div className="min-h-screen bg-poe-dark text-readable">
         <Header />
         
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 blog-content guide-content">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-gaming font-bold text-poe-gold mb-4">
               Crafting Guides
             </h1>
-            <p className="text-lg text-poe-text-dim max-w-2xl mx-auto">
+            <p className="text-lg text-readable-muted max-w-2xl mx-auto">
               Master Path of Exile crafting with our comprehensive guides. From basic socket mechanics 
               to advanced currency optimization strategies.
             </p>
@@ -73,20 +73,20 @@ export default function GuidesIndex() {
                 </span>
               </div>
               
-              <Card className="bg-poe-dark-alt border-poe-gold/40 glow-effect">
+              <Card className="content-section border-poe-gold/40 glow-effect">
                 <CardContent className="p-8">
                   <div className="grid md:grid-cols-3 gap-6 items-center">
                     <div className="md:col-span-2">
                       <div className="flex items-center mb-4">
                         <guide.icon className="w-8 h-8 text-poe-gold mr-3" />
                         <div>
-                          <div className="text-sm text-poe-text-dim">{guide.difficulty} • {guide.readTime}</div>
+                          <div className="text-sm text-readable-muted">{guide.difficulty} • {guide.readTime}</div>
                         </div>
                       </div>
                       <h2 className="text-2xl font-gaming font-bold text-poe-gold mb-4">
                         {guide.title}
                       </h2>
-                      <p className="text-poe-text-dim mb-6">
+                      <p className="text-readable-muted mb-6">
                         {guide.description}
                       </p>
                       <Link 
@@ -100,7 +100,7 @@ export default function GuidesIndex() {
                       <div className="w-24 h-24 bg-poe-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <guide.icon className="w-12 h-12 text-poe-gold" />
                       </div>
-                      <div className="text-poe-text-dim text-sm">
+                      <div className="text-readable-muted text-sm">
                         Complete coverage of all crafting mechanics
                       </div>
                     </div>
@@ -113,11 +113,11 @@ export default function GuidesIndex() {
           {/* All Guides */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.filter(guide => !guide.featured).map((guide) => (
-              <Card key={guide.href} className="bg-poe-dark-alt border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
+              <Card key={guide.href} className="content-section border-poe-gold/20 hover:border-poe-gold/40 transition-colors">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <guide.icon className="w-6 h-6 text-poe-gold" />
-                    <div className="text-xs text-poe-text-dim">
+                    <div className="text-xs text-readable-muted">
                       {guide.difficulty}
                     </div>
                   </div>
@@ -126,11 +126,11 @@ export default function GuidesIndex() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-poe-text-dim text-sm mb-4">
+                  <p className="text-readable-muted text-sm mb-4">
                     {guide.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-poe-text-dim">{guide.readTime}</span>
+                    <span className="text-xs text-readable-muted">{guide.readTime}</span>
                     <Link 
                       href={guide.href}
                       className="text-poe-gold hover:text-poe-orange transition-colors text-sm font-medium"
@@ -145,13 +145,13 @@ export default function GuidesIndex() {
 
           {/* Calculator CTA */}
           <div className="mt-16">
-            <Card className="bg-poe-dark-alt border-poe-gold/20">
+            <Card className="content-section border-poe-gold/20">
               <CardContent className="p-8 text-center">
                 <Calculator className="w-16 h-16 text-poe-gold mx-auto mb-4" />
                 <h2 className="text-2xl font-gaming font-bold text-poe-gold mb-4">
                   Ready to Calculate?
                 </h2>
-                <p className="text-poe-text-dim mb-6">
+                <p className="text-readable-muted mb-6">
                   Put your knowledge to work with our All-in-One Crafting Calculator. 
                   Get precise costs and probabilities for all your crafting needs.
                 </p>

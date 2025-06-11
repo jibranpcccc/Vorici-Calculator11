@@ -48,15 +48,15 @@ export default function SocketColoringMechanics() {
         structuredData={structuredData}
       />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 blog-content guide-content">
         {/* Breadcrumb */}
         <nav className="mb-6">
-          <ol className="flex items-center space-x-2 text-sm text-poe-text-dim">
+          <ol className="flex items-center space-x-2 text-sm text-readable-muted">
             <li><Link href="/" className="hover:text-poe-gold transition-colors">Home</Link></li>
             <li>/</li>
             <li><Link href="/guides" className="hover:text-poe-gold transition-colors">Guides</Link></li>
             <li>/</li>
-            <li className="text-poe-text">Socket Coloring Mechanics</li>
+            <li className="text-readable">Socket Coloring Mechanics</li>
           </ol>
         </nav>
 
@@ -78,7 +78,7 @@ export default function SocketColoringMechanics() {
             <p className="text-xl text-readable-dim leading-relaxed mb-6">
               Understanding socket coloring mechanics is essential for any serious Path of Exile player. This comprehensive guide explains the exact formulas, probability calculations, and advanced strategies that determine how Chromatic Orbs interact with your items to produce the socket colors you need.
             </p>
-            <div className="flex items-center gap-4 text-sm text-poe-text-dim">
+            <div className="flex items-center gap-4 text-sm text-readable-muted">
               <span>Updated for 2025</span>
               <span>•</span>
               <span>8 minute read</span>
@@ -95,7 +95,7 @@ export default function SocketColoringMechanics() {
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">
                     Calculate your exact costs with our All-in-One Crafting Calculator
                   </h3>
-                  <p className="text-poe-text-dim">
+                  <p className="text-readable-muted">
                     Put this knowledge into practice with real-time calculations and see the math in action
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function SocketColoringMechanics() {
                 costs thousands of Chromatic Orbs, while achieving the same result on an Intelligence item requires just a few attempts.
               </p>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <div className="flex items-start gap-3">
                   <Zap className="w-6 h-6 text-poe-gold mt-1 flex-shrink-0" />
                   <div>
@@ -150,7 +150,7 @@ export default function SocketColoringMechanics() {
                 attribute requirements in one stat will heavily favor the corresponding socket color.
               </p>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">Complete Socket Color Weighting Table</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -163,7 +163,7 @@ export default function SocketColoringMechanics() {
                         <th className="text-center py-3 text-gray-300">White Weight</th>
                       </tr>
                     </thead>
-                    <tbody className="text-poe-text">
+                    <tbody className="text-readable">
                       <tr className="border-b border-poe-gold/10">
                         <td className="py-3">Pure Strength (159+ STR, &lt;60 DEX/INT)</td>
                         <td className="text-center text-red-400 font-bold">200</td>
@@ -216,7 +216,7 @@ export default function SocketColoringMechanics() {
                   <AlertTriangle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-yellow-400 mb-2">Important Note on White Sockets</h4>
-                    <p className="text-poe-text">
+                    <p className="text-readable">
                       White sockets can only appear on corrupted items or through specific crafting methods like Vaal Orbs or certain league mechanics. 
                       The white socket weighting shown above applies only when white sockets are possible on the item.
                     </p>
@@ -230,12 +230,12 @@ export default function SocketColoringMechanics() {
                 The Chromatic Orb Formula Explained
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 The probability calculation for socket colors follows a weighted random distribution. Each socket is rolled independently, 
                 and the probability of getting a specific color depends on the total weight of all possible outcomes.
               </p>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">Core Probability Formula</h3>
                 <div className="font-mono text-poe-gold bg-poe-dark p-4 rounded border mb-4">
                   P(specific_color) = Weight(color) / Total_Weight<br/>
@@ -243,13 +243,13 @@ export default function SocketColoringMechanics() {
                   Where:<br/>
                   Total_Weight = Red_Weight + Green_Weight + Blue_Weight + White_Weight
                 </div>
-                <p className="text-poe-text-dim text-sm">
+                <p className="text-readable-muted text-sm">
                   For multiple sockets, multiply individual probabilities: P(combination) = P(socket1) × P(socket2) × ... × P(socketN)
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Example: Pure Strength Helmet (4 sockets)</CardTitle>
                   </CardHeader>
@@ -258,7 +258,7 @@ export default function SocketColoringMechanics() {
                       <div className="text-sm">
                         <strong className="text-poe-gold">Total Weight:</strong> 200 + 20 + 20 + 20 = 260
                       </div>
-                      <ul className="text-poe-text space-y-1 text-sm">
+                      <ul className="text-readable space-y-1 text-sm">
                         <li>• Red socket: 200/260 = 76.9%</li>
                         <li>• Green socket: 20/260 = 7.7%</li>
                         <li>• Blue socket: 20/260 = 7.7%</li>
@@ -271,7 +271,7 @@ export default function SocketColoringMechanics() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Example: Pure Intelligence Chest (6 sockets)</CardTitle>
                   </CardHeader>
@@ -280,7 +280,7 @@ export default function SocketColoringMechanics() {
                       <div className="text-sm">
                         <strong className="text-poe-gold">Total Weight:</strong> 20 + 20 + 200 + 20 = 260
                       </div>
-                      <ul className="text-poe-text space-y-1 text-sm">
+                      <ul className="text-readable space-y-1 text-sm">
                         <li>• Red socket: 20/260 = 7.7%</li>
                         <li>• Green socket: 20/260 = 7.7%</li>
                         <li>• Blue socket: 200/260 = 76.9%</li>
@@ -294,9 +294,9 @@ export default function SocketColoringMechanics() {
                 </Card>
               </div>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">Expected Cost Calculation</h3>
-                <p className="text-poe-text mb-4">
+                <p className="text-readable mb-4">
                   To find the average number of Chromatic Orbs needed, use the inverse of the probability:
                 </p>
                 <div className="font-mono text-poe-gold bg-poe-dark p-4 rounded border">
@@ -311,13 +311,13 @@ export default function SocketColoringMechanics() {
                 Off-Coloring: Strategies & Costs
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 "Off-coloring" refers to achieving socket colors that oppose the item's natural attribute bias. This is one of the most 
                 currency-intensive activities in Path of Exile, but certain strategies can significantly reduce costs.
               </p>
 
               <div className="space-y-8">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold flex items-center">
                       <Target className="w-5 h-5 mr-2" />
@@ -325,14 +325,14 @@ export default function SocketColoringMechanics() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-4">
+                    <p className="text-readable mb-4">
                       The straightforward approach: repeatedly use Chromatic Orbs until you achieve the desired socket combination. 
                       This method is most effective for items requiring 1-2 off-color sockets.
                     </p>
                     <div className="grid md:grid-cols-2 gap-4 mb-4">
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <strong className="text-green-400">Best for:</strong>
-                        <ul className="text-poe-text mt-2 space-y-1 text-sm">
+                        <ul className="text-readable mt-2 space-y-1 text-sm">
                           <li>• 1-2 off-color sockets needed</li>
                           <li>• Lower socket count items (2-4 sockets)</li>
                           <li>• Probability above 1% (under 100 attempts average)</li>
@@ -340,7 +340,7 @@ export default function SocketColoringMechanics() {
                       </div>
                       <div className="bg-red-900/20 border border-red-500/30 p-4 rounded">
                         <strong className="text-red-400">Avoid when:</strong>
-                        <ul className="text-poe-text mt-2 space-y-1 text-sm">
+                        <ul className="text-readable mt-2 space-y-1 text-sm">
                           <li>• Probability below 0.1% (1000+ attempts)</li>
                           <li>• Need 4+ off-color sockets</li>
                           <li>• Working with 6-socket items</li>
@@ -350,7 +350,7 @@ export default function SocketColoringMechanics() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold flex items-center">
                       <TrendingUp className="w-5 h-5 mr-2" />
@@ -358,10 +358,10 @@ export default function SocketColoringMechanics() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-4">
+                    <p className="text-readable mb-4">
                       For extreme off-coloring scenarios, this method dramatically reduces costs by working with fewer sockets at a time:
                     </p>
-                    <ol className="text-poe-text space-y-3 mb-6">
+                    <ol className="text-readable space-y-3 mb-6">
                       <li className="flex items-start">
                         <span className="bg-poe-gold text-poe-dark w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
                         <div>
@@ -389,7 +389,7 @@ export default function SocketColoringMechanics() {
                     </ol>
                     <div className="bg-poe-dark p-4 rounded border border-poe-gold/30">
                       <strong className="text-poe-gold">Critical Insight:</strong> 
-                      <span className="text-poe-text ml-2">
+                      <span className="text-readable ml-2">
                         This method exploits the fact that existing socket colors are preserved when adding sockets, 
                         allowing you to build up your desired combination incrementally.
                       </span>
@@ -411,7 +411,7 @@ export default function SocketColoringMechanics() {
                     <CardTitle className="text-red-400">Expensive: 4B on STR Chest</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3">
+                    <p className="text-readable mb-3">
                       Getting 4 blue sockets on a pure Strength chest piece
                     </p>
                     <div className="text-sm space-y-1">
@@ -427,7 +427,7 @@ export default function SocketColoringMechanics() {
                     <CardTitle className="text-green-400">Reasonable: 2R on DEX Bow</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3">
+                    <p className="text-readable mb-3">
                       Getting 2 red sockets on a Dexterity bow
                     </p>
                     <div className="text-sm space-y-1">
@@ -457,7 +457,7 @@ export default function SocketColoringMechanics() {
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2 group-hover:text-poe-orange transition-colors">
                     Use the Vorici Calculator Now
                   </h3>
-                  <p className="text-poe-text-dim text-sm">
+                  <p className="text-readable-muted text-sm">
                     Apply socket coloring mechanics with our free calculator
                   </p>
                 </div>
@@ -467,14 +467,14 @@ export default function SocketColoringMechanics() {
 
             <Link 
               href="/guides/path-of-exile-crafting-guide"
-              className="bg-poe-dark-alt border border-poe-gold/20 rounded-lg p-6 hover:border-poe-gold/40 transition-colors group"
+              className="content-section border border-poe-gold/20 rounded-lg p-6 hover:border-poe-gold/40 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2 group-hover:text-poe-orange transition-colors">
                     Return to the Complete Path of Exile Crafting Guide
                   </h3>
-                  <p className="text-poe-text-dim text-sm">
+                  <p className="text-readable-muted text-sm">
                     Continue your crafting education
                   </p>
                 </div>

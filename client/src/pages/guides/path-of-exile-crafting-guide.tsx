@@ -48,15 +48,15 @@ export default function PathOfExileCraftingGuide() {
         structuredData={structuredData}
       />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 guide-content">
         {/* Breadcrumb */}
         <nav className="mb-6">
-          <ol className="flex items-center space-x-2 text-sm text-poe-text-dim">
-            <li><Link href="/" className="hover:text-poe-gold transition-colors">Home</Link></li>
+          <ol className="flex items-center space-x-2 text-sm text-readable-muted">
+            <li><Link href="/" className="content-link hover:text-amber-300 transition-colors">Home</Link></li>
             <li>/</li>
-            <li><Link href="/guides" className="hover:text-poe-gold transition-colors">Guides</Link></li>
+            <li><Link href="/guides" className="content-link hover:text-amber-300 transition-colors">Guides</Link></li>
             <li>/</li>
-            <li className="text-poe-text">Complete Crafting Guide</li>
+            <li className="text-readable">Complete Crafting Guide</li>
           </ol>
         </nav>
 
@@ -71,14 +71,14 @@ export default function PathOfExileCraftingGuide() {
           </Link>
 
           {/* Article Header */}
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-poe-gold mb-6">
+          <header className="mb-12 content-bg">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-readable-bright mb-6">
               The Complete Path of Exile Crafting Guide
             </h1>
-            <p className="text-xl text-poe-text-dim leading-relaxed mb-6">
+            <p className="text-xl text-readable leading-relaxed mb-6">
               Master the complex art of item crafting in Path of Exile. This comprehensive guide covers everything from basic currency usage to advanced crafting techniques, providing the foundation you need to create powerful gear and understand one of the game's most rewarding systems.
             </p>
-            <div className="flex items-center gap-4 text-sm text-poe-text-dim">
+            <div className="flex items-center gap-4 text-sm text-readable-muted">
               <span>Updated for 2025</span>
               <span>•</span>
               <span>15 minute read</span>
@@ -95,7 +95,7 @@ export default function PathOfExileCraftingGuide() {
                   <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2">
                     Our Ultimate Crafting Calculator
                   </h3>
-                  <p className="text-poe-text-dim">
+                  <p className="text-readable-muted">
                     Apply what you learn here with real-time calculations for socket coloring, linking, and currency optimization
                   </p>
                 </div>
@@ -126,21 +126,21 @@ export default function PathOfExileCraftingGuide() {
                 Path of Exile crafting guide: Crafting in Path of Exile represents one of the most sophisticated item creation systems in any action RPG. Unlike games where you simply find or purchase your gear, PoE empowers players to create items that can surpass even the most legendary unique items when crafted with skill and knowledge. This system rewards understanding, patience, and strategic thinking above simple luck.
               </p>
 
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 The crafting system operates on multiple layers of complexity, from basic currency orb interactions to advanced metamodding techniques that require deep game knowledge. At its core, crafting is about manipulating probability in your favor, understanding economic principles, and knowing when to take calculated risks versus guaranteed outcomes.
               </p>
 
-              <div className="bg-poe-dark-alt rounded-lg p-6 border border-poe-gold/20 mb-8">
+              <div className="content-section rounded-lg p-6 border border-poe-gold/20 mb-8">
                 <h3 className="text-xl font-gaming font-semibold text-poe-gold mb-4">What This Comprehensive Guide Covers</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <ul className="text-poe-text space-y-2">
+                  <ul className="text-readable space-y-2">
                     <li>• Core crafting currencies and optimal usage patterns</li>
                     <li>• Understanding item bases, affixes, and hidden mechanics</li>
                     <li>• The crafting bench and recipe acquisition strategies</li>
                     <li>• Socket manipulation mathematics and cost optimization</li>
                     <li>• Advanced league mechanics integration</li>
                   </ul>
-                  <ul className="text-poe-text space-y-2">
+                  <ul className="text-readable space-y-2">
                     <li>• Economic considerations and market dynamics</li>
                     <li>• Risk management and budget planning</li>
                     <li>• Influence systems and endgame crafting</li>
@@ -156,12 +156,12 @@ export default function PathOfExileCraftingGuide() {
                 The Core Crafting Currencies
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 Understanding each currency orb's function, economic value, and optimal usage scenarios is fundamental to successful crafting. Every orb serves specific purposes, and mastering when and how to use them efficiently will save you significant resources while improving your results dramatically.
               </p>
 
               <div className="space-y-8">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold flex items-center text-2xl">
                       <Zap className="w-6 h-6 mr-3" />
@@ -177,7 +177,7 @@ export default function PathOfExileCraftingGuide() {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-lg font-semibold text-poe-gold mb-2">Chromatic Orbs</h4>
-                            <p className="text-poe-text mb-3">
+                            <p className="text-readable mb-3">
                               Reroll socket colors based on item attribute requirements. Success rates heavily depend on the item's Strength, Dexterity, and Intelligence requirements, making some color combinations extremely expensive while others are nearly guaranteed.
                             </p>
                             <div className="bg-poe-dark p-3 rounded border border-poe-gold/30">
@@ -199,7 +199,7 @@ export default function PathOfExileCraftingGuide() {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-lg font-semibold text-poe-gold mb-2">Jeweller's Orbs</h4>
-                            <p className="text-poe-text mb-3">
+                            <p className="text-readable mb-3">
                               Modify the number of sockets on an item. Item level determines the maximum possible sockets, and existing socket colors are preserved when adding sockets (crucial for advanced strategies).
                             </p>
                             <div className="bg-poe-dark p-3 rounded border border-poe-gold/30">
@@ -221,7 +221,7 @@ export default function PathOfExileCraftingGuide() {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-lg font-semibold text-poe-gold mb-2">Orbs of Fusing</h4>
-                            <p className="text-poe-text mb-3">
+                            <p className="text-readable mb-3">
                               Reroll socket links. Quality dramatically improves success rates, making 20% quality nearly mandatory for cost-effective linking. The difference between 0% and 20% quality can be thousands of orbs.
                             </p>
                             <div className="bg-poe-dark p-3 rounded border border-poe-gold/30">
@@ -239,7 +239,7 @@ export default function PathOfExileCraftingGuide() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold flex items-center text-2xl">
                       <Hammer className="w-6 h-6 mr-3" />
@@ -255,7 +255,7 @@ export default function PathOfExileCraftingGuide() {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-lg font-semibold text-poe-gold mb-2">Orbs of Alchemy</h4>
-                            <p className="text-poe-text mb-3">
+                            <p className="text-readable mb-3">
                               Transform normal (white) items into rare (yellow) items with 4-6 random modifiers. This is often the starting point for crafting projects and provides the most cost-effective way to get a rare item base.
                             </p>
                           </div>
@@ -269,12 +269,12 @@ export default function PathOfExileCraftingGuide() {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-lg font-semibold text-poe-gold mb-2">Chaos Orbs</h4>
-                            <p className="text-poe-text mb-3">
+                            <p className="text-readable mb-3">
                               Reroll all modifiers on rare items. This is the backbone of most basic crafting strategies and serves as the primary currency for trading. "Chaos spamming" refers to repeatedly using these until you get desired modifiers.
                             </p>
                             <div className="bg-poe-dark p-3 rounded border border-poe-gold/30">
                               <strong className="text-poe-gold">Economic Importance:</strong>
-                              <span className="text-sm text-poe-text ml-2">
+                              <span className="text-sm text-readable ml-2">
                                 Chaos Orbs function as the de facto currency standard in Path of Exile's player-driven economy.
                               </span>
                             </div>
@@ -289,12 +289,12 @@ export default function PathOfExileCraftingGuide() {
                           </div>
                           <div className="flex-1">
                             <h4 className="text-lg font-semibold text-poe-gold mb-2">Exalted Orbs</h4>
-                            <p className="text-poe-text mb-3">
+                            <p className="text-readable mb-3">
                               Add a new random modifier to rare items with open prefix or suffix slots. These are extremely valuable and represent high-stakes crafting. Using an Exalted Orb is often called "slamming."
                             </p>
                             <div className="bg-yellow-900/20 border border-yellow-500/30 p-3 rounded">
                               <strong className="text-yellow-400">High-Risk Currency:</strong>
-                              <span className="text-sm text-poe-text ml-2">
+                              <span className="text-sm text-readable ml-2">
                                 Only use on items worth significantly more than the orb itself due to the random nature of results.
                               </span>
                             </div>
@@ -312,17 +312,17 @@ export default function PathOfExileCraftingGuide() {
                 The Mathematics of Sockets, Links, and Colors
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 Socket manipulation represents one of the most mathematically complex aspects of Path of Exile crafting. Understanding these mechanics is crucial for cost-effective item creation and allows you to make informed decisions about when to use different strategies and currencies.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Socket Colors</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3 text-sm">
+                    <p className="text-readable mb-3 text-sm">
                       Socket colors are weighted based on item attribute requirements. For detailed probability calculations and off-coloring strategies:
                     </p>
                     <Link 
@@ -334,12 +334,12 @@ export default function PathOfExileCraftingGuide() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Socket Linking</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3 text-sm">
+                    <p className="text-readable mb-3 text-sm">
                       6-linking success rates depend heavily on item quality. Learn optimal strategies, cost comparisons, and when to use the crafting bench:
                     </p>
                     <Link 
@@ -358,28 +358,28 @@ export default function PathOfExileCraftingGuide() {
                 Advanced Crafting Concepts
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 Beyond basic currency crafting, Path of Exile offers sophisticated systems for creating truly exceptional items. These advanced methods require significant investment but can produce results impossible through normal crafting.
               </p>
 
               <div className="space-y-6">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Essence Crafting</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3">
+                    <p className="text-readable mb-3">
                       Essences guarantee one specific modifier while randomly rolling others. This provides more control than chaos spam while still maintaining some randomness for potential upgrades.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold">Fossil Crafting</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-poe-text mb-3">
+                    <p className="text-readable mb-3">
                       Fossils modify the affix pool by increasing, decreasing, or blocking certain modifier types. This allows for targeted crafting with significantly improved odds.
                     </p>
                   </CardContent>
@@ -393,12 +393,12 @@ export default function PathOfExileCraftingGuide() {
                 Additional Resources
               </h2>
               
-              <p className="text-poe-text mb-6">
+              <p className="text-readable mb-6">
                 Our calculations are based on the community's reverse-engineered data, cross-referenced with the official PoE Wiki. For the most authoritative information on game mechanics:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold flex items-center">
                       <ExternalLink className="w-5 h-5 mr-2" />
@@ -427,7 +427,7 @@ export default function PathOfExileCraftingGuide() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-poe-dark-alt border-poe-gold/20">
+                <Card className="content-section border-poe-gold/20">
                   <CardHeader>
                     <CardTitle className="text-poe-gold flex items-center">
                       <Calculator className="w-5 h-5 mr-2" />
@@ -461,24 +461,24 @@ export default function PathOfExileCraftingGuide() {
           <div className="grid md:grid-cols-2 gap-6 mt-12 pt-8 border-t border-poe-gold/20">
             <Link 
               href="/guides/socket-coloring-mechanics"
-              className="bg-poe-dark-alt border border-poe-gold/20 rounded-lg p-6 hover:border-poe-gold/40 transition-colors group"
+              className="content-section border border-poe-gold/20 rounded-lg p-6 hover:border-poe-gold/40 transition-colors group"
             >
               <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2 group-hover:text-poe-orange transition-colors">
                 Socket Coloring Deep Dive
               </h3>
-              <p className="text-poe-text-dim text-sm">
+              <p className="text-readable-muted text-sm">
                 Learn the exact math behind Chromatic Orbs and off-coloring strategies
               </p>
             </Link>
 
             <Link 
               href="/guides/6-linking-strategies"
-              className="bg-poe-dark-alt border border-poe-gold/20 rounded-lg p-6 hover:border-poe-gold/40 transition-colors group"
+              className="content-section border border-poe-gold/20 rounded-lg p-6 hover:border-poe-gold/40 transition-colors group"
             >
               <h3 className="text-lg font-gaming font-semibold text-poe-gold mb-2 group-hover:text-poe-orange transition-colors">
                 6-Linking Strategies
               </h3>
-              <p className="text-poe-text-dim text-sm">
+              <p className="text-readable-muted text-sm">
                 Master the art of linking sockets efficiently and cost-effectively
               </p>
             </Link>

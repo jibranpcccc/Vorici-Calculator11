@@ -29,7 +29,7 @@ export function Header() {
               <span className="text-charcoal-stone font-heading font-bold text-lg">⚡</span>
             </div>
             <div>
-              <h1 className="text-2xl font-heading font-bold text-exalted-gold">Vorici Calculator</h1>
+              <span className="text-2xl font-heading font-bold text-exalted-gold">Vorici Calculator</span>
               <p className="text-xs text-light-slate">Path of Exile Crafting Tool</p>
             </div>
           </Link>

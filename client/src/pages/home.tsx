@@ -184,27 +184,31 @@ export default function Home() {
             </p>
           </div>
           
-          <Card className="bg-poe-surface border-poe-accent/20 mb-8">
-            <CardContent className="p-8">
-              <div className="flex justify-center items-center gap-4 mb-6">
-                <Button variant="outline" className="border-poe-accent text-poe-accent">
-                  <BarChart3 className="w-4 h-4 mr-2" />
-                  Standard Chromatics
-                </Button>
-                <Button variant="outline" className="border-purple-400 text-purple-400">
-                  <BarChart3 className="w-4 h-4 mr-2" />
-                  Tainted Chromatics
-                </Button>
-              </div>
-              <div className="h-64 bg-poe-darker rounded-lg flex items-center justify-center">
-                <div className="text-center text-poe-text-secondary">
-                  <BarChart3 className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                  <p>Interactive probability chart loads here</p>
-                  <p className="text-sm">Updates automatically with calculator changes</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="mb-8">
+            <div className="flex justify-center items-center gap-4 mb-6">
+              <Button 
+                variant={chartType === 'standard' ? 'default' : 'outline'} 
+                className={chartType === 'standard' ? "bg-poe-accent text-poe-dark" : "border-poe-accent text-poe-accent"}
+                onClick={() => setChartType('standard')}
+              >
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Standard Chromatics
+              </Button>
+              <Button 
+                variant={chartType === 'tainted' ? 'default' : 'outline'} 
+                className={chartType === 'tainted' ? "bg-purple-500 text-white" : "border-purple-400 text-purple-400"}
+                onClick={() => setChartType('tainted')}
+              >
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Tainted Chromatics
+              </Button>
+            </div>
+            <ProbabilityChart 
+              itemBase="strength" 
+              socketCount={6} 
+              chartType={chartType}
+            />
+          </div>
         </section>
 
         {/* Crafting Bench Costs */}
@@ -305,17 +309,38 @@ export default function Home() {
                 description: "Execute calculation to see probability percentages, expected costs, and optimal strategy",
                 icon: TrendingUp
               }
-            ].map((item) => (
-              <Card key={item.step} className="bg-poe-surface border-poe-accent/20 relative">
+            ].map((item, index) => (
+              <Card key={item.step} className="bg-poe-surface border-poe-accent/20 relative group hover:border-poe-accent/40 transition-all duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-poe-accent text-poe-dark rounded-full flex items-center justify-center font-bold text-sm">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-poe-accent text-poe-dark rounded-full flex items-center justify-center font-bold text-sm group-hover:scale-110 transition-transform">
                     {item.step}
                   </div>
-                  <item.icon className="w-12 h-12 text-poe-accent mx-auto mb-4" />
+                  <div className="relative mb-4">
+                    <item.icon className="w-12 h-12 text-poe-accent mx-auto group-hover:scale-110 transition-transform" />
+                    <div className="mt-2 h-20 bg-poe-darker rounded-lg flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
+                      <div className="text-center">
+                        <div className="w-8 h-8 mx-auto mb-1 bg-poe-accent/20 rounded animate-pulse"></div>
+                        <p className="text-xs text-poe-text-secondary">Interactive demo</p>
+                      </div>
+                    </div>
+                  </div>
                   <h3 className="text-lg font-semibold text-poe-text mb-3">{item.title}</h3>
-                  <p className="text-sm text-poe-text-secondary leading-relaxed">
+                  <p className="text-sm text-poe-text-secondary leading-relaxed mb-4">
                     {item.description}
                   </p>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border-poe-accent/30 text-poe-accent hover:bg-poe-accent/10"
+                    onClick={() => {
+                      if (index === 0) {
+                        // Scroll to calculator for step 1
+                        document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    {index === 0 ? 'Try Now' : 'Learn More'}
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -382,12 +407,65 @@ export default function Home() {
                   and specific Harvest crafts. Regular Chromatics won't work on corrupted items.
                 </AccordionContent>
               </AccordionItem>
+
+              <AccordionItem value="vorici-trick" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  What is the Vorici Method for off-coloring?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  The Vorici Method uses crafting bench recipes to lock in socket colors one at a time. Start with 
+                  fewer sockets, craft the hardest colors first, then add more sockets. This prevents losing 
+                  difficult colors when rerolling.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="harvest-reroll" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  How does "Reforge keeping sockets" work in Harvest?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  This Harvest craft rerolls all item modifiers while preserving socket count, colors, and links. 
+                  It's extremely valuable for corrupted items that need new stats but already have perfect sockets.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="socket-colors-league" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  Do socket color probabilities change between leagues?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  No, the base socket color mechanics remain consistent across all leagues. However, new currency 
+                  types (like Tainted Chromatics) and crafting methods may be introduced that change optimal strategies.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="6off-color-strategy" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  What's the most efficient way to get 6 off-color sockets?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  For extreme off-colors (like 6B on a Strength base), use the crafting bench recipes. They're 
+                  expensive but guaranteed. For less extreme cases, our calculator will show when spamming 
+                  Chromatics becomes more cost-effective.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="white-sockets" className="bg-poe-surface border-poe-accent/20 rounded-lg px-6">
+                <AccordionTrigger className="text-poe-text hover:text-poe-accent">
+                  Can I get white sockets with Chromatic Orbs?
+                </AccordionTrigger>
+                <AccordionContent className="text-poe-text-secondary">
+                  No, white sockets can only be obtained through specific methods like Vorici in Research 
+                  (Betrayal), certain Harvest crafts, or items that naturally spawn with white sockets like 
+                  some unique items.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
 
             <div className="text-center mt-8">
               <Link href="/faq">
                 <Button variant="outline" className="border-poe-accent text-poe-accent">
-                  View All 15 FAQs
+                  View All 12 FAQs
                   <ChevronRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>

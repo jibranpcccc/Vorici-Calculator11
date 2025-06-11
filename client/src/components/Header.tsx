@@ -33,7 +33,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-poe-gold rounded-full flex items-center justify-center">
               <span className="text-poe-dark font-gaming font-bold text-sm">V</span>
             </div>
-            <h1 className="text-xl font-gaming font-bold text-poe-gold">Vorici Calculator</h1>
+            <span className="text-xl font-gaming font-bold text-poe-gold">Vorici Calculator</span>
           </Link>
           
           {/* Desktop Navigation */}
